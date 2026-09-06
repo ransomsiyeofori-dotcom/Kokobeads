@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Kokobeeds — Shopping Cart</title>
+
+    <link
+        rel="stylesheet"
+        href="../css/styles.css"
+    >
+
+      <link
+        rel="stylesheet"
+        href="../css/cart.css"
+    >
+    
+          <link
+        rel="stylesheet"
+        href="../css/header.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<header class="site-header">
+
+    <div class="container">
+
+        <!-- LOGO -->
+
+        <a
+            href="../index.html"
+            class="logo"
+            aria-label="Kokobeeds home"
+        >
+            Kokobeads
+        </a>
+
+
+        <!-- DESKTOP NAVIGATION -->
+
+        <nav
+            class="main-navigation"
+            aria-label="Main navigation"
+        >
+
+            <a href="./shop.html">
+                Shop
+            </a>
+
+            <a href="./collection.html">
+                Collections
+            </a>
+
+            <a href="./profile.html">
+                Profile
+            </a>
+
+            <a
+                href="./cart.html"
+                class="active"
+            >
+                Cart
+
+                <span
+                    class="cart-count"
+                    id="cartCount" data-cart-count
+                >
+                    0
+                </span>
+
+            </a>
+
+        </nav>
+
+
+        <!-- MOBILE ACTIONS -->
+
+        <div class="mobile-header-actions">
+
+            <!-- Mobile Cart -->
+
+            <a
+                href="./cart.html"
+                class="mobile-cart-action"
+                aria-label="Shopping cart"
+            >
+
+                <i
+                    class="fa-solid fa-bag-shopping"
+                    aria-hidden="true"
+                ></i>
+
+                <span
+                    class="mobile-cart-count"
+                    id="mobileCartCount" data-cart-count
+                >
+                    0
+                </span>
+
+            </a>
+
+
+            <!-- Menu -->
+
+            <button
+                type="button"
+                class="menu-button"
+                id="menuButton"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+                aria-controls="mobileNavigation"
+            >
+
+                <i
+                    class="fa-solid fa-bars"
+                    aria-hidden="true"
+                ></i>
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- MOBILE NAVIGATION -->
+
+    <nav
+        class="mobile-navigation"
+        id="mobileNavigation"
+        aria-label="Mobile navigation"
+    >
+
+        <a href="./shop.html">
+            Shop
+        </a>
+
+        <a href="./collection.html">
+            Collections
+        </a>
+
+        <a href="./profile.html">
+            Profile
+        </a>
+
+        <a
+            href="./cart.html"
+            class="active"
+        >
+            Cart
+
+            <span class="drawer-cart-count" data-cart-count>
+                0
+            </span>
+
+        </a>
+
+    </nav>
+
+</header>
+
+
+<main class="cart-page">
+
+    <section class="container">
+
+        <div class="page-heading">
+
+            <p class="product-category">
+                Kokobeeds
+            </p>
+
+            <h1>
+                Shopping Cart
+            </h1>
+
+            <p>
+                Review your selected products before checkout.
+            </p>
+
+        </div>
+
+
+
+        <!-- =================================
+             LOADING
+        ================================== -->
+
+        <div
+            id="cartLoading"
+            class="cart-state"
+            hidden
+        >
+
+            <p>
+                Loading your cart...
+            </p>
+
+        </div>
+
+
+
+        <!-- =================================
+             EMPTY CART
+        ================================== -->
+
+        <div
+            id="emptyCart"
+            class="cart-state"
+            hidden
+        >
+
+            <i class="fa-solid fa-bag-shopping"></i>
+
+            <h2>
+                Your cart is empty
+            </h2>
+
+            <p>
+                You haven't added any products yet.
+            </p>
+
+            <a
+                href="./shop.html"
+                class="primary-button"
+            >
+                Continue Shopping
+            </a>
+
+        </div>
+
+
+
+        <!-- =================================
+             CART CONTENT
+        ================================== -->
+
+        <div
+            id="cartContent"
+            class="cart-layout"
+            hidden
+        >
+
+
+            <!-- CART ITEMS -->
+
+            <section class="cart-items-section">
+
+                <div
+                    id="cartItems"
+                    class="cart-items"
+                >
+                </div>
+
+            </section>
+
+
+
+            <!-- ORDER SUMMARY -->
+
+            <aside class="cart-summary">
+
+                <h2>
+                    Order Summary
+                </h2>
+
+
+                <div class="summary-row">
+
+                    <span>
+                        Items
+                    </span>
+
+                    <strong id="cartItemCount">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="summary-row">
+
+                    <span>
+                        Subtotal
+                    </span>
+
+                    <strong id="cartSubtotal">
+                        ₦0
+                    </strong>
+
+                </div>
+
+
+                <div class="summary-row">
+
+                    <span>
+                        Shipping
+                    </span>
+
+                    <strong>
+                        Calculated at checkout
+                    </strong>
+
+                </div>
+
+
+                <hr>
+
+
+                <div class="summary-total">
+
+                    <span>
+                        Total
+                    </span>
+
+                    <strong id="cartTotal">
+                        ₦0
+                    </strong>
+
+                </div>
+
+
+                <a
+                    href="./checkout.html"
+                    id="checkoutButton"
+                    class="primary-button"
+                >
+                    Proceed to Checkout
+                </a>
+
+
+                <a
+                    href="./shop.html"
+                    class="secondary-button"
+                >
+                    Continue Shopping
+                </a>
+
+            </aside>
+
+
+        </div>
+
+    </section>
+
+</main>
+
+
+
+<script src="../js/api.js"></script>
+<script src="../js/cartNavigation.js"></script>
+<script src="../js/cart.js"></script>
+
+<script src="../js/cartCount.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,1235 @@
+/* =========================================
+   KOKOBEEDS PREMIUM AUTH
+========================================= */
+
+.auth-page {
+
+    min-height: 100vh;
+
+    background:
+        linear-gradient(
+            180deg,
+            #ffffff 0%,
+            #faf7ff 100%
+        );
+
+    color: #171329;
+
+}
+
+
+/* =========================================
+   TOP BAR
+========================================= */
+
+.auth-topbar {
+
+    width: 100%;
+
+    max-width: 1400px;
+
+    margin: 0 auto;
+
+    padding: 22px 5%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    box-sizing: border-box;
+
+}
+
+
+.auth-logo {
+
+    font-family: Georgia, serif;
+
+    font-size: 30px;
+
+    font-weight: 700;
+
+    color: #27134f;
+
+    text-decoration: none;
+
+}
+
+
+.auth-login-link {
+
+    margin: 0;
+
+    font-size: 14px;
+
+    color: #5f5875;
+
+}
+
+
+.auth-login-link a {
+
+    margin-left: 8px;
+
+    color: #6827b7;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+}
+
+
+.auth-login-link a:hover {
+
+    text-decoration: underline;
+
+}
+
+
+
+/* =========================================
+   REGISTER HERO
+========================================= */
+
+.register-hero {
+
+    max-width: 1400px;
+
+    margin: 0 auto;
+
+    min-height: 420px;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        1fr;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            120deg,
+            #f3edff,
+            #e8dcff
+        );
+
+}
+
+
+.register-hero-content {
+
+    padding: 70px 8%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+
+.register-eyebrow {
+
+    margin: 0 0 16px;
+
+    color: #6c28b8;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+
+}
+
+
+.register-hero h1 {
+
+    max-width: 650px;
+
+    margin: 0;
+
+    font-family: Georgia, serif;
+
+    font-size: clamp(
+        42px,
+        5vw,
+        72px
+    );
+
+    line-height: 1.02;
+
+    color: #1b1430;
+
+}
+
+
+.register-hero h1 span {
+
+    display: block;
+
+    color: #7029bb;
+
+    font-style: italic;
+
+}
+
+
+.register-hero-description {
+
+    max-width: 560px;
+
+    margin: 28px 0 0;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    color: #51486b;
+
+}
+
+
+.register-hero-image {
+
+    min-height: 420px;
+
+    overflow: hidden;
+
+}
+
+
+.register-hero-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+}
+
+
+
+/* =========================================
+   REGISTER SECTION
+========================================= */
+
+.register-section {
+
+    padding: 70px 20px;
+
+    display: flex;
+
+    justify-content: center;
+
+}
+
+
+.register-card {
+
+    width: 100%;
+
+    max-width: 650px;
+
+    padding: 50px;
+
+    background: #ffffff;
+
+    border: 1px solid #eee8f7;
+
+    border-radius: 28px;
+
+    box-shadow:
+        0 25px 80px
+        rgba(
+            69,
+            35,
+            112,
+            0.10
+        );
+
+    box-sizing: border-box;
+
+}
+
+
+.register-header {
+
+    text-align: center;
+
+    margin-bottom: 35px;
+
+}
+
+
+.register-form-eyebrow {
+
+    margin: 0 0 10px;
+
+    color: #7029bb;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 4px;
+
+}
+
+
+.register-header h2 {
+
+    margin: 0;
+
+    font-family: Georgia, serif;
+
+    font-size: 42px;
+
+    line-height: 1.15;
+
+    color: #171329;
+
+}
+
+
+.register-header h2 span {
+
+    color: #7029bb;
+
+    font-style: italic;
+
+}
+
+
+.register-header > p:last-child {
+
+    margin: 12px 0 0;
+
+    color: #756d89;
+
+    font-size: 16px;
+
+}
+
+
+
+/* =========================================
+   FORM
+========================================= */
+
+.register-form {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 22px;
+
+}
+
+
+.form-group {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+}
+
+
+.form-group label {
+
+    color: #241b3d;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+}
+
+
+.form-group small {
+
+    color: #8a829c;
+
+    font-size: 12px;
+
+}
+
+
+.input-wrapper {
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+}
+
+
+.input-icon {
+
+    position: absolute;
+
+    left: 17px;
+
+    z-index: 2;
+
+    color: #6d2db5;
+
+    font-size: 18px;
+
+    pointer-events: none;
+
+}
+
+
+.input-wrapper input {
+
+    width: 100%;
+
+    min-height: 58px;
+
+    padding:
+        0 52px;
+
+    box-sizing: border-box;
+
+    border:
+        1px solid #ddd4ed;
+
+    border-radius: 12px;
+
+    background: #fcfaff;
+
+    color: #1b1530;
+
+    font-size: 15px;
+
+    outline: none;
+
+    transition:
+        border-color .2s ease,
+        box-shadow .2s ease,
+        background .2s ease;
+
+}
+
+
+.input-wrapper input::placeholder {
+
+    color: #918aa2;
+
+}
+
+
+.input-wrapper input:focus {
+
+    border-color: #7c35c7;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(
+            124,
+            53,
+            199,
+            .10
+        );
+
+}
+
+
+.password-toggle {
+
+    position: absolute;
+
+    right: 15px;
+
+    border: 0;
+
+    background: transparent;
+
+    color: #6326a8;
+
+    cursor: pointer;
+
+    font-size: 17px;
+
+}
+
+
+
+/* =========================================
+   TERMS
+========================================= */
+
+.terms-checkbox {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 11px;
+
+    color: #625a72;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+
+    cursor: pointer;
+
+}
+
+
+.terms-checkbox input {
+
+    position: absolute;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+}
+
+
+.custom-checkbox {
+
+    flex: 0 0 19px;
+
+    width: 19px;
+
+    height: 19px;
+
+    margin-top: 1px;
+
+    border:
+        1.5px solid #b7a9ca;
+
+    border-radius: 5px;
+
+    background: #ffffff;
+
+    position: relative;
+
+}
+
+
+.terms-checkbox input:checked
++ .custom-checkbox {
+
+    background: #7029bb;
+
+    border-color: #7029bb;
+
+}
+
+
+.terms-checkbox input:checked
++ .custom-checkbox::after {
+
+    content: "✓";
+
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: white;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+}
+
+
+.terms-checkbox a {
+
+    color: #6827b7;
+
+    font-weight: 700;
+
+}
+
+
+
+/* =========================================
+   MESSAGE
+========================================= */
+
+.auth-message {
+
+    min-height: 20px;
+
+    margin: -5px 0 0;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+}
+
+
+.auth-message.error {
+
+    color: #c53030;
+
+}
+
+
+.auth-message.success {
+
+    color: #21834a;
+
+}
+
+
+
+/* =========================================
+   CREATE ACCOUNT BUTTON
+========================================= */
+
+.register-submit {
+
+    width: 100%;
+
+    min-height: 58px;
+
+    border: 0;
+
+    border-radius: 12px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #7428bd,
+            #52208e
+        );
+
+    color: #ffffff;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 12px 25px
+        rgba(
+            99,
+            38,
+            168,
+            .22
+        );
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+
+}
+
+
+.register-submit:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 16px 30px
+        rgba(
+            99,
+            38,
+            168,
+            .30
+        );
+
+}
+
+
+.register-submit:disabled {
+
+    opacity: .65;
+
+    cursor: not-allowed;
+
+    transform: none;
+
+}
+
+
+.submit-arrow {
+
+    font-size: 24px;
+
+}
+
+
+
+/* =========================================
+   SOCIAL
+========================================= */
+
+.social-divider {
+
+    margin: 30px 0 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+}
+
+
+.social-divider span {
+
+    flex: 1;
+
+    height: 1px;
+
+    background: #e8e1ef;
+
+}
+
+
+.social-divider p {
+
+    margin: 0;
+
+    color: #8b829b;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+}
+
+
+.social-auth-buttons {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        1fr;
+
+    gap: 12px;
+
+}
+
+
+.social-auth-button {
+
+    min-height: 52px;
+
+    border:
+        1px solid #ddd5e9;
+
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    color: #272036;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+}
+
+
+.social-auth-button span {
+
+    margin-right: 8px;
+
+}
+
+
+.social-auth-button:disabled {
+
+    opacity: .8;
+
+    cursor: not-allowed;
+
+}
+
+
+
+/* =========================================
+   LOGIN PROMPT
+========================================= */
+
+.mobile-login-prompt {
+
+    text-align: center;
+
+    margin: 28px 0;
+
+    color: #6f677e;
+
+    font-size: 14px;
+
+}
+
+
+.mobile-login-prompt a {
+
+    color: #6827b7;
+
+    font-weight: 700;
+
+    margin-left: 5px;
+
+}
+
+
+
+/* =========================================
+   SECURITY
+========================================= */
+
+.security-message {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    color: #91899d;
+
+    font-size: 12px;
+
+    text-align: center;
+
+}
+
+
+
+/* =========================================
+   TRUST STRIP
+========================================= */
+
+.register-trust {
+
+    max-width: 1100px;
+
+    margin: 0 auto 70px;
+
+    padding: 28px 35px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-around;
+
+    gap: 25px;
+
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f3eaff,
+            #eee3ff
+        );
+
+    box-sizing: border-box;
+
+}
+
+
+.trust-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+}
+
+
+.trust-item > span {
+
+    color: #7029bb;
+
+    font-size: 25px;
+
+}
+
+
+.trust-item strong,
+.trust-item small {
+
+    display: block;
+
+}
+
+
+.trust-item strong {
+
+    color: #342052;
+
+    font-size: 14px;
+
+}
+
+
+.trust-item small {
+
+    margin-top: 3px;
+
+    color: #786d8c;
+
+    font-size: 12px;
+
+}
+
+
+.trust-divider {
+
+    width: 1px;
+
+    height: 35px;
+
+    background: #d5c6e7;
+
+}
+
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .auth-topbar {
+
+        padding:
+            18px
+            20px;
+
+    }
+
+
+    .auth-logo {
+
+        font-size: 24px;
+
+    }
+
+
+    .auth-login-link {
+
+        font-size: 12px;
+
+    }
+
+
+    .auth-login-link a {
+
+        margin-left: 4px;
+
+    }
+
+
+    .register-hero {
+
+        min-height: auto;
+
+        display: flex;
+
+        flex-direction: column;
+
+        border-radius:
+            0 0 35px 35px;
+
+    }
+
+
+    .register-hero-content {
+
+        padding:
+            42px
+            24px
+            25px;
+
+    }
+
+
+    .register-eyebrow {
+
+        font-size: 11px;
+
+        letter-spacing: 2.5px;
+
+    }
+
+
+    .register-hero h1 {
+
+        font-size: 42px;
+
+        line-height: 1.02;
+
+    }
+
+
+    .register-hero-description {
+
+        margin-top: 20px;
+
+        font-size: 15px;
+
+        line-height: 1.6;
+
+    }
+
+
+    .register-hero-image {
+
+        min-height: 250px;
+
+        max-height: 280px;
+
+    }
+
+
+    .register-section {
+
+        padding:
+            24px
+            14px
+            35px;
+
+    }
+
+
+    .register-card {
+
+        padding:
+            30px
+            18px;
+
+        border-radius: 28px;
+
+    }
+
+
+    .register-header {
+
+        margin-bottom: 30px;
+
+    }
+
+
+    .register-form-eyebrow {
+
+        font-size: 10px;
+
+        letter-spacing: 3px;
+
+    }
+
+
+    .register-header h2 {
+
+        font-size: 34px;
+
+    }
+
+
+    .register-header > p:last-child {
+
+        font-size: 14px;
+
+    }
+
+
+    .input-wrapper input {
+
+        min-height: 56px;
+
+    }
+
+
+    .social-auth-buttons {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .register-trust {
+
+        margin:
+            0
+            14px
+            40px;
+
+        padding:
+            22px
+            15px;
+
+        display: grid;
+
+        grid-template-columns:
+            1fr
+            1fr
+            1fr;
+
+        gap: 8px;
+
+        border-radius: 20px;
+
+    }
+
+
+    .trust-item {
+
+        flex-direction: column;
+
+        text-align: center;
+
+        gap: 6px;
+
+    }
+
+
+    .trust-item > span {
+
+        font-size: 22px;
+
+    }
+
+
+    .trust-item strong {
+
+        font-size: 11px;
+
+    }
+
+
+    .trust-item small {
+
+        font-size: 9px;
+
+    }
+
+
+    .trust-divider {
+
+        display: none;
+
+    }
+
+}
+
+
+
+/* =========================================
+   SMALL PHONES
+========================================= */
+
+@media (max-width: 380px) {
+
+    .auth-topbar {
+
+        padding:
+            16px;
+
+    }
+
+
+    .auth-logo {
+
+        font-size: 21px;
+
+    }
+
+
+    .auth-login-link {
+
+        font-size: 11px;
+
+    }
+
+
+    .register-hero-content {
+
+        padding:
+            35px
+            20px
+            22px;
+
+    }
+
+
+    .register-hero h1 {
+
+        font-size: 36px;
+
+    }
+
+
+    .register-card {
+
+        padding:
+            27px
+            15px;
+
+    }
+
+
+    .register-header h2 {
+
+        font-size: 30px;
+
+    }
+
+
+    .terms-checkbox {
+
+        font-size: 12px;
+
+    }
+
+}

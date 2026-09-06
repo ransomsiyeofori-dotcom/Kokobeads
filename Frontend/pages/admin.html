@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Kokobeeds administrator dashboard."
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/styles.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/admin.css"
+    >
+
+    <title>Kokobeeds Admin Dashboard</title>
+
+</head>
+
+
+<body class="admin-page">
+
+
+    <!-- =========================================
+         HEADER
+    ========================================== -->
+
+    <header class="admin-header">
+
+        <div class="admin-header-container">
+
+            <a
+                href="../index.html"
+                class="admin-logo"
+            >
+                Kokobeeds
+            </a>
+
+
+            <div class="admin-header-right">
+
+                <span class="admin-badge">
+                    ADMIN
+                </span>
+
+                <a
+                    href="./profile.html"
+                    class="admin-account-link"
+                >
+                    My Account
+                </a>
+
+                <button
+                    type="button"
+                    id="adminLogoutButton"
+                    class="admin-logout-button"
+                >
+                    Log Out
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================================
+         MAIN
+    ========================================== -->
+
+    <main class="admin-main">
+
+        <div class="admin-container">
+
+
+            <!-- =====================================
+                 PAGE HEADING
+            ====================================== -->
+
+            <section class="admin-hero">
+
+                <div>
+
+                    <p class="admin-eyebrow">
+                        KOKOBEEDS ADMINISTRATION
+                    </p>
+
+                    <h1>
+                        Dashboard
+                    </h1>
+
+                    <p>
+                        Manage your products and keep your
+                        Kokobeeds store up to date.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- =====================================
+                 STATISTICS
+            ====================================== -->
+
+            <section
+                class="admin-stats"
+                aria-label="Store statistics"
+            >
+
+                <article class="admin-stat-card">
+
+                    <span class="admin-stat-label">
+                        Products
+                    </span>
+
+                    <strong
+                        id="totalProducts"
+                        class="admin-stat-value"
+                    >
+                        0
+                    </strong>
+
+                </article>
+
+
+                <article class="admin-stat-card">
+
+                    <span class="admin-stat-label">
+                        Active Products
+                    </span>
+
+                    <strong
+                        id="activeProducts"
+                        class="admin-stat-value"
+                    >
+                        0
+                    </strong>
+
+                </article>
+
+
+                <article class="admin-stat-card">
+
+                    <span class="admin-stat-label">
+                        Featured
+                    </span>
+
+                    <strong
+                        id="featuredProducts"
+                        class="admin-stat-value"
+                    >
+                        0
+                    </strong>
+
+                </article>
+
+
+                <article class="admin-stat-card">
+
+                    <span class="admin-stat-label">
+                        Low Stock
+                    </span>
+
+                    <strong
+                        id="lowStockProducts"
+                        class="admin-stat-value"
+                    >
+                        0
+                    </strong>
+
+                </article>
+
+            </section>
+
+
+            <!-- =====================================
+                 PRODUCT MANAGEMENT
+            ====================================== -->
+
+            <section class="admin-products-section">
+
+
+                <div class="admin-section-header">
+
+                    <div>
+
+                        <p class="admin-eyebrow">
+                            STORE MANAGEMENT
+                        </p>
+
+                        <h2>
+                            Products
+                        </h2>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        id="addProductButton"
+                        class="admin-primary-button"
+                    >
+                        + Add Product
+                    </button>
+
+                </div>
+
+                <!-- Message -->
+
+                <div
+                    id="adminMessage"
+                    class="admin-message"
+                    aria-live="polite"
+                ></div>
+
+
+                <!-- Product filters -->
+
+                <div class="admin-product-filters">
+
+                    <div class="admin-search-box">
+
+                        <span aria-hidden="true">⌕</span>
+
+                        <input
+                            type="search"
+                            id="adminProductSearch"
+                            placeholder="Search products..."
+                            autocomplete="off"
+                        >
+
+                    </div>
+
+
+                    <select
+                        id="adminCategoryFilter"
+                        class="admin-filter-select"
+                    >
+                        <option value="all">All Categories</option>
+                    </select>
+
+
+                    <select
+                        id="adminStockFilter"
+                        class="admin-filter-select"
+                    >
+                        <option value="all">All Stock</option>
+                        <option value="in-stock">In Stock</option>
+                        <option value="low-stock">Low Stock</option>
+                        <option value="out-of-stock">Out of Stock</option>
+                    </select>
+
+
+                    <select
+                        id="adminFeaturedFilter"
+                        class="admin-filter-select"
+                    >
+                        <option value="all">All Products</option>
+                        <option value="featured">Featured</option>
+                        <option value="regular">Regular</option>
+                    </select>
+
+
+                    <button
+                        type="button"
+                        id="clearProductFilters"
+                        class="admin-clear-filters"
+                    >
+                        Clear
+                    </button>
+
+                </div>
+
+
+                <!-- Product list -->
+
+                <div
+                    id="adminProductsList"
+                    class="admin-products-list"
+                >
+
+                    <div class="admin-loading">
+                        Loading products...
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- =========================================
+         ADD PRODUCT MODAL
+    ========================================== -->
+
+    <div
+        id="productModal"
+        class="admin-modal"
+        hidden
+    >
+
+        <div
+            class="admin-modal-overlay"
+            id="productModalOverlay"
+        ></div>
+
+
+        <div
+            class="admin-modal-content"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="productModalTitle"
+        >
+
+            <div class="admin-modal-header">
+
+                <div>
+
+                    <p class="admin-eyebrow">
+                        STORE MANAGEMENT
+                    </p>
+
+                    <h2 id="productModalTitle">
+                        Add Product
+                    </h2>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    id="closeProductModal"
+                    class="admin-modal-close"
+                    aria-label="Close"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+            <!-- Product Form -->
+
+            <form
+                id="productForm"
+                class="admin-product-form"
+            >
+
+
+                <!-- Name -->
+
+                <div class="admin-form-group">
+
+                    <label for="productName">
+                        Product Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="productName"
+                        name="name"
+                        required
+                        maxlength="200"
+                        placeholder="e.g. Gold Beaded Bracelet"
+                    >
+
+                </div>
+
+
+                <!-- Description -->
+
+                <div class="admin-form-group">
+
+                    <label for="productDescription">
+                        Description
+                    </label>
+
+                    <textarea
+                        id="productDescription"
+                        name="description"
+                        required
+                        rows="4"
+                        placeholder="Describe the product..."
+                    ></textarea>
+
+                </div>
+
+
+                <!-- Price -->
+
+                <div class="admin-form-row">
+
+                    <div class="admin-form-group">
+
+                        <label for="productPrice">
+                            Price
+                        </label>
+
+                        <input
+                            type="number"
+                            id="productPrice"
+                            name="price"
+                            required
+                            min="0"
+                            step="0.01"
+                            placeholder="5000"
+                        >
+
+                    </div>
+
+
+                    <div class="admin-form-group">
+
+                        <label for="productOriginalPrice">
+                            Original Price
+                        </label>
+
+                        <input
+                            type="number"
+                            id="productOriginalPrice"
+                            name="originalPrice"
+                            min="0"
+                            step="0.01"
+                            placeholder="6500"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- Category + Stock -->
+
+                <div class="admin-form-row">
+
+                    <div class="admin-form-group">
+
+                        <label for="productCategory">
+                            Category
+                        </label>
+
+                        <input
+                            type="text"
+                            id="productCategory"
+                            name="category"
+                            required
+                            placeholder="bracelets"
+                        >
+
+                    </div>
+
+
+                    <div class="admin-form-group">
+
+                        <label for="productStock">
+                            Stock
+                        </label>
+
+                        <input
+                            type="number"
+                            id="productStock"
+                            name="stock"
+                            required
+                            min="0"
+                            step="1"
+                            placeholder="20"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- Badge -->
+
+                <div class="admin-form-group">
+
+                    <label for="productBadge">
+                        Badge
+                    </label>
+
+                    <input
+                        type="text"
+                        id="productBadge"
+                        name="badge"
+                        placeholder="Bestseller"
+                    >
+
+                </div>
+
+
+                <!-- Product Image -->
+
+                <div class="admin-form-group">
+
+                    <label for="productImageFile">
+                        Product Image
+                    </label>
+
+                    <input
+                        type="file"
+                        id="productImageFile"
+                        name="image"
+                        accept="image/jpeg,image/png,image/webp"
+                    >
+
+                    <small>
+                        JPG, PNG or WebP. Maximum size: 5MB.
+                    </small>
+
+                    <div
+                        id="productImagePreview"
+                        class="admin-image-preview"
+                        style="display:none;"
+                    >
+                        <img
+                            id="productImagePreviewImg"
+                            src=""
+                            alt="Product image preview"
+                        >
+                    </div>
+
+                    <input
+                        type="hidden"
+                        id="productImage"
+                        name="image"
+                        value=""
+                    >
+
+                </div>
+
+
+                <!-- Featured -->
+
+                <label class="admin-checkbox">
+
+                    <input
+                        type="checkbox"
+                        id="productFeatured"
+                        name="isFeatured"
+                    >
+
+                    <span>
+                        Mark as featured product
+                    </span>
+
+                </label>
+
+
+                <!-- Form message -->
+
+                <p
+                    id="productFormMessage"
+                    class="admin-form-message"
+                    aria-live="polite"
+                ></p>
+
+
+                <!-- Actions -->
+
+                <div class="admin-form-actions">
+
+                    <button
+                        type="button"
+                        id="cancelProductButton"
+                        class="admin-secondary-button"
+                    >
+                        Cancel
+                    </button>
+
+
+                    <button
+                        type="submit"
+                        id="saveProductButton"
+                        class="admin-primary-button"
+                    >
+                        Save Product
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+
+    <script src="../js/admin.js"></script>
+
+</body>
+
+</html>

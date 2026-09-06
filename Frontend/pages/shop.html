@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Shop handmade Kokobeeds bracelets, necklaces, earrings and more."
+    >
+<link rel="stylesheet" href="../css/shop.css">
+<link rel="stylesheet" href="../css/styles.css">
+
+    <title>Shop | Kokobeeds</title>
+
+    <!-- Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- ==============================
+         ANNOUNCEMENT BAR
+    =============================== -->
+
+    <div class="announcement-bar">
+
+        <div class="announcement-content">
+
+            <span class="announcement-icon">
+                <i class="fa-solid fa-truck"></i>
+            </span>
+
+            <p>
+                Free shipping on orders over ₦50,000
+            </p>
+
+            <button
+                type="button"
+                class="announcement-close"
+                aria-label="Close announcement"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==============================
+         SITE HEADER
+    =============================== -->
+
+    <header class="site-header">
+
+        <div class="header-container">
+
+
+            <!-- Mobile Menu -->
+
+            <button
+                type="button"
+                class="menu-button"
+                id="menuButton"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+            >
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
+
+
+            <!-- Logo -->
+
+            <a
+                href="../index.html"
+                class="site-logo"
+                aria-label="Kokobeeds home"
+            >
+                Kokobeeds
+            </a>
+
+
+            <!-- Desktop Navigation -->
+
+            <nav
+                class="main-navigation"
+                aria-label="Main navigation"
+            >
+
+                <a href="../index.html">
+                    Home
+                </a>
+
+                <a
+                    href="./shop.html"
+                    class="active"
+                >
+                    Shop
+                </a>
+
+                <a href="./collections.html">
+                    Collections
+                </a>
+
+                <a href="./about.html">
+                    About
+                </a>
+
+                <a href="./contact.html">
+                    Contact
+                </a>
+
+            </nav>
+
+
+            <!-- Header Actions -->
+
+            <div class="header-actions">
+
+
+                <!-- Search -->
+
+  <button type="button" class="header-action"
+                    id="searchButton"
+                    aria-label="Search products"
+                >
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                </button>
+
+
+                <!-- Wishlist -->
+
+                <a
+                    href="./wishlist.html"
+                    class="header-action"
+                    aria-label="Wishlist"
+                >
+
+                    <i class="fa-regular fa-heart"></i>
+
+                </a>
+
+
+                <!-- Cart -->
+
+                <a
+                    href="./cart.html"
+                    class="header-action cart-action"
+                    aria-label="Shopping cart"
+                >
+
+                    <i class="fa-solid fa-bag-shopping"></i>
+
+                    <span
+                        class="cart-count"
+                        id="cartCount" data-cart-count
+                    >
+                        0
+                    </span>
+
+                </a>
+
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- ==============================
+         MAIN CONTENT
+    =============================== -->
+
+    <main id="mainContent">
+      
+      <!-- ==============================
+     SHOP HEADER
+============================== -->
+
+<section class="shop-section">
+
+    <div class="container">
+
+
+        <!-- ==========================
+             PAGE HEADING
+        =========================== -->
+
+        <div class="shop-heading">
+
+            <div class="shop-heading-content">
+
+                <h1>
+                    Shop All Products
+                </h1>
+
+                <nav
+                    class="breadcrumb"
+                    aria-label="Breadcrumb"
+                >
+
+                    <a href="../index.html">
+                        Home
+                    </a>
+
+                    <span
+                        class="breadcrumb-separator"
+                        aria-hidden="true"
+                    >
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </span>
+
+                    <span
+                        class="breadcrumb-current"
+                        aria-current="page"
+                    >
+                        Shop
+                    </span>
+
+                </nav>
+
+            </div>
+
+        </div>
+
+
+        <!-- ==========================
+             SHOP CONTROLS
+        =========================== -->
+
+        <div class="shop-controls">
+
+
+            <!-- Filter & Sort -->
+
+      <button
+                type="button"
+                class="filter-sort-button"
+                id="filterSortButton"
+                aria-label="Open filter and sort options"
+            >
+
+                <span class="control-icon">
+                    <i class="fa-solid fa-sliders"></i>
+                </span>
+
+                <span>
+                    Filter &amp; Sort
+                </span>
+
+            </button>
+
+
+            <!-- View Controls -->
+
+            <div class="view-controls">
+
+                <span class="view-label">
+                    View
+                </span>
+
+
+                <button
+                    type="button"
+                    class="view-button active"
+                    id="gridViewButton"
+                    aria-label="Grid view"
+                    aria-pressed="true"
+                >
+
+                    <i class="fa-solid fa-grip"></i>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="view-button"
+                    id="listViewButton"
+                    aria-label="List view"
+                    aria-pressed="false"
+                >
+
+                    <i class="fa-solid fa-list"></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+   <!-- ==========================
+             CATEGORY FILTERS
+        =========================== -->
+
+        <div
+            class="category-filter-wrapper"
+            aria-label="Product categories"
+        >
+
+            <div
+                class="category-filters"
+                id="categoryFilters"
+            >
+
+
+                <button
+                    type="button"
+                    class="category-filter active"
+                    data-category="all"
+                    aria-pressed="true"
+                >
+                    All
+                </button>
+
+
+                <button
+                    type="button"
+                    class="category-filter"
+                    data-category="bracelets"
+                    aria-pressed="false"
+                >
+                    Bracelets
+                </button>
+
+
+                <button
+                    type="button"
+                    class="category-filter"
+                    data-category="necklaces"
+                    aria-pressed="false"
+                >
+                    Necklaces
+                </button>
+
+
+                <button
+                    type="button"
+                    class="category-filter"
+                    data-category="earrings"
+                    aria-pressed="false"
+                >
+                    Earrings
+                </button>
+
+
+                <button
+                    type="button"
+                    class="category-filter"
+                    data-category="anklets"
+                    aria-pressed="false"
+                >
+                    Anklets
+                </button>
+
+
+                <button
+                    type="button"
+                    class="category-filter"
+                    data-category="accessories"
+                    aria-pressed="false"
+                >
+                    Accessories
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- ==========================
+             PRODUCT RESULT INFO
+        =========================== -->
+
+        <div class="product-result-header">
+
+            <p
+                class="product-result-count"
+                id="productResultCount"
+                aria-live="polite"
+            >
+                Showing products
+            </p>
+
+
+            <div class="product-sort">
+
+                <label
+                    for="sortProducts"
+                >
+                    Sort by
+                </label>
+
+                <select
+                    id="sortProducts"
+                    name="sort"
+                >
+
+                    <option value="featured">
+                        Featured
+                    </option>
+
+                    <option value="newest">
+                        Newest
+                    </option>
+
+                    <option value="price-low">
+                        Price: Low to High
+                    </option>
+
+                    <option value="price-high">
+                        Price: High to Low
+                    </option>
+
+                    <option value="rating">
+                        Highest Rated
+                    </option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+
+        <!-- ==========================
+             PRODUCTS
+        =========================== -->
+<div class="products-grid" id="productsGrid">
+<!-- ==============================
+     PRODUCT CARD TEMPLATE
+============================== -->
+
+<template id="productCardTemplate">
+
+  <article
+    class="product-card"
+    data-product-id=""
+>
+
+
+        <!-- Product Image -->
+
+        <div class="product-image-wrapper">
+
+
+            <!-- Product Badge -->
+
+            <span
+                class="product-badge"
+                data-product-badge
+            >
+                New
+            </span>
+
+
+            <!-- Wishlist -->
+
+       <button
+    type="button"
+    class="wishlist-button"
+    data-wishlist-button
+    aria-label="Add product to wishlist"
+    aria-pressed="false"
+>
+    <i class="fa-regular fa-heart"></i>
+</button>
+
+
+            <!-- Image Link -->
+
+            <a
+                href="#"
+                class="product-image-link"
+                data-product-link
+                aria-label="View product"
+            >
+
+                <img
+                    src=""
+                    alt=""
+                    class="product-image"
+                    data-product-image
+                    loading="lazy"
+                >
+
+            </a>
+
+        </div>
+
+
+        <!-- Product Information -->
+
+        <div class="product-content">
+
+
+            <!-- Category -->
+
+            <p
+                class="product-category"
+                data-product-category
+            >
+                Category
+            </p>
+
+
+            <!-- Product Name -->
+
+            <h2 class="product-name">
+
+                <a
+                    href="#"
+                    data-product-name-link
+                >
+                    Product Name
+                </a>
+
+            </h2>
+
+
+            <!-- Rating -->
+
+            <div
+                class="product-rating"
+                data-product-rating
+                aria-label="Product rating"
+            >
+
+                <span
+                    class="stars"
+                    data-product-stars
+                    aria-hidden="true"
+                >
+                    ★★★★★
+                </span>
+
+                <span
+                    class="review-count"
+                    data-product-review-count
+                >
+                    (0)
+                </span>
+
+            </div>
+
+
+            <!-- Price + Cart -->
+
+            <div class="product-bottom">
+
+
+                <div class="product-price-container">
+
+                    <span
+                        class="product-price"
+                        data-product-price
+                    >
+                        ₦0
+                    </span>
+
+
+                    <span
+                        class="product-original-price"
+                        data-product-original-price
+                    >
+                    </span>
+
+                </div>
+
+<button
+    type="button"
+    class="add-to-cart-button"
+    data-add-to-cart
+>
+    <i class="fa-solid fa-bag-shopping"></i>
+    Add to Cart
+</button>
+
+            </div>
+
+        </div>
+
+    </article>
+
+</template>
+        </div>
+        
+        <!-- ==============================
+     PAGINATION
+============================== -->
+
+<nav
+    class="pagination"
+    id="pagination"
+    aria-label="Product pagination"
+>
+
+    <button
+        type="button"
+        class="pagination-button previous"
+        id="previousPageButton"
+        aria-label="Previous page"
+        disabled
+    >
+
+        <i class="fa-solid fa-chevron-left"></i>
+
+    </button>
+
+
+    <div
+        class="pagination-pages"
+        id="paginationPages"
+    >
+
+        <!--
+            Page numbers will be generated
+            dynamically by JavaScript.
+        -->
+
+    </div>
+
+
+    <button
+        type="button"
+        class="pagination-button next"
+        id="nextPageButton"
+        aria-label="Next page"
+    >
+
+        <i class="fa-solid fa-chevron-right"></i>
+
+    </button>
+
+</nav>
+
+
+    </div>
+
+</section>
+
+
+    </main>
+    
+    <!-- ==============================
+     MOBILE BOTTOM NAVIGATION
+============================== -->
+
+<nav
+    class="mobile-bottom-navigation"
+    aria-label="Mobile navigation"
+>
+
+
+    <!-- Home -->
+
+    <a
+        href="../index.html"
+        class="mobile-nav-item"
+    >
+
+        <span class="mobile-nav-icon">
+            <i class="fa-solid fa-house"></i>
+        </span>
+
+        <span class="mobile-nav-label">
+            Home
+        </span>
+
+    </a>
+
+
+    <!-- Shop -->
+
+    <a
+        href="./shop.html"
+        class="mobile-nav-item active"
+        aria-current="page"
+    >
+
+        <span class="mobile-nav-icon">
+            <i class="fa-solid fa-store"></i>
+        </span>
+
+        <span class="mobile-nav-label">
+            Shop
+        </span>
+
+    </a>
+
+
+    <!-- Wishlist -->
+
+    <a
+        href="./wishlist.html"
+        class="mobile-nav-item"
+    >
+
+        <span class="mobile-nav-icon">
+
+            <i class="fa-regular fa-heart"></i>
+
+            <span
+                class="mobile-wishlist-count"
+                id="mobileWishlistCount"
+            >
+                0
+            </span>
+
+        </span>
+
+        <span class="mobile-nav-label">
+            Wishlist
+        </span>
+
+    </a>
+
+
+    <!-- Cart -->
+
+    <a
+        href="./cart.html"
+        class="mobile-nav-item"
+    >
+
+        <span class="mobile-nav-icon">
+
+            <i class="fa-solid fa-bag-shopping"></i>
+
+            <span
+                class="mobile-cart-count"
+                id="mobileCartCount" data-cart-count
+            >
+                0
+            </span>
+
+        </span>
+
+        <span class="mobile-nav-label">
+            Cart
+        </span>
+
+    </a>
+
+
+    <!-- Account -->
+
+    <a
+        href="./account.html"
+        class="mobile-nav-item"
+    >
+
+        <span class="mobile-nav-icon">
+            <i class="fa-regular fa-user"></i>
+        </span>
+
+        <span class="mobile-nav-label">
+            Account
+        </span>
+
+    </a>
+
+</nav>
+
+<!-- ==============================
+     SITE FOOTER
+============================== -->
+
+<footer class="site-footer">
+
+    <div class="footer-container">
+
+
+        <!-- ==========================
+             FOOTER BRAND
+        =========================== -->
+
+        <div class="footer-brand">
+
+            <a
+                href="../index.html"
+                class="footer-logo"
+            >
+                Kokobeeds
+            </a>
+
+            <p class="footer-description">
+                Beautifully handcrafted beads made to
+                complement your style and tell your story.
+            </p>
+
+
+            <div class="footer-socials">
+
+                <a
+                    href="#"
+                    class="social-link"
+                    aria-label="Instagram"
+                >
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a
+                    href="#"
+                    class="social-link"
+                    aria-label="Facebook"
+                >
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+
+                <a
+                    href="#"
+                    class="social-link"
+                    aria-label="TikTok"
+                >
+                    <i class="fa-brands fa-tiktok"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- ==========================
+             SHOP LINKS
+        =========================== -->
+
+        <div class="footer-column">
+
+            <h2>
+                Shop
+            </h2>
+
+            <nav aria-label="Shop links">
+
+                <a href="./shop.html">
+                    All Products
+                </a>
+
+                <a href="./collections.html">
+                    Collections
+                </a>
+
+                <a href="./wishlist.html">
+                    Wishlist
+                </a>
+
+                <a href="./cart.html">
+                    Cart
+                </a>
+
+            </nav>
+
+        </div>
+
+
+        <!-- ==========================
+             CUSTOMER CARE
+        =========================== -->
+
+        <div class="footer-column">
+
+            <h2>
+                Customer Care
+            </h2>
+
+            <nav aria-label="Customer care links">
+
+                <a href="./contact.html">
+                    Contact Us
+                </a>
+
+                <a href="./shipping.html">
+                    Shipping
+                </a>
+
+                <a href="./returns.html">
+                    Returns &amp; Refunds
+                </a>
+
+                <a href="./faq.html">
+                    FAQs
+                </a>
+
+            </nav>
+
+        </div>
+
+
+        <!-- ==========================
+             ACCOUNT
+        =========================== -->
+
+        <div class="footer-column">
+
+            <h2>
+                Account
+            </h2>
+
+            <nav aria-label="Account links">
+
+                <a href="./login.html">
+                    Login
+                </a>
+
+                <a href="./register.html">
+                    Create Account
+                </a>
+
+                <a href="./orders.html">
+                    My Orders
+                </a>
+
+                <a href="./account.html">
+                    My Account
+                </a>
+
+            </nav>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==============================
+         FOOTER BOTTOM
+    =============================== -->
+
+    <div class="footer-bottom">
+
+        <div class="footer-bottom-container">
+
+            <p>
+                &copy;
+                <span id="currentYear"></span>
+                Kokobeeds. All rights reserved.
+            </p>
+
+
+            <nav
+                class="footer-legal-links"
+                aria-label="Legal links"
+            >
+
+                <a href="./privacy.html">
+                    Privacy Policy
+                </a>
+
+                <a href="./terms.html">
+                    Terms &amp; Conditions
+                </a>
+
+            </nav>
+
+        </div>
+
+    </div>
+
+</footer>
+
+<script src="../js/shop.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# OS files
+.DS_Store
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Local backup files
+*.backup
+*.broken-backup
+*.before-repair
+*.before-final-cleanup
+*.pre-duplicate-cleanup

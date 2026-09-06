@@ -1,0 +1,170 @@
+/* =========================================
+   KOKOBEEDS — GLOBAL RESPONSIVE STYLES
+========================================= */
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1024px) {
+
+    .container {
+        width: min(94%, 1100px);
+    }
+
+}
+
+
+/* =========================================
+   MOBILE — 768px
+========================================= */
+
+@media (max-width: 768px) {
+
+    /* -----------------------------
+       GLOBAL CONTAINER
+    ----------------------------- */
+
+    .container {
+        width: min(92%, 600px);
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    /* -----------------------------
+       HEADER
+    ----------------------------- */
+
+    .site-header .container {
+        min-height: 68px;
+    }
+
+
+    .main-navigation {
+        display: none;
+    }
+
+
+    .menu-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    .header-actions {
+        gap: 10px;
+    }
+
+
+    /* -----------------------------
+       GENERAL IMAGES
+    ----------------------------- */
+
+    img {
+        max-width: 100%;
+    }
+
+
+    /* -----------------------------
+       GENERAL BUTTONS
+    ----------------------------- */
+
+    button,
+    a {
+        -webkit-tap-highlight-color: transparent;
+    }
+
+
+    /* -----------------------------
+       GENERAL TYPOGRAPHY
+    ----------------------------- */
+
+    h1 {
+        line-height: 1.1;
+    }
+
+
+    h2 {
+        line-height: 1.2;
+    }
+
+
+    /* -----------------------------
+       FORMS
+    ----------------------------- */
+
+    input,
+    select,
+    textarea {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE — 480px
+========================================= */
+
+@media (max-width: 480px) {
+
+    .container {
+        width: 94%;
+    }
+
+
+    body {
+        overflow-x: hidden;
+    }
+
+
+    h1 {
+        font-size: 2rem;
+    }
+
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+
+    button {
+        min-height: 42px;
+    }
+
+
+    input,
+    select,
+    textarea {
+        font-size: 16px;
+    }
+
+}
+
+
+/* =========================================
+   VERY SMALL DEVICES — 360px
+========================================= */
+
+@media (max-width: 360px) {
+
+    .container {
+        width: 95%;
+    }
+
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+
+}

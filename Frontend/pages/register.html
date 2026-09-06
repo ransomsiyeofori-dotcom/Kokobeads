@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Create your Kokobeeds account and enjoy a personalized shopping experience."
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/styles.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/register.css"
+    >
+
+    <title>Create Account | Kokobeeds</title>
+
+</head>
+
+
+<body class="auth-page">
+
+
+    <!-- =========================================
+         AUTH HEADER
+    ========================================== -->
+
+    <header class="auth-topbar">
+
+        <a
+            href="../index.html"
+            class="auth-logo"
+        >
+            Kokobeeds
+        </a>
+
+
+        <p class="auth-login-link">
+
+            Already have an account?
+
+            <a href="./login.html">
+                Log in
+            </a>
+
+        </p>
+
+    </header>
+
+
+
+    <!-- =========================================
+         MAIN
+    ========================================== -->
+
+    <main>
+
+
+        <!-- =====================================
+             HERO
+        ====================================== -->
+
+        <section class="register-hero">
+
+            <div class="register-hero-content">
+
+                <p class="register-eyebrow">
+                    JOIN THE KOKOBEEDS FAMILY
+                </p>
+
+
+                <h1>
+
+                    More Than Beads —
+
+                    <span>
+                        A Bigger Story
+                    </span>
+
+                </h1>
+
+
+                <p class="register-hero-description">
+
+                    Create an account and become part
+                    of a community that celebrates
+                    creativity, self-expression and
+                    meaningful style.
+
+                </p>
+
+            </div>
+
+
+            <div class="register-hero-image">
+
+                <img
+                    src="../assets/images/home.png"
+                    alt="Beautiful handcrafted Kokobeeds bracelets"
+                >
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             REGISTER CARD
+        ====================================== -->
+
+        <section
+            class="register-section"
+            aria-labelledby="registerTitle"
+        >
+
+            <div class="register-card">
+
+
+                <!-- Header -->
+
+                <div class="register-header">
+
+                    <p class="register-form-eyebrow">
+                        CREATE YOUR ACCOUNT
+                    </p>
+
+
+                    <h2 id="registerTitle">
+
+                        Welcome to
+
+                        <span>
+                            Kokobeeds
+                        </span>
+
+                    </h2>
+
+
+                    <p>
+                        Fill in your details to get started.
+                    </p>
+
+                </div>
+
+
+
+                <!-- =================================
+                     REGISTER FORM
+                ================================== -->
+
+                <form
+                    class="auth-form register-form"
+                    id="registerForm"
+                    novalidate
+                >
+
+
+                    <!-- Full Name -->
+
+                    <div class="form-group">
+
+                        <label for="registerName">
+                            Full Name
+                        </label>
+
+
+                        <div class="input-wrapper">
+
+                            <span
+                                class="input-icon"
+                                aria-hidden="true"
+                            >
+                                ♙
+                            </span>
+
+
+                            <input
+                                type="text"
+                                id="registerName"
+                                name="name"
+                                placeholder="Enter your full name"
+                                autocomplete="name"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Email -->
+
+                    <div class="form-group">
+
+                        <label for="registerEmail">
+                            Email Address
+                        </label>
+
+
+                        <div class="input-wrapper">
+
+                            <span
+                                class="input-icon"
+                                aria-hidden="true"
+                            >
+                                ✉
+                            </span>
+
+
+                            <input
+                                type="email"
+                                id="registerEmail"
+                                name="email"
+                                placeholder="Enter your email address"
+                                autocomplete="email"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Password -->
+
+                    <div class="form-group">
+
+                        <label for="registerPassword">
+                            Password
+                        </label>
+
+
+                        <div class="input-wrapper">
+
+                            <span
+                                class="input-icon"
+                                aria-hidden="true"
+                            >
+                                🔒
+                            </span>
+
+
+                            <input
+                                type="password"
+                                id="registerPassword"
+                                name="password"
+                                placeholder="Create a password"
+                                autocomplete="new-password"
+                                required
+                            >
+
+
+                            <button
+                                type="button"
+                                class="password-toggle"
+                                data-target="registerPassword"
+                                aria-label="Show password"
+                            >
+                                ◉
+                            </button>
+
+                        </div>
+
+
+                        <small>
+                            At least 8 characters
+                        </small>
+
+                    </div>
+
+
+
+                    <!-- Confirm Password -->
+
+                    <div class="form-group">
+
+                        <label for="confirmPassword">
+                            Confirm Password
+                        </label>
+
+
+                        <div class="input-wrapper">
+
+                            <span
+                                class="input-icon"
+                                aria-hidden="true"
+                            >
+                                🔒
+                            </span>
+
+
+                            <input
+                                type="password"
+                                id="confirmPassword"
+                                name="confirmPassword"
+                                placeholder="Confirm your password"
+                                autocomplete="new-password"
+                                required
+                            >
+
+
+                            <button
+                                type="button"
+                                class="password-toggle"
+                                data-target="confirmPassword"
+                                aria-label="Show password"
+                            >
+                                ◉
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Terms -->
+
+                    <label class="terms-checkbox">
+
+                        <input
+                            type="checkbox"
+                            id="termsAgreement"
+                            name="terms"
+                            required
+                        >
+
+                        <span class="custom-checkbox"></span>
+
+
+                        <span>
+
+                            I agree to the
+
+                            <a href="./terms.html">
+                                Terms &amp; Conditions
+                            </a>
+
+                            and
+
+                            <a href="./privacy.html">
+                                Privacy Policy
+                            </a>.
+
+                        </span>
+
+                    </label>
+
+
+
+                    <!-- Message -->
+
+                    <p
+                        class="auth-message"
+                        id="registerMessage"
+                        aria-live="polite"
+                    ></p>
+
+
+
+                    <!-- Submit -->
+
+                    <button
+                        type="submit"
+                        class="register-submit"
+                        id="registerButton"
+                    >
+
+                        <span>
+                            Create Account
+                        </span>
+
+                        <span
+                            aria-hidden="true"
+                            class="submit-arrow"
+                        >
+                            →
+                        </span>
+
+                    </button>
+
+
+                </form>
+
+
+
+                <!-- =================================
+                     SOCIAL LOGIN
+                ================================== -->
+
+                <div class="social-divider">
+
+                    <span></span>
+
+                    <p>OR</p>
+
+                    <span></span>
+
+                </div>
+
+
+                <div class="social-auth-buttons">
+
+                    <button
+                        type="button"
+                        class="social-auth-button"
+                        disabled
+                    >
+
+                        <span>
+                            G
+                        </span>
+
+                        Sign up with Google
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="social-auth-button"
+                        disabled
+                    >
+
+                        <span>
+                            
+                        </span>
+
+                        Sign up with Apple
+
+                    </button>
+
+                </div>
+
+
+
+                <!-- Login -->
+
+                <p class="mobile-login-prompt">
+
+                    Already have an account?
+
+                    <a href="./login.html">
+                        Login
+                    </a>
+
+                </p>
+
+
+
+                <!-- Security -->
+
+                <div class="security-message">
+
+                    <span aria-hidden="true">
+                        🔒
+                    </span>
+
+                    <span>
+                        Your information is protected
+                        with secure authentication.
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             TRUST STRIP
+        ====================================== -->
+
+        <section class="register-trust">
+
+            <div class="trust-item">
+
+                <span aria-hidden="true">
+                    ◇
+                </span>
+
+                <div>
+                    <strong>
+                        Premium
+                    </strong>
+
+                    <small>
+                        Quality
+                    </small>
+                </div>
+
+            </div>
+
+
+            <div class="trust-divider"></div>
+
+
+            <div class="trust-item">
+
+                <span aria-hidden="true">
+                    🚚
+                </span>
+
+                <div>
+                    <strong>
+                        Fast &amp;
+                    </strong>
+
+                    <small>
+                        Reliable Delivery
+                    </small>
+                </div>
+
+            </div>
+
+
+            <div class="trust-divider"></div>
+
+
+            <div class="trust-item">
+
+                <span aria-hidden="true">
+                    🛡
+                </span>
+
+                <div>
+                    <strong>
+                        Secure
+                    </strong>
+
+                    <small>
+                        Transactions
+                    </small>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+
+ <script src="../js/register.js">
+</script>
+
+
+</body>
+
+</html>

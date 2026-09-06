@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Complete your Kokobeeds order securely."
+    >
+
+    <title>Kokobeeds — Checkout</title>
+
+
+    <!-- Header -->
+
+    <link
+        rel="stylesheet"
+        href="../css/header.css"
+    >
+
+
+    <!-- Checkout -->
+
+    <link
+        rel="stylesheet"
+        href="../css/checkout.css"
+    >
+
+
+    <!-- Font Awesome -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     HEADER
+========================================= -->
+
+<header class="site-header">
+
+    <div class="container">
+
+
+        <!-- LOGO -->
+
+        <a
+            href="../index.html"
+            class="logo"
+            aria-label="Kokobeeds home"
+        >
+            Kokobeads
+        </a>
+
+
+        <!-- DESKTOP NAVIGATION -->
+
+        <nav
+            class="main-navigation"
+            aria-label="Main navigation"
+        >
+
+            <a href="./shop.html">
+                Shop
+            </a>
+
+            <a href="./collection.html">
+                Collections
+            </a>
+
+            <a href="./profile.html">
+                Profile
+            </a>
+
+            <a href="./cart.html">
+                Cart
+
+                <span
+                    class="cart-count"
+                    id="cartCount" data-cart-count
+                >
+                    0
+                </span>
+
+            </a>
+
+        </nav>
+
+
+        <!-- MOBILE ACTIONS -->
+
+        <div class="mobile-header-actions">
+
+
+            <!-- Mobile Cart -->
+
+            <a
+                href="./cart.html"
+                class="mobile-cart-action"
+                aria-label="Shopping cart"
+            >
+
+                <i
+                    class="fa-solid fa-bag-shopping"
+                    aria-hidden="true"
+                ></i>
+
+                <span
+                    class="mobile-cart-count"
+                    id="mobileCartCount" data-cart-count
+                >
+                    0
+                </span>
+
+            </a>
+
+
+            <!-- Menu -->
+
+            <button
+                type="button"
+                class="menu-button"
+                id="menuButton"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+                aria-controls="mobileNavigation"
+            >
+
+                <i
+                    class="fa-solid fa-bars"
+                    aria-hidden="true"
+                ></i>
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- MOBILE NAVIGATION -->
+
+    <nav
+        class="mobile-navigation"
+        id="mobileNavigation"
+        aria-label="Mobile navigation"
+    >
+
+        <a href="./shop.html">
+            Shop
+        </a>
+
+        <a href="./collection.html">
+            Collections
+        </a>
+
+        <a href="./profile.html">
+            Profile
+        </a>
+
+        <a href="./cart.html">
+            Cart
+
+            <span class="drawer-cart-count">
+                0
+            </span>
+
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<!-- =========================================
+     MAIN CHECKOUT
+========================================= -->
+
+<main class="checkout-page">
+
+
+    <!-- PAGE INTRO -->
+
+    <section class="checkout-header">
+
+        <div class="container">
+
+            <p class="checkout-eyebrow">
+                KOKOBEEDS
+            </p>
+
+            <h1>
+                Checkout
+            </h1>
+
+            <p>
+                Complete your details to place your order.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         CHECKOUT CONTENT
+    ========================================== -->
+
+    <section class="checkout-section">
+
+        <div class="container">
+
+            <div class="checkout-layout">
+
+
+                <!-- =================================
+                     CUSTOMER INFORMATION
+                ================================== -->
+
+                <section class="checkout-form-card">
+
+                    <div class="checkout-card-heading">
+
+                        <span class="checkout-step">
+                            01
+                        </span>
+
+                        <div>
+
+                            <p>
+                                DELIVERY
+                            </p>
+
+                            <h2>
+                                Shipping Information
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+                    <form
+                        id="checkoutForm"
+                        novalidate
+                    >
+
+
+                        <!-- FULL NAME -->
+
+                        <div class="form-group">
+
+                            <label for="fullName">
+                                Full Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="fullName"
+                                name="fullName"
+                                autocomplete="name"
+                                placeholder="Enter your full name"
+                                required
+                            >
+
+                            <small
+                                class="form-error"
+                                id="fullNameError"
+                            ></small>
+
+                        </div>
+
+
+                        <!-- PHONE -->
+
+                        <div class="form-group">
+
+                            <label for="phone">
+                                Phone Number
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="phone"
+                                name="phone"
+                                autocomplete="tel"
+                                placeholder="08012345678"
+                                required
+                            >
+
+                            <small
+                                class="form-error"
+                                id="phoneError"
+                            ></small>
+
+                        </div>
+
+
+                        <!-- ADDRESS -->
+
+                        <div class="form-group">
+
+                            <label for="addressLine">
+                                Delivery Address
+                            </label>
+
+                            <textarea
+                                id="addressLine"
+                                name="addressLine"
+                                rows="4"
+                                autocomplete="street-address"
+                                placeholder="Enter your complete delivery address"
+                                required
+                            ></textarea>
+
+                            <small
+                                class="form-error"
+                                id="addressError"
+                            ></small>
+
+                        </div>
+
+
+                        <!-- CITY + STATE -->
+
+                        <div class="form-row">
+
+
+                            <div class="form-group">
+
+                                <label for="city">
+                                    City
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="city"
+                                    name="city"
+                                    autocomplete="address-level2"
+                                    placeholder="Port Harcourt"
+                                    required
+                                >
+
+                                <small
+                                    class="form-error"
+                                    id="cityError"
+                                ></small>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="state">
+                                    State
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="state"
+                                    name="state"
+                                    autocomplete="address-level1"
+                                    placeholder="Rivers"
+                                    required
+                                >
+
+                                <small
+                                    class="form-error"
+                                    id="stateError"
+                                ></small>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- COUNTRY -->
+
+                        <div class="form-group">
+
+                            <label for="country">
+                                Country
+                            </label>
+
+                            <input
+                                type="text"
+                                id="country"
+                                name="country"
+                                value="Nigeria"
+                                autocomplete="country-name"
+                                required
+                            >
+
+                            <small
+                                class="form-error"
+                                id="countryError"
+                            ></small>
+
+                        </div>
+
+
+                        <!-- LOGIN NOTICE -->
+
+                        <div
+                            id="checkoutAuthMessage"
+                            class="checkout-auth-message"
+                            hidden
+                        >
+
+                            <i
+                                class="fa-solid fa-lock"
+                                aria-hidden="true"
+                            ></i>
+
+                            <div>
+
+                                <strong>
+                                    Sign in required
+                                </strong>
+
+                                <p>
+                                    Please sign in before placing your order.
+                                </p>
+
+                            </div>
+
+                            <a href="./login.html">
+                                Sign In
+                            </a>
+
+                        </div>
+
+
+                    </form>
+
+                </section>
+
+
+
+                <!-- =================================
+                     ORDER SUMMARY
+                ================================== -->
+
+                <aside class="checkout-summary-card">
+
+
+                    <div class="checkout-card-heading">
+
+                        <span class="checkout-step">
+                            02
+                        </span>
+
+                        <div>
+
+                            <p>
+                                YOUR ORDER
+                            </p>
+
+                            <h2>
+                                Order Summary
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ORDER ITEMS -->
+
+                    <div
+                        id="checkoutItems"
+                        class="checkout-items"
+                    >
+
+                        <!-- JavaScript inserts products here -->
+
+                    </div>
+
+
+                    <!-- SUMMARY -->
+
+                    <div class="checkout-summary">
+
+
+                        <div class="checkout-summary-row">
+
+                            <span>
+                                Items
+                            </span>
+
+                            <strong id="checkoutItemCount">
+                                0
+                            </strong>
+
+                        </div>
+
+
+                        <div class="checkout-summary-row">
+
+                            <span>
+                                Subtotal
+                            </span>
+
+                            <strong id="checkoutSubtotal">
+                                ₦0
+                            </strong>
+
+                        </div>
+
+
+                        <div class="checkout-summary-row">
+
+                            <span>
+                                Shipping
+                            </span>
+
+                            <span class="shipping-note">
+                                Calculated at checkout
+                            </span>
+
+                        </div>
+
+
+                        <div class="checkout-divider"></div>
+
+
+                        <div class="checkout-total">
+
+                            <span>
+                                Total
+                            </span>
+
+                            <strong id="checkoutTotal">
+                                ₦0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- PLACE ORDER -->
+
+                    <button
+                        type="submit"
+                        form="checkoutForm"
+                        id="placeOrderButton"
+                        class="place-order-button"
+                    >
+
+                        <span>
+                            Place Order
+                        </span>
+
+                        <i
+                            class="fa-solid fa-arrow-right"
+                            aria-hidden="true"
+                        ></i>
+
+                    </button>
+
+
+                    <!-- SECURITY -->
+
+                    <div class="checkout-security">
+
+                        <i
+                            class="fa-solid fa-shield-halved"
+                            aria-hidden="true"
+                        ></i>
+
+                        <span>
+                            Your order information is securely processed.
+                        </span>
+
+                    </div>
+
+
+                    <!-- BACK TO CART -->
+
+                    <a
+                        href="./cart.html"
+                        class="back-to-cart"
+                    >
+
+                        <i
+                            class="fa-solid fa-arrow-left"
+                            aria-hidden="true"
+                        ></i>
+
+                        Back to Cart
+
+                    </a>
+
+                </aside>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+
+<!-- =========================================
+     JAVASCRIPT
+========================================= -->
+
+
+
+<script src="../js/api.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/checkout.js"></script>
+<script src="../js/cartNavigation.js"></script>
+
+</body>
+
+</html>

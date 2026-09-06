@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Wishlist | Kokobeeds</title>
+
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+
+    <!-- ==============================
+         HEADER
+    =============================== -->
+
+    <header class="site-header">
+
+        <div class="header-container">
+
+            <!-- Hamburger Menu -->
+
+            <button
+                type="button"
+                class="menu-button"
+                id="menuButton"
+                aria-label="Open menu"
+                aria-expanded="false"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+
+            <!-- Logo -->
+
+            <a
+                href="../index.html"
+                class="site-logo"
+            >
+                Kokobeeds
+            </a>
+
+
+            <!-- Navigation -->
+
+            <nav
+                class="main-navigation"
+                id="mainNavigation"
+                aria-label="Main navigation"
+            >
+
+                <a href="../index.html">
+                    Home
+                </a>
+
+                <a href="./shop.html">
+                    Shop
+                </a>
+
+                <a href="./collections.html">
+                    Collections
+                </a>
+
+                <a href="./about.html">
+                    About
+                </a>
+
+                <a href="./contact.html">
+                    Contact
+                </a>
+
+            </nav>
+
+
+            <!-- Header Actions -->
+
+            <div class="header-actions">
+
+                <!-- Search -->
+
+                <button
+                    type="button"
+                    class="header-action"
+                    id="searchButton"
+                    aria-label="Search"
+                >
+                    <span aria-hidden="true">
+                        🔍
+                    </span>
+                </button>
+
+
+                <!-- Account -->
+
+                <a
+                    href="./login.html"
+                    class="header-action"
+                    aria-label="My account"
+                >
+                    <span aria-hidden="true">
+                        ♙
+                    </span>
+                </a>
+
+
+                <!-- Cart -->
+
+                <a
+                    href="./cart.html"
+                    class="header-action cart-action"
+                    aria-label="Shopping cart"
+                >
+                    <span aria-hidden="true">
+                        🛒
+                    </span>
+
+                    <span
+                        class="cart-count"
+                        id="cartCount"
+                        data-cart-count
+                    >
+                        0
+                    </span>
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- ==============================
+         MOBILE NAVIGATION
+    =============================== -->
+
+    <nav
+        class="mobile-navigation"
+        id="mobileNavigation"
+        aria-label="Mobile navigation"
+    >
+        <a href="../index.html">Home</a>
+        <a href="./shop.html">Shop</a>
+        <a href="./collections.html">Collections</a>
+        <a href="./about.html">About</a>
+        <a href="./contact.html">Contact</a>
+    </nav>
+
+
+    <!-- ==============================
+         WISHLIST
+    =============================== -->
+
+    <main class="wishlist-page">
+
+        <div class="container">
+
+            <header class="wishlist-header">
+
+                <span class="wishlist-eyebrow">
+                    Saved Pieces
+                </span>
+
+                <h1 class="wishlist-title">
+                    My Wishlist
+                </h1>
+
+                <p class="wishlist-subtitle">
+                    Keep the pieces you love close. Your saved items will
+                    stay here until you're ready to add them to your cart.
+                </p>
+
+            </header>
+
+
+            <section
+                id="wishlistContent"
+                aria-live="polite"
+            ></section>
+
+        </div>
+
+    </main>
+
+
+    <!-- Wishlist Logic -->
+
+    <script src="../js/cartCount.js"></script>
+    <script src="../js/wishlist.js"></script>
+
+</body>
+</html>

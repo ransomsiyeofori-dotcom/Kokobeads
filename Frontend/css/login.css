@@ -1,0 +1,1269 @@
+/* =========================================================
+   KOKOBEEDS — PREMIUM LOGIN PAGE
+   ========================================================= */
+
+
+/* =========================================================
+   1. LOGIN PAGE FOUNDATION
+========================================================= */
+
+.login-page {
+    min-height: 100vh;
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(184, 123, 255, 0.10),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 90% 30%,
+            rgba(184, 123, 255, 0.07),
+            transparent 30%
+        ),
+        #0b0b0d;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   2. TOP BAR
+========================================================= */
+
+.login-page .auth-topbar {
+    min-height: 72px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 16px 20px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+    background: rgba(11, 11, 13, 0.82);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    position: relative;
+    z-index: 10;
+}
+
+
+.login-page .auth-logo {
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 1.35rem;
+    font-weight: 800;
+
+    letter-spacing: -0.04em;
+}
+
+
+.login-page .auth-login-link {
+    margin: 0;
+
+    color: #92929a;
+
+    font-size: 0.78rem;
+}
+
+
+.login-page .auth-login-link a {
+    color: #c99aff;
+
+    text-decoration: none;
+
+    font-weight: 700;
+
+    margin-left: 4px;
+
+    transition: color 0.2s ease;
+}
+
+
+.login-page .auth-login-link a:hover {
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   3. LOGIN HERO
+========================================================= */
+
+.login-hero {
+    width: min(1180px, calc(100% - 32px));
+
+    margin: 0 auto;
+
+    padding: 55px 0 30px;
+
+    display: grid;
+    gap: 40px;
+}
+
+
+.login-hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.login-eyebrow {
+    margin: 0 0 15px;
+
+    color: #bd83ff;
+
+    font-size: 0.7rem;
+    font-weight: 800;
+
+    letter-spacing: 0.18em;
+}
+
+
+.login-hero-content h1 {
+    margin: 0;
+
+    max-width: 600px;
+
+    font-size: clamp(2.5rem, 9vw, 5rem);
+
+    line-height: 0.98;
+
+    letter-spacing: -0.055em;
+
+    font-weight: 800;
+}
+
+
+.login-hero-content h1 span {
+    display: block;
+
+    color: #bd83ff;
+}
+
+
+.login-hero-description {
+    max-width: 520px;
+
+    margin: 22px 0 0;
+
+    color: #a1a1aa;
+
+    font-size: 0.98rem;
+
+    line-height: 1.75;
+}
+
+
+/* =========================================================
+   4. HERO TRUST POINTS
+========================================================= */
+
+.login-trust-points {
+    display: flex;
+    flex-direction: column;
+
+    gap: 16px;
+
+    margin-top: 30px;
+}
+
+
+.login-trust-item {
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+}
+
+
+.login-trust-icon {
+    width: 38px;
+    height: 38px;
+
+    flex: 0 0 38px;
+
+    display: grid;
+    place-items: center;
+
+    border: 1px solid rgba(189, 131, 255, 0.2);
+
+    border-radius: 12px;
+
+    background: rgba(189, 131, 255, 0.08);
+
+    color: #c99aff;
+
+    font-size: 0.9rem;
+}
+
+
+.login-trust-item strong {
+    display: block;
+
+    color: #f5f5f7;
+
+    font-size: 0.82rem;
+}
+
+
+.login-trust-item small {
+    display: block;
+
+    margin-top: 3px;
+
+    color: #777780;
+
+    font-size: 0.7rem;
+}
+
+
+/* =========================================================
+   5. HERO IMAGE
+========================================================= */
+
+.login-hero-image {
+    position: relative;
+
+    min-height: 360px;
+
+    overflow: hidden;
+
+    border-radius: 28px;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    background: #151519;
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.45);
+}
+
+
+.login-hero-image::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent 35%,
+            rgba(0, 0, 0, 0.7)
+        );
+
+    pointer-events: none;
+}
+
+
+.login-hero-image img {
+    width: 100%;
+    height: 100%;
+
+    min-height: 360px;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: transform 0.7s ease;
+}
+
+
+.login-hero-image:hover img {
+    transform: scale(1.04);
+}
+
+
+.login-image-overlay {
+    position: absolute;
+
+    z-index: 2;
+
+    left: 22px;
+    right: 22px;
+    bottom: 20px;
+
+    display: flex;
+    justify-content: space-between;
+
+    gap: 10px;
+}
+
+
+.login-image-overlay span {
+    color: rgba(255, 255, 255, 0.88);
+
+    font-size: 0.58rem;
+
+    letter-spacing: 0.16em;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   6. LOGIN SECTION
+========================================================= */
+
+.login-section {
+    width: min(540px, calc(100% - 32px));
+
+    margin: 10px auto 70px;
+}
+
+
+.login-card {
+    padding: 28px 20px;
+
+    border-radius: 26px;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(28, 28, 32, 0.98),
+            rgba(15, 15, 18, 0.98)
+        );
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.45);
+}
+
+
+/* =========================================================
+   7. LOGIN HEADER
+========================================================= */
+
+.login-header {
+    margin-bottom: 28px;
+}
+
+
+.login-form-eyebrow {
+    margin: 0 0 9px;
+
+    color: #bd83ff;
+
+    font-size: 0.65rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.16em;
+}
+
+
+.login-header h2 {
+    margin: 0;
+
+    font-size: 2rem;
+
+    line-height: 1.1;
+
+    letter-spacing: -0.04em;
+}
+
+
+.login-header h2 span {
+    color: #bd83ff;
+}
+
+
+.login-header > p:last-child {
+    margin: 10px 0 0;
+
+    color: #85858d;
+
+    font-size: 0.82rem;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   8. FORM
+========================================================= */
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+
+    gap: 19px;
+}
+
+
+.login-form .form-group {
+    margin: 0;
+}
+
+
+.login-form label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #dedee3;
+
+    font-size: 0.76rem;
+
+    font-weight: 650;
+}
+
+
+/* =========================================================
+   9. LABEL ROW
+========================================================= */
+
+.form-label-row {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 10px;
+}
+
+
+.form-label-row label {
+    margin-bottom: 8px;
+}
+
+
+.forgot-password {
+    color: #b981ff;
+
+    text-decoration: none;
+
+    font-size: 0.7rem;
+
+    font-weight: 650;
+
+    transition: color 0.2s ease;
+}
+
+
+.forgot-password:hover {
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   10. INPUT WRAPPER
+========================================================= */
+
+.login-form .input-wrapper {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+}
+
+
+.login-form .input-icon {
+    position: absolute;
+
+    left: 15px;
+
+    z-index: 2;
+
+    color: #777780;
+
+    font-size: 0.88rem;
+
+    pointer-events: none;
+}
+
+
+.login-form input[type="email"],
+.login-form input[type="password"] {
+    width: 100%;
+
+    min-height: 54px;
+
+    padding: 0 46px;
+
+    border: 1px solid rgba(255, 255, 255, 0.09);
+
+    border-radius: 14px;
+
+    outline: none;
+
+    background: rgba(255, 255, 255, 0.035);
+
+    color: #ffffff;
+
+    font-family: inherit;
+
+    font-size: 0.84rem;
+
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.login-form input::placeholder {
+    color: #5f5f67;
+}
+
+
+.login-form input:focus {
+    border-color: rgba(189, 131, 255, 0.65);
+
+    background: rgba(189, 131, 255, 0.035);
+
+    box-shadow:
+        0 0 0 4px rgba(189, 131, 255, 0.08);
+}
+
+
+/* =========================================================
+   11. PASSWORD TOGGLE
+========================================================= */
+
+.login-form .password-toggle {
+    position: absolute;
+
+    right: 10px;
+
+    width: 36px;
+    height: 36px;
+
+    display: grid;
+    place-items: center;
+
+    border: 0;
+
+    background: transparent;
+
+    color: #777780;
+
+    cursor: pointer;
+
+    border-radius: 9px;
+
+    transition:
+        color 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.login-form .password-toggle:hover {
+    color: #ffffff;
+
+    background: rgba(255, 255, 255, 0.06);
+}
+
+
+/* =========================================================
+   12. REMEMBER ME
+========================================================= */
+
+.login-options {
+    margin-top: -3px;
+}
+
+
+.remember-checkbox {
+    display: inline-flex !important;
+
+    align-items: center;
+
+    gap: 9px;
+
+    margin: 0 !important;
+
+    cursor: pointer;
+
+    color: #85858d !important;
+
+    font-size: 0.72rem !important;
+
+    font-weight: 500 !important;
+}
+
+
+.remember-checkbox input {
+    position: absolute;
+
+    opacity: 0;
+
+    pointer-events: none;
+}
+
+
+.remember-checkbox .custom-checkbox {
+    width: 17px;
+    height: 17px;
+
+    display: inline-block;
+
+    flex: 0 0 17px;
+
+    border: 1px solid rgba(255, 255, 255, 0.18);
+
+    border-radius: 5px;
+
+    background: rgba(255, 255, 255, 0.03);
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+
+.remember-checkbox input:checked + .custom-checkbox {
+    border-color: #bd83ff;
+
+    background: #bd83ff;
+
+    box-shadow:
+        0 4px 14px rgba(189, 131, 255, 0.2);
+}
+
+
+.remember-checkbox input:checked + .custom-checkbox::after {
+    content: "✓";
+
+    display: grid;
+
+    width: 100%;
+    height: 100%;
+
+    place-items: center;
+
+    color: #ffffff;
+
+    font-size: 0.65rem;
+
+    font-weight: 900;
+}
+
+
+/* =========================================================
+   13. MESSAGE
+========================================================= */
+
+.login-form .auth-message {
+    min-height: 20px;
+
+    margin: -5px 0 0;
+
+    font-size: 0.74rem;
+
+    line-height: 1.5;
+}
+
+
+.login-form .auth-message.error {
+    color: #ff7d8d;
+}
+
+
+.login-form .auth-message.success {
+    color: #72dfb0;
+}
+
+
+/* =========================================================
+   14. LOGIN BUTTON
+========================================================= */
+
+.login-submit {
+    position: relative;
+
+    width: 100%;
+
+    min-height: 56px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    margin-top: 3px;
+
+    border: 0;
+
+    border-radius: 15px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #c994ff,
+            #a967ef
+        );
+
+    color: #ffffff;
+
+    font-family: inherit;
+
+    font-size: 0.86rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.01em;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 14px 30px rgba(169, 103, 239, 0.20);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        opacity 0.2s ease;
+}
+
+
+.login-submit:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 18px 36px rgba(169, 103, 239, 0.28);
+}
+
+
+.login-submit:active {
+    transform: translateY(0);
+}
+
+
+.login-submit:disabled {
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   15. LOGIN BUTTON ARROW
+========================================================= */
+
+.login-submit .submit-arrow {
+    font-size: 1.05rem;
+
+    transition: transform 0.2s ease;
+}
+
+
+.login-submit:hover .submit-arrow {
+    transform: translateX(4px);
+}
+
+
+/* =========================================================
+   16. LOGIN SPINNER
+========================================================= */
+
+.login-spinner {
+    width: 19px;
+    height: 19px;
+
+    flex: 0 0 19px;
+
+    display: none;
+
+    border: 2px solid rgba(255, 255, 255, 0.35);
+
+    border-top-color: #ffffff;
+
+    border-radius: 50%;
+
+    animation:
+        loginSpinnerRotation
+        0.7s linear infinite;
+}
+
+
+.login-submit.is-loading {
+    pointer-events: none;
+
+    cursor: wait;
+
+    opacity: 0.85;
+}
+
+
+.login-submit.is-loading .login-spinner {
+    display: block;
+}
+
+
+.login-submit.is-loading .submit-arrow {
+    display: none;
+}
+
+
+@keyframes loginSpinnerRotation {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* =========================================================
+   17. SOCIAL DIVIDER
+========================================================= */
+
+.social-divider {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin: 27px 0 18px;
+}
+
+
+.social-divider span {
+    height: 1px;
+
+    flex: 1;
+
+    background: rgba(255, 255, 255, 0.08);
+}
+
+
+.social-divider p {
+    margin: 0;
+
+    color: #5f5f67;
+
+    font-size: 0.62rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.12em;
+}
+
+
+/* =========================================================
+   18. SOCIAL BUTTONS
+========================================================= */
+
+.social-auth-buttons {
+    display: grid;
+
+    gap: 10px;
+}
+
+
+.social-auth-button {
+    width: 100%;
+
+    min-height: 50px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 13px;
+
+    background: rgba(255, 255, 255, 0.025);
+
+    color: #777780;
+
+    font-family: inherit;
+
+    font-size: 0.76rem;
+
+    font-weight: 650;
+
+    cursor: not-allowed;
+}
+
+
+.social-auth-button span {
+    color: #aaaaaf;
+
+    font-size: 0.95rem;
+
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   19. MOBILE LOGIN PROMPT
+========================================================= */
+
+.mobile-login-prompt {
+    margin: 22px 0 0;
+
+    text-align: center;
+
+    color: #777780;
+
+    font-size: 0.74rem;
+}
+
+
+.mobile-login-prompt a {
+    color: #bd83ff;
+
+    text-decoration: none;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   20. SECURITY MESSAGE
+========================================================= */
+
+.security-message {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    margin-top: 23px;
+
+    padding-top: 19px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+
+    color: #5f5f67;
+
+    font-size: 0.64rem;
+
+    line-height: 1.5;
+
+    text-align: center;
+}
+
+
+.security-message span:first-child {
+    color: #8f65bd;
+
+    font-size: 0.75rem;
+}
+
+
+/* =========================================================
+   21. BENEFITS STRIP
+========================================================= */
+
+.login-benefits {
+    width: min(1000px, calc(100% - 32px));
+
+    margin: 0 auto 60px;
+
+    padding: 20px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 20px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+
+.login-benefit {
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+}
+
+
+.login-benefit > span {
+    width: 38px;
+    height: 38px;
+
+    flex: 0 0 38px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 11px;
+
+    background: rgba(189, 131, 255, 0.07);
+
+    color: #bd83ff;
+}
+
+
+.login-benefit strong {
+    display: block;
+
+    color: #ddddE2;
+
+    font-size: 0.76rem;
+}
+
+
+.login-benefit small {
+    display: block;
+
+    margin-top: 3px;
+
+    color: #686870;
+
+    font-size: 0.66rem;
+}
+
+
+.login-benefit-divider {
+    display: none;
+}
+
+
+/* =========================================================
+   22. FOOTER
+========================================================= */
+
+.auth-footer {
+    width: min(1180px, calc(100% - 32px));
+
+    margin: 0 auto;
+
+    padding: 25px 0 35px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 12px;
+
+    color: #55555d;
+
+    font-size: 0.65rem;
+
+    text-align: center;
+}
+
+
+.auth-footer p {
+    margin: 0;
+}
+
+
+.auth-footer div {
+    display: flex;
+
+    gap: 18px;
+}
+
+
+.auth-footer a {
+    color: #66666f;
+
+    text-decoration: none;
+
+    transition: color 0.2s ease;
+}
+
+
+.auth-footer a:hover {
+    color: #bd83ff;
+}
+
+
+/* =========================================================
+   23. TABLET
+========================================================= */
+
+@media (min-width: 600px) {
+
+    .login-page .auth-topbar {
+        padding: 18px 34px;
+    }
+
+
+    .login-hero {
+        width: min(1180px, calc(100% - 60px));
+
+        padding-top: 70px;
+    }
+
+
+    .login-card {
+        padding: 38px;
+    }
+
+
+    .login-section {
+        width: min(560px, calc(100% - 60px));
+    }
+
+
+    .login-benefits {
+        width: min(1000px, calc(100% - 60px));
+
+        flex-direction: row;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        padding: 25px 0;
+    }
+
+
+    .login-benefit-divider {
+        display: block;
+
+        width: 1px;
+
+        height: 35px;
+
+        background: rgba(255, 255, 255, 0.08);
+    }
+
+}
+
+
+/* =========================================================
+   24. DESKTOP
+========================================================= */
+
+@media (min-width: 900px) {
+
+    .login-page .auth-topbar {
+        min-height: 80px;
+
+        padding: 18px 5%;
+    }
+
+
+    .login-page .auth-logo {
+        font-size: 1.5rem;
+    }
+
+
+    .login-page .auth-login-link {
+        font-size: 0.82rem;
+    }
+
+
+    .login-hero {
+        grid-template-columns: 1fr 0.85fr;
+
+        align-items: center;
+
+        gap: 80px;
+
+        padding-top: 90px;
+
+        padding-bottom: 80px;
+    }
+
+
+    .login-hero-image {
+        min-height: 540px;
+    }
+
+
+    .login-hero-image img {
+        min-height: 540px;
+    }
+
+
+    .login-section {
+        margin-bottom: 90px;
+    }
+
+
+    .login-card {
+        padding: 42px;
+    }
+
+
+    .login-header h2 {
+        font-size: 2.3rem;
+    }
+
+
+    .login-benefits {
+        margin-bottom: 70px;
+    }
+
+
+    .auth-footer {
+        flex-direction: row;
+
+        justify-content: space-between;
+
+        padding-bottom: 40px;
+    }
+
+}
+
+
+/* =========================================================
+   25. LARGE DESKTOP
+========================================================= */
+
+@media (min-width: 1200px) {
+
+    .login-hero {
+        gap: 110px;
+    }
+
+
+    .login-hero-content h1 {
+        font-size: 5.2rem;
+    }
+
+
+    .login-card {
+        padding: 48px;
+    }
+
+}
+
+
+/* =========================================================
+   26. REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .login-spinner {
+        animation: none;
+    }
+
+
+    .login-submit,
+    .login-submit .submit-arrow,
+    .login-hero-image img,
+    .login-page .auth-login-link a {
+        transition: none;
+    }
+
+}

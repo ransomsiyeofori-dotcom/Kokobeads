@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Collections — Kokobeeds</title>
+
+    <meta
+        name="description"
+        content="Explore the curated Kokobeeds collections."
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/styles.css"
+    >
+
+</head>
+
+<body>
+
+    <header class="site-header">
+
+        <div class="header-container">
+
+            <button
+                type="button"
+                class="menu-button"
+                id="menuButton"
+                aria-label="Open menu"
+                aria-expanded="false"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+
+            <a
+                href="../index.html"
+                class="site-logo"
+            >
+                Kokobeeds
+            </a>
+
+
+            <nav
+                class="main-navigation"
+                id="mainNavigation"
+                aria-label="Main navigation"
+            >
+
+                <a href="../index.html">
+                    Home
+                </a>
+
+                <a href="./shop.html">
+                    Shop
+                </a>
+
+                <a
+                    href="./collection.html"
+                    class="active"
+                >
+                    Collections
+                </a>
+
+                <a href="./about.html">
+                    About
+                </a>
+
+                <a href="./contact.html">
+                    Contact
+                </a>
+
+            </nav>
+
+
+            <div class="header-actions">
+
+                <button
+                    type="button"
+                    class="header-action"
+                    id="searchButton"
+                    aria-label="Search"
+                >
+                    <span aria-hidden="true">
+                        🔍
+                    </span>
+                </button>
+
+
+                <a
+                    href="./login.html"
+                    class="header-action"
+                    aria-label="My account"
+                >
+                    <span aria-hidden="true">
+                        ♙
+                    </span>
+                </a>
+
+
+                <a
+                    href="./cart.html"
+                    class="header-action cart-action"
+                    aria-label="Shopping cart"
+                >
+                    <span aria-hidden="true">
+                        🛒
+                    </span>
+
+                    <span
+                        class="cart-count"
+                        id="cartCount"
+                        data-cart-count
+                    >
+                        0
+                    </span>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <nav
+        class="mobile-navigation"
+        id="mobileNavigation"
+        aria-label="Mobile navigation"
+    >
+
+        <a href="../index.html">
+            Home
+        </a>
+
+        <a href="./shop.html">
+            Shop
+        </a>
+
+        <a
+            href="./collection.html"
+            class="active"
+        >
+            Collections
+        </a>
+
+        <a href="./about.html">
+            About
+        </a>
+
+        <a href="./contact.html">
+            Contact
+        </a>
+
+    </nav>
+
+
+    <main class="collections-page">
+
+        <section class="collections-hero">
+
+            <div class="collections-hero-inner">
+
+                <span class="collections-eyebrow">
+                    The Kokobeeds Edit
+                </span>
+
+                <h1 class="collections-title">
+                    Collections
+                </h1>
+
+                <p class="collections-intro">
+                    Discover thoughtfully curated pieces
+                    designed to add character, elegance
+                    and individuality to every look.
+                </p>
+
+                <a
+                    href="./shop.html"
+                    class="collections-hero-cta"
+                >
+                    Explore All Pieces
+                    <span aria-hidden="true">→</span>
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <section class="collections-section">
+
+            <div class="collections-section-header">
+
+                <div>
+
+                    <span class="collections-section-eyebrow">
+                        Shop by style
+                    </span>
+
+                    <h2 class="collections-section-title">
+                        Curated Collections
+                    </h2>
+
+                </div>
+
+                <p class="collections-section-description">
+                    Explore our pieces by collection.
+                </p>
+
+            </div>
+
+
+            <div
+                id="collectionsGrid"
+                class="collections-grid"
+            >
+
+                <div class="collections-loading">
+
+                    <span class="collections-spinner"></span>
+
+                    <p>
+                        Discovering collections...
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="collections-featured">
+
+            <div class="collections-featured-header">
+
+                <span class="collections-section-eyebrow">
+                    Selected for you
+                </span>
+
+                <h2 class="collections-section-title">
+                    Featured Pieces
+                </h2>
+
+                <p>
+                    A selection of pieces currently
+                    making an impression.
+                </p>
+
+            </div>
+
+
+            <div
+                id="featuredProducts"
+                class="collections-product-grid"
+            ></div>
+
+
+            <div class="collections-featured-action">
+
+                <a
+                    href="./shop.html"
+                    class="collections-secondary-cta"
+                >
+                    View All Products
+                    <span aria-hidden="true">→</span>
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer class="site-footer">
+
+        <div class="footer-container">
+
+            <div class="footer-brand">
+
+                <a
+                    href="../index.html"
+                    class="footer-logo"
+                >
+                    Kokobeeds
+                </a>
+
+                <p>
+                    Thoughtfully made pieces
+                    for your everyday expression.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="./shop.html">
+                    Shop
+                </a>
+
+                <a href="./collection.html">
+                    Collections
+                </a>
+
+                <a href="./about.html">
+                    About
+                </a>
+
+                <a href="./contact.html">
+                    Contact
+                </a>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <script src="../js/cartCount.js"></script>
+
+    <script src="../js/collection.js"></script>
+
+</body>
+
+</html>

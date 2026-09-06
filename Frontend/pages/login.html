@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Log in to your Kokobeeds account and continue your shopping journey."
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/styles.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/login.css"
+    >
+
+    <title>Log In | Kokobeeds</title>
+
+</head>
+
+
+<body class="auth-page login-page">
+
+
+    <!-- =========================================
+         TOP BAR
+    ========================================== -->
+
+    <header class="auth-topbar">
+
+        <a
+            href="../index.html"
+            class="auth-logo"
+        >
+            Kokobeeds
+        </a>
+
+
+        <p class="auth-login-link">
+
+            Don't have an account?
+
+            <a href="./register.html">
+                Create Account
+            </a>
+
+        </p>
+
+    </header>
+
+
+
+    <!-- =========================================
+         MAIN
+    ========================================== -->
+
+    <main>
+
+
+        <!-- =====================================
+             LOGIN HERO
+        ====================================== -->
+
+        <section class="login-hero">
+
+
+            <!-- LEFT CONTENT -->
+
+            <div class="login-hero-content">
+
+                <p class="login-eyebrow">
+                    WELCOME BACK
+                </p>
+
+
+                <h1>
+
+                    Your Style.
+
+                    <span>
+                        Your Story.
+                    </span>
+
+                </h1>
+
+
+                <p class="login-hero-description">
+
+                    Sign in to continue exploring
+                    handcrafted pieces designed
+                    to express who you are.
+
+                </p>
+
+
+                <!-- Trust Points -->
+
+                <div class="login-trust-points">
+
+
+                    <div class="login-trust-item">
+
+                        <span
+                            aria-hidden="true"
+                            class="login-trust-icon"
+                        >
+                            ✦
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Personalized Experience
+                            </strong>
+
+                            <small>
+                                Your account, your preferences.
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="login-trust-item">
+
+                        <span
+                            aria-hidden="true"
+                            class="login-trust-icon"
+                        >
+                            🛡
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Secure Authentication
+                            </strong>
+
+                            <small>
+                                Your account is protected.
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="login-trust-item">
+
+                        <span
+                            aria-hidden="true"
+                            class="login-trust-icon"
+                        >
+                            ♡
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Your Kokobeeds Journey
+                            </strong>
+
+                            <small>
+                                Orders, wishlist and more.
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- RIGHT IMAGE -->
+
+            <div class="login-hero-image">
+
+                <img
+                    src="../assets/images/login.png"
+                    alt="Handcrafted Kokobeeds bracelets"
+                >
+
+                <div class="login-image-overlay">
+
+                    <span>
+                        HANDMADE
+                    </span>
+
+                    <span>
+                        UNIQUE
+                    </span>
+
+                    <span>
+                        TIMELESS
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             LOGIN SECTION
+        ====================================== -->
+
+        <section
+            class="login-section"
+            aria-labelledby="loginTitle"
+        >
+
+            <div class="login-card">
+
+
+                <!-- Card Header -->
+
+                <div class="login-header">
+
+                    <p class="login-form-eyebrow">
+                        YOUR ACCOUNT
+                    </p>
+
+
+                    <h2 id="loginTitle">
+
+                        Welcome
+
+                        <span>
+                            Back
+                        </span>
+
+                    </h2>
+
+
+                    <p>
+                        Enter your details to access
+                        your Kokobeeds account.
+                    </p>
+
+                </div>
+
+
+
+                <!-- =================================
+                     LOGIN FORM
+                ================================== -->
+
+                <form
+                    class="auth-form login-form"
+                    id="loginForm"
+                    novalidate
+                >
+
+
+                    <!-- Email -->
+
+                    <div class="form-group">
+
+                        <label for="loginEmail">
+                            Email Address
+                        </label>
+
+
+                        <div class="input-wrapper">
+
+                            <span
+                                class="input-icon"
+                                aria-hidden="true"
+                            >
+                                ✉
+                            </span>
+
+
+                            <input
+                                type="email"
+                                id="loginEmail"
+                                name="email"
+                                placeholder="Enter your email address"
+                                autocomplete="email"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Password -->
+
+                    <div class="form-group">
+
+                        <div class="form-label-row">
+
+                            <label for="loginPassword">
+                                Password
+                            </label>
+
+
+                            <a
+                                href="./forgot-password.html"
+                                class="forgot-password"
+                            >
+                                Forgot password?
+                            </a>
+
+                        </div>
+
+
+                        <div class="input-wrapper">
+
+                            <span
+                                class="input-icon"
+                                aria-hidden="true"
+                            >
+                                🔒
+                            </span>
+
+
+                            <input
+                                type="password"
+                                id="loginPassword"
+                                name="password"
+                                placeholder="Enter your password"
+                                autocomplete="current-password"
+                                required
+                            >
+
+
+                            <button
+                                type="button"
+                                class="password-toggle"
+                                data-target="loginPassword"
+                                aria-label="Show password"
+                            >
+                                ◉
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Remember Me -->
+
+                    <div class="login-options">
+
+                        <label class="remember-checkbox">
+
+                            <input
+                                type="checkbox"
+                                id="rememberMe"
+                                name="remember"
+                            >
+
+                            <span class="custom-checkbox"></span>
+
+                            <span>
+                                Remember me
+                            </span>
+
+                        </label>
+
+                    </div>
+
+
+
+                    <!-- Message -->
+
+                    <p
+                        class="auth-message"
+                        id="loginMessage"
+                        aria-live="polite"
+                    ></p>
+
+
+
+                    <!-- Submit -->
+
+             <button
+    type="submit"
+    class="login-submit"
+    id="loginButton"
+>
+
+    <span
+        class="login-button-text"
+        id="loginButtonText"
+    >
+        Log In
+    </span>
+
+    <span
+        class="login-spinner"
+        id="loginSpinner"
+        aria-hidden="true"
+    ></span>
+
+    <span
+        aria-hidden="true"
+        class="submit-arrow"
+        id="loginButtonArrow"
+    >
+        →
+    </span>
+
+</button>
+
+
+                </form>
+
+
+
+                <!-- =================================
+                     SOCIAL LOGIN
+                ================================== -->
+
+                <div class="social-divider">
+
+                    <span></span>
+
+                    <p>
+                        OR
+                    </p>
+
+                    <span></span>
+
+                </div>
+
+
+                <div class="social-auth-buttons">
+
+                    <button
+                        type="button"
+                        class="social-auth-button"
+                        disabled
+                    >
+
+                        <span>
+                            G
+                        </span>
+
+                        Continue with Google
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="social-auth-button"
+                        disabled
+                    >
+
+                        <span>
+                            
+                        </span>
+
+                        Continue with Apple
+
+                    </button>
+
+                </div>
+
+
+
+                <!-- =================================
+                     REGISTER PROMPT
+                ================================== -->
+
+                <p class="mobile-login-prompt">
+
+                    Don't have an account?
+
+                    <a href="./register.html">
+                        Create one
+                    </a>
+
+                </p>
+
+
+
+                <!-- =================================
+                     SECURITY MESSAGE
+                ================================== -->
+
+                <div class="security-message">
+
+                    <span aria-hidden="true">
+                        🔒
+                    </span>
+
+                    <span>
+                        Your connection is protected
+                        with secure authentication.
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             BENEFITS
+        ====================================== -->
+
+        <section class="login-benefits">
+
+            <div class="login-benefit">
+
+                <span aria-hidden="true">
+                    ♡
+                </span>
+
+                <div>
+
+                    <strong>
+                        Your Wishlist
+                    </strong>
+
+                    <small>
+                        Save the pieces you love.
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="login-benefit-divider"></div>
+
+
+            <div class="login-benefit">
+
+                <span aria-hidden="true">
+                    🛒
+                </span>
+
+                <div>
+
+                    <strong>
+                        Easy Shopping
+                    </strong>
+
+                    <small>
+                        A smoother checkout experience.
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="login-benefit-divider"></div>
+
+
+            <div class="login-benefit">
+
+                <span aria-hidden="true">
+                    ◇
+                </span>
+
+                <div>
+
+                    <strong>
+                        Order Tracking
+                    </strong>
+
+                    <small>
+                        Keep track of your purchases.
+                    </small>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+    <footer class="auth-footer">
+
+        <p>
+
+            &copy;
+            <span id="currentYear"></span>
+            Kokobeeds.
+            All rights reserved.
+
+        </p>
+
+
+        <div>
+
+            <a href="./privacy.html">
+                Privacy
+            </a>
+
+            <a href="./terms.html">
+                Terms
+            </a>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+
+    <script src="../js/login.js"></script>
+
+
+</body>
+
+</html>

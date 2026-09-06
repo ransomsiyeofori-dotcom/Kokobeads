@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Manage your Kokobeeds account, orders, wishlist and personal information."
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/styles.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/profile.css"
+    >
+
+    <title>My Account | Kokobeeds</title>
+
+</head>
+
+
+<body class="profile-page">
+
+
+    <!-- =========================================
+         HEADER
+    ========================================== -->
+
+    <header class="profile-header">
+
+        <div class="profile-header-container">
+
+
+            <!-- Logo -->
+
+            <a
+                href="../index.html"
+                class="profile-logo"
+            >
+                Kokobeeds
+            </a>
+
+
+            <!-- Desktop Navigation -->
+
+            <nav
+                class="profile-navigation"
+                aria-label="Account navigation"
+            >
+
+                <a href="../index.html">
+                    Home
+                </a>
+
+                <a href="./shop.html">
+                    Shop
+                </a>
+
+                <a href="./collections.html">
+                    Collections
+                </a>
+
+                <a
+                    href="./wishlist.html"
+                    class="profile-nav-wishlist"
+                >
+                    Wishlist
+
+                    <span
+                        id="profileWishlistCount"
+                        class="profile-nav-count"
+                    >
+                        0
+                    </span>
+
+                </a>
+
+                <a
+                    href="./cart.html"
+                    class="profile-nav-cart"
+                >
+                    Cart
+
+                    <span
+                        id="profileCartCount"
+                        class="profile-nav-count"
+                    >
+                        0
+                    </span>
+
+                </a>
+
+            </nav>
+
+
+            <!-- Header Account -->
+
+            <div class="profile-header-account">
+
+                <span
+                    class="profile-header-avatar"
+                    id="headerUserInitials"
+                    aria-hidden="true"
+                >
+                    --
+                </span>
+
+                <span
+                    class="profile-header-name"
+                    id="headerUserName"
+                >
+                    Account
+                </span>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================================
+         MAIN
+    ========================================== -->
+
+    <main class="profile-main">
+
+
+        <!-- =====================================
+             PAGE HERO
+        ====================================== -->
+
+        <section class="profile-hero">
+
+            <div class="profile-hero-container">
+
+
+                <div class="profile-hero-content">
+
+                    <p class="profile-eyebrow">
+                        MY KOKOBEEDS
+                    </p>
+
+                    <h1>
+                        Welcome back,
+                        <span id="welcomeUserName">
+                            there
+                        </span>
+                    </h1>
+
+                    <p>
+                        Manage your account, track your
+                        orders and keep your favorite
+                        pieces close.
+                    </p>
+
+                </div>
+
+
+                <!-- Profile Avatar -->
+
+                <div class="profile-hero-avatar-wrapper">
+
+                    <div
+                        class="profile-hero-avatar"
+                        id="profileInitials"
+                        aria-label="Profile avatar"
+                    >
+                        --
+                    </div>
+
+                    <span
+                        class="profile-online-indicator"
+                        aria-label="Account active"
+                    ></span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             CONTENT
+        ====================================== -->
+
+        <section class="profile-content">
+
+            <div class="profile-content-container">
+
+
+                <!-- =================================
+                     ACCOUNT OVERVIEW
+                ================================== -->
+
+                <section
+                    class="account-overview"
+                    aria-labelledby="overviewTitle"
+                >
+
+                    <div class="section-heading">
+
+                        <div>
+
+                            <p class="section-eyebrow">
+                                ACCOUNT OVERVIEW
+                            </p>
+
+                            <h2 id="overviewTitle">
+                                Your Kokobeeds
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="overview-grid">
+
+
+                        <!-- Orders -->
+
+                        <a
+                            href="./orders.html"
+                            class="overview-card"
+                        >
+
+                            <div class="overview-card-icon">
+                                ◇
+                            </div>
+
+                            <div class="overview-card-content">
+
+                                <span>
+                                    Orders
+                                </span>
+
+                                <strong
+                                    id="ordersCount"
+                                >
+                                    0
+                                </strong>
+
+                                <small>
+                                    View your orders
+                                </small>
+
+                            </div>
+
+                            <span
+                                class="overview-arrow"
+                                aria-hidden="true"
+                            >
+                                →
+                            </span>
+
+                        </a>
+
+
+                        <!-- Wishlist -->
+
+                        <a
+                            href="./wishlist.html"
+                            class="overview-card"
+                        >
+
+                            <div class="overview-card-icon">
+                                ♡
+                            </div>
+
+                            <div class="overview-card-content">
+
+                                <span>
+                                    Wishlist
+                                </span>
+
+                                <strong
+                                    id="wishlistCount"
+                                >
+                                    0
+                                </strong>
+
+                                <small>
+                                    Your saved pieces
+                                </small>
+
+                            </div>
+
+                            <span
+                                class="overview-arrow"
+                                aria-hidden="true"
+                            >
+                                →
+                            </span>
+
+                        </a>
+
+
+                        <!-- Cart -->
+
+                        <a
+                            href="./cart.html"
+                            class="overview-card"
+                        >
+
+                            <div class="overview-card-icon">
+                                🛒
+                            </div>
+
+                            <div class="overview-card-content">
+
+                                <span>
+                                    Cart
+                                </span>
+
+                                <strong
+                                    id="cartCount" data-cart-count
+                                >
+                                    0
+                                </strong>
+
+                                <small>
+                                    Items waiting for you
+                                </small>
+
+                            </div>
+
+                            <span
+                                class="overview-arrow"
+                                aria-hidden="true"
+                            >
+                                →
+                            </span>
+
+                        </a>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =================================
+                     PROFILE INFORMATION
+                ================================== -->
+
+                <section
+                    class="profile-information"
+                    aria-labelledby="personalInfoTitle"
+                >
+
+                    <div class="profile-section-header">
+
+                        <div>
+
+                            <p class="section-eyebrow">
+                                PERSONAL INFORMATION
+                            </p>
+
+                            <h2 id="personalInfoTitle">
+                                Account Details
+                            </h2>
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            class="profile-edit-button"
+                            id="editProfileButton"
+                        >
+                            Edit Profile
+                        </button>
+
+                    </div>
+
+
+                    <div class="profile-info-card">
+
+
+                        <!-- Name -->
+
+                        <div class="profile-info-row">
+
+                            <div class="profile-info-icon">
+                                ♙
+                            </div>
+
+                            <div class="profile-info-content">
+
+                                <span>
+                                    Full Name
+                                </span>
+
+                                <strong
+                                    id="profileName"
+                                >
+                                    Loading...
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Email -->
+
+                        <div class="profile-info-row">
+
+                            <div class="profile-info-icon">
+                                ✉
+                            </div>
+
+                            <div class="profile-info-content">
+
+                                <span>
+                                    Email Address
+                                </span>
+
+                                <strong
+                                    id="profileEmail"
+                                >
+                                    Loading...
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Account Type -->
+
+                        <div class="profile-info-row">
+
+                            <div class="profile-info-icon">
+                                ✦
+                            </div>
+
+                            <div class="profile-info-content">
+
+                                <span>
+                                    Account Type
+                                </span>
+
+                                <strong
+                                    id="profileRole"
+                                >
+                                    Customer
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Account Status -->
+
+                        <div class="profile-info-row">
+
+                            <div class="profile-info-icon">
+                                ◉
+                            </div>
+
+                            <div class="profile-info-content">
+
+                                <span>
+                                    Account Status
+                                </span>
+
+                                <strong
+                                    class="status-active"
+                                    id="profileStatus"
+                                >
+                                    Active
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =================================
+                     QUICK ACTIONS
+                ================================== -->
+
+                <section
+                    class="profile-actions-section"
+                    aria-labelledby="quickActionsTitle"
+                >
+
+                    <div class="section-heading">
+
+                        <div>
+
+                            <p class="section-eyebrow">
+                                QUICK ACTIONS
+                            </p>
+
+                            <h2 id="quickActionsTitle">
+                                Manage Your Account
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="profile-actions-grid">
+
+
+                        <!-- Orders -->
+
+                        <a
+                            href="./orders.html"
+                            class="profile-action-card"
+                        >
+
+                            <span
+                                class="profile-action-icon"
+                                aria-hidden="true"
+                            >
+                                ◇
+                            </span>
+
+                            <span class="profile-action-text">
+
+                                <strong>
+                                    My Orders
+                                </strong>
+
+                                <small>
+                                    Track and manage purchases
+                                </small>
+
+                            </span>
+
+                            <span
+                                class="profile-action-arrow"
+                                aria-hidden="true"
+                            >
+                                →
+                            </span>
+
+                        </a>
+
+
+                        <!-- Wishlist -->
+
+                        <a
+                            href="./wishlist.html"
+                            class="profile-action-card"
+                        >
+
+                            <span
+                                class="profile-action-icon"
+                                aria-hidden="true"
+                            >
+                                ♡
+                            </span>
+
+                            <span class="profile-action-text">
+
+                                <strong>
+                                    My Wishlist
+                                </strong>
+
+                                <small>
+                                    View your favorite pieces
+                                </small>
+
+                            </span>
+
+                            <span
+                                class="profile-action-arrow"
+                                aria-hidden="true"
+                            >
+                                →
+                            </span>
+
+                        </a>
+
+
+                        <!-- Cart -->
+
+                        <a
+                            href="./cart.html"
+                            class="profile-action-card"
+                        >
+
+                            <span
+                                class="profile-action-icon"
+                                aria-hidden="true"
+                            >
+                                🛒
+                            </span>
+
+                            <span class="profile-action-text">
+
+                                <strong>
+                                    Shopping Cart
+                                </strong>
+
+                                <small>
+                                    Continue your shopping
+                                </small>
+
+                            </span>
+
+                            <span
+                                class="profile-action-arrow"
+                                aria-hidden="true"
+                            >
+                                →
+                            </span>
+
+                        </a>
+
+
+                        <!-- Settings -->
+
+                        <button
+                            type="button"
+                            class="profile-action-card"
+                            id="accountSettingsButton"
+                        >
+
+                            <span
+                                class="profile-action-icon"
+                                aria-hidden="true"
+                            >
+                                ⚙
+                            </span>
+
+                            <span class="profile-action-text">
+
+                                <strong>
+                                    Account Settings
+                                </strong>
+
+                                <small>
+                                    Manage your preferences
+                                </small>
+
+                            </span>
+
+                            <span
+                                class="profile-action-arrow"
+                                aria-hidden="true"
+                            >
+                                →
+                            </span>
+
+                        </button>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =================================
+                     SECURITY
+                ================================== -->
+
+                <section
+                    class="profile-security"
+                    aria-labelledby="securityTitle"
+                >
+
+                    <div class="security-card">
+
+                        <div class="security-icon">
+                            🔒
+                        </div>
+
+                        <div class="security-content">
+
+                            <p class="section-eyebrow">
+                                ACCOUNT SECURITY
+                            </p>
+
+                            <h2 id="securityTitle">
+                                Your account is protected
+                            </h2>
+
+                            <p>
+                                Kokobeeds uses secure
+                                authentication to protect
+                                your account information.
+                            </p>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            class="security-button"
+                            id="changePasswordButton"
+                        >
+                            Change Password
+                        </button>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =================================
+                     LOGOUT
+                ================================== -->
+
+                <section class="profile-logout-section">
+
+                    <button
+                        type="button"
+                        class="logout-button"
+                        id="logoutButton"
+                    >
+
+                        <span
+                            class="logout-spinner"
+                            id="logoutSpinner"
+                            hidden
+  aria-hidden="true"
+                        ></span>
+
+                        <span>
+                            Log Out
+                        </span>
+
+                    </button>
+
+                    <p
+                        class="profile-message"
+                        id="profileMessage"
+                        aria-live="polite"
+                    ></p>
+
+                </section>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =========================================
+         MOBILE BOTTOM NAVIGATION
+    ========================================== -->
+
+    <nav
+        class="mobile-bottom-navigation"
+        aria-label="Mobile navigation"
+    >
+
+
+        <!-- Home -->
+
+        <a
+            href="../index.html"
+            class="mobile-nav-item"
+        >
+
+            <span
+                class="mobile-nav-icon"
+                aria-hidden="true"
+            >
+                ⌂
+            </span>
+
+            <span class="mobile-nav-label">
+                Home
+            </span>
+
+        </a>
+
+
+        <!-- Shop -->
+
+        <a
+            href="./shop.html"
+            class="mobile-nav-item"
+        >
+
+            <span
+                class="mobile-nav-icon"
+                aria-hidden="true"
+            >
+                ♧
+            </span>
+
+            <span class="mobile-nav-label">
+                Shop
+            </span>
+
+        </a>
+
+
+        <!-- Wishlist -->
+
+        <a
+            href="./wishlist.html"
+            class="mobile-nav-item"
+        >
+
+            <span
+                class="mobile-nav-icon"
+                aria-hidden="true"
+            >
+                ♡
+            </span>
+
+            <span
+                class="mobile-wishlist-count"
+                id="mobileWishlistCount"
+            >
+                0
+            </span>
+
+            <span class="mobile-nav-label">
+                Wishlist
+            </span>
+
+        </a>
+
+
+        <!-- Cart -->
+
+        <a
+            href="./cart.html"
+            class="mobile-nav-item mobile-cart-item"
+        >
+
+            <span
+                class="mobile-nav-icon"
+                aria-hidden="true"
+            >
+                🛒
+            </span>
+
+            <span
+                class="mobile-cart-count"
+                id="mobileCartCount" data-cart-count
+            >
+                0
+            </span>
+
+            <span class="mobile-nav-label">
+                Cart
+            </span>
+
+        </a>
+
+
+        <!-- Account -->
+
+        <a
+            href="./profile.html"
+            class="mobile-nav-item active"
+            aria-current="page"
+        >
+
+            <span
+                class="mobile-nav-icon"
+                aria-hidden="true"
+            >
+                ♙
+            </span>
+
+            <span class="mobile-nav-label">
+                Account
+            </span>
+
+        </a>
+
+    </nav>
+
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+
+    <script src="../js/profile.js"></script>
+
+</body>
+
+</html>
