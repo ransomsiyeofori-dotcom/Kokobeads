@@ -4,7 +4,7 @@
 
 const API_BASE_URL =
     window.KOKOBEEDS_API_URL ||
-    "http://localhost:5000/api";
+    "https://kokobeads-api.onrender.com/api";
 
 const WISHLIST_STORAGE_KEY =
     "kokobeeds_wishlist";

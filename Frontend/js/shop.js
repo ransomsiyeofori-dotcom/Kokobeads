@@ -1755,7 +1755,7 @@ function initializePagination() {
 
 const API_BASE_URL =
     window.KOKOBEEDS_API_URL ||
-    "http://localhost:5000/api";
+    "https://kokobeads-api.onrender.com/api";
 
 
 const API_REQUEST_TIMEOUT =
