@@ -2202,3 +2202,21 @@
 
 }
 
+
+/* =========================================================
+   KOKOBEADS — SHOP MOBILE HORIZONTAL SPACING
+   ========================================================= */
+
+@media (max-width: 900px) {
+    .shop-section {
+        padding-left: var(--container-padding);
+        padding-right: var(--container-padding);
+        box-sizing: border-box;
+    }
+
+    .shop-section .products-grid {
+        width: 100%;
+        gap: 18px;
+    }
+}
+
