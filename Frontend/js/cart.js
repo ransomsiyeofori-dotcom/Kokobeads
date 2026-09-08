@@ -1,5 +1,5 @@
 /* =========================================
-   KOKOBEEDS — CART PAGE
+   KOKOBEADS — CART PAGE
 ========================================= */
 
 const CART_STORAGE_KEY =
@@ -482,7 +482,7 @@ function createCartItem(
                 src="${escapeHtml(image)}"
                 alt="${escapeHtml(
                     product.name ||
-                    "Kokobeeds product"
+                    "Kokobeads product"
                 )}"
                 loading="lazy"
             >

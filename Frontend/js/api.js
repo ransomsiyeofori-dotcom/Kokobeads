@@ -1,8 +1,8 @@
 /* =========================================
-   KOKOBEEDS — SHARED API CONFIGURATION
+   KOKOBEADS — SHARED API CONFIGURATION
 ========================================= */
 
-const KOKOBEEDS_API_BASE_URL =
+const KOKOBEADS_API_BASE_URL =
     window.KOKOBEEDS_API_URL ||
     "https://kokobeads-api.onrender.com/api";
 
@@ -38,7 +38,7 @@ async function apiRequest(
 
         const response =
             await fetch(
-                `${KOKOBEEDS_API_BASE_URL}${endpoint}`,
+                `${KOKOBEADS_API_BASE_URL}${endpoint}`,
                 {
                     ...options,
 

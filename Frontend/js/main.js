@@ -1,6 +1,6 @@
 
 /* =========================================
-   KOKOBEEDS — MAIN JAVASCRIPT
+   KOKOBEADS — MAIN JAVASCRIPT
    Homepage + Mobile Navigation
 ========================================= */
 
@@ -863,7 +863,7 @@ function initializeSearchButton() {
                 <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search products">
 
                     <div class="search-panel-header">
-                        <span class="search-panel-title">Search Kokobeeds</span>
+                        <span class="search-panel-title">Search Kokobeads</span>
 
                         <button
                             type="button"

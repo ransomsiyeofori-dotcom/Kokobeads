@@ -1,5 +1,5 @@
 /* =========================================
-   KOKOBEEDS — CHECKOUT
+   KOKOBEADS — CHECKOUT
 ========================================= */
 
 const CHECKOUT_CART_KEY = "kokobeeds_cart";
@@ -366,7 +366,7 @@ function createCheckoutItem(
                 src="${escapeCheckoutHtml(image)}"
                 alt="${escapeCheckoutHtml(
                     product.name ||
-                    "Kokobeeds product"
+                    "Kokobeads product"
                 )}"
                 loading="lazy"
             >
@@ -918,7 +918,7 @@ function showOrderSuccess(
 
 
                 <p>
-                    Your Kokobeeds order has been
+                    Your Kokobeads order has been
                     received successfully.
                 </p>
 
@@ -1013,7 +1013,7 @@ function showEmptyCheckout() {
 
 
                 <p class="checkout-eyebrow">
-                    KOKOBEEDS
+                    KOKOBEADS
                 </p>
 
 

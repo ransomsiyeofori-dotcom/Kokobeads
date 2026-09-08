@@ -99,7 +99,7 @@ function initializeSearch() {
                         <div class="search-panel-header">
 
                             <span class="search-panel-title">
-                                Search Kokobeeds
+                                Search Kokobeads
                             </span>
 
                             <button
@@ -546,7 +546,7 @@ function renderCollections(
                                         `
                                         : `
                                             <div class="collection-card-placeholder">
-                                                Kokobeeds
+                                                Kokobeads
                                             </div>
                                         `
                                 }
@@ -662,7 +662,7 @@ function createProductCard(product) {
 
     const name =
         product.name ||
-        "Kokobeeds Piece";
+        "Kokobeads Piece";
 
 
     const price =
@@ -709,7 +709,7 @@ function createProductCard(product) {
                         `
                         : `
                             <div class="collection-product-placeholder">
-                                Kokobeeds
+                                Kokobeads
                             </div>
                         `
                 }

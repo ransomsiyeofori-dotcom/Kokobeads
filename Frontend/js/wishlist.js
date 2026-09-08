@@ -1,5 +1,5 @@
 /* =========================================================
-   KOKOBEEDS — WISHLIST PAGE
+   KOKOBEADS — WISHLIST PAGE
 ========================================================= */
 
 const API_BASE_URL =
@@ -156,7 +156,7 @@ async function loadWishlist() {
 
                 <p>
                     We couldn't connect to the store right now.
-                    Please check that the Kokobeeds server is running
+                    Please check that the Kokobeads server is running
                     and try again.
                 </p>
 
@@ -721,7 +721,7 @@ function initializeWishlistSearch() {
                     <div class="search-panel-header">
 
                         <span class="search-panel-title">
-                            Search Kokobeeds
+                            Search Kokobeads
                         </span>
 
                         <button

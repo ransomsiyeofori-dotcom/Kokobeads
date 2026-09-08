@@ -2021,7 +2021,7 @@ function escapeHTML(value) {
 }
 
 /* =========================================
-   KOKOBEEDS PRODUCT ACTIONS
+   KOKOBEADS PRODUCT ACTIONS
 ========================================= */
 
 

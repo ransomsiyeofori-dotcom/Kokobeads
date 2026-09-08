@@ -1,5 +1,5 @@
 // =========================================
-// KOKOBEEDS AUTHENTICATION
+// KOKOBEADS AUTHENTICATION
 // =========================================
 
 const API_BASE_URL =
@@ -90,7 +90,7 @@ async function testAuthentication() {
     const user = await getCurrentUser();
 
     console.log(
-        "Current Kokobeeds user:",
+        "Current Kokobeads user:",
         user
     );
 

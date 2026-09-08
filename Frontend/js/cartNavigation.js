@@ -1,5 +1,5 @@
 /* =========================================
-   KOKOBEEDS MOBILE NAVIGATION
+   KOKOBEADS MOBILE NAVIGATION
 ========================================= */
 
 document.addEventListener("DOMContentLoaded", function () {

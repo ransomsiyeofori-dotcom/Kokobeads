@@ -1,7 +1,7 @@
 
-console.log("Kokobeeds shop.js loaded");
+console.log("Kokobeads shop.js loaded");
 /* =========================================
-   KOKOBEEDS — SHOP PAGE
+   KOKOBEADS — SHOP PAGE
    Part 1: Page Initialization & Basic UI
 ========================================= */
 
@@ -594,7 +594,7 @@ function createProductCard(product) {
 
         image.alt =
             product.name ||
-            "Kokobeeds product";
+            "Kokobeads product";
 
     }
 
@@ -1036,7 +1036,7 @@ function handleWishlistClick(event) {
 
 
 /* =========================================
-   KOKOBEEDS — SHOP PAGE
+   KOKOBEADS — SHOP PAGE
    Part 3: Filtering, Sorting & Pagination
 ========================================= */
 
@@ -1739,12 +1739,12 @@ function initializePagination() {
 }
 
 /* =========================================
-   KOKOBEEDS — SHOP PAGE
+   KOKOBEADS — SHOP PAGE
    Part 4: API & Product Loading
 ========================================= */
 
 /* =========================================
-   KOKOBEEDS — SHOP PAGE
+   KOKOBEADS — SHOP PAGE
    Part 7A: Production-Safe API Configuration
 ========================================= */
 
@@ -2277,7 +2277,7 @@ function renderProductsError() {
 }
 
 /* =========================================
-   KOKOBEEDS — SHOP PAGE
+   KOKOBEADS — SHOP PAGE
    Part 5: Cart
 ========================================= */
 
@@ -2672,7 +2672,7 @@ function initializeCart() {
 }
 
 /* =========================================
-   KOKOBEEDS — SHOP PAGE
+   KOKOBEADS — SHOP PAGE
    Part 6: Wishlist
 ========================================= */
 
@@ -3128,7 +3128,7 @@ function initializeSearchButton() {
                     <div class="search-panel-header">
 
                         <span class="search-panel-title">
-                            Search Kokobeeds
+                            Search Kokobeads
                         </span>
 
                         <button

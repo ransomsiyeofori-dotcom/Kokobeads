@@ -1,5 +1,5 @@
 // =========================================
-// KOKOBEEDS REGISTRATION
+// KOKOBEADS REGISTRATION
 // =========================================
 
 const API_BASE_URL =
@@ -362,13 +362,13 @@ async function handleRegistration(event) {
     } catch (error) {
 
         console.error(
-            "Kokobeeds registration error:",
+            "Kokobeads registration error:",
             error
         );
 
 
         showMessage(
-            "Unable to connect to Kokobeeds. Please check that the server is running and try again."
+            "Unable to connect to Kokobeads. Please check that the server is running and try again."
         );
 
 
@@ -397,7 +397,7 @@ if (registerForm) {
 } else {
 
     console.error(
-        "Kokobeeds: #registerForm was not found."
+        "Kokobeads: #registerForm was not found."
     );
 
 }

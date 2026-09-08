@@ -1,5 +1,5 @@
 // =========================================
-// KOKOBEEDS PROFILE
+// KOKOBEADS PROFILE
 // =========================================
 
 const API_BASE_URL =
@@ -107,7 +107,7 @@ function renderUserProfile(user) {
 
     const name =
         user.name ||
-        "Kokobeeds Customer";
+        "Kokobeads Customer";
 
     const email =
         user.email ||
