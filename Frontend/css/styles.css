@@ -6617,51 +6617,98 @@ body.search-open {
 }
 
 
+
 /* =========================================================
-   KOKOBEADS — COLLECTION FOOTER LINKS
+   KOKOBEADS — FOOTER
    ========================================================= */
 
-.collections-page + .site-footer .footer-links,
-.site-footer .footer-links {
+.site-footer {
+    width: 100%;
+    background: #0b0b0b;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-container {
+    width: 100%;
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 60px var(--container-padding);
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.footer-brand {
+    max-width: 360px;
+}
+
+.footer-logo {
+    display: inline-block;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    margin-bottom: 14px;
+}
+
+.footer-brand p {
+    margin: 0;
+    color: #888888;
+    font-size: 0.9rem;
+    line-height: 1.7;
+}
+
+.footer-links {
     display: flex;
     align-items: center;
-    gap: 28px;
+    justify-content: flex-end;
+    gap: 32px;
     flex-wrap: wrap;
 }
 
-.collections-page + .site-footer .footer-links a,
-.site-footer .footer-links a {
-    display: inline-flex;
-    align-items: center;
-    color: #b8b8b8;
+.footer-links a {
+    display: inline-block;
+    color: #bdbdbd;
     text-decoration: none;
     font-size: 0.9rem;
     font-weight: 500;
-    letter-spacing: 0.02em;
-    transition:
-        color 0.25s ease,
-        transform 0.25s ease;
+    white-space: nowrap;
+    transition: color 0.25s ease, transform 0.25s ease;
 }
 
-.collections-page + .site-footer .footer-links a:hover,
-.site-footer .footer-links a:hover {
+.footer-links a:hover {
     color: #ffffff;
     transform: translateY(-2px);
 }
 
 @media (max-width: 768px) {
-    .collections-page + .site-footer .footer-links,
-    .site-footer .footer-links {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 14px 24px;
-        width: 100%;
+
+    .footer-container {
+        padding: 45px var(--container-padding);
+        flex-direction: column;
+        gap: 30px;
     }
 
-    .collections-page + .site-footer .footer-links a,
-    .site-footer .footer-links a {
-        font-size: 0.88rem;
-        padding: 6px 0;
+    .footer-brand {
+        max-width: 100%;
     }
+
+    .footer-links {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px 25px;
+        justify-content: initial;
+    }
+
+    .footer-links a {
+        font-size: 0.88rem;
+        padding: 4px 0;
+    }
+
 }
 
