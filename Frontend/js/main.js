@@ -565,7 +565,7 @@ function handleHomepageAddToCart(
 ========================================= */
 
 const HOMEPAGE_CART_STORAGE_KEY =
-    "kokobeeds_cart";
+    "kokobeads_cart";
 
 
 function getHomepageCart() {
@@ -963,7 +963,7 @@ function updateHomepageWishlistBadge() {
 
         const stored =
             localStorage.getItem(
-                "kokobeeds_wishlist"
+                "kokobeads_wishlist"
             );
 
         if (stored) {
@@ -1032,7 +1032,7 @@ function getHomepageWishlist() {
     try {
 
         const stored =
-            localStorage.getItem("kokobeeds_wishlist");
+            localStorage.getItem("kokobeads_wishlist");
 
         if (!stored) {
             return [];
@@ -1064,7 +1064,7 @@ function saveHomepageWishlist(wishlist) {
     try {
 
         localStorage.setItem(
-            "kokobeeds_wishlist",
+            "kokobeads_wishlist",
             JSON.stringify(wishlist)
         );
 

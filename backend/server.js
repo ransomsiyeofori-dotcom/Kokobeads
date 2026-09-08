@@ -77,7 +77,7 @@ app.get(
 
         res.json({
             success: true,
-            message: "Kokobeeds API is running"
+            message: "Kokobeads API is running"
         });
 
     }
@@ -134,7 +134,7 @@ app.listen(
     function () {
 
         console.log(
-            `Kokobeeds API running on port ${PORT}`
+            `Kokobeads API running on port ${PORT}`
         );
 
     }

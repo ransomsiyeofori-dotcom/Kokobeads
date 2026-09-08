@@ -2,7 +2,7 @@
    KOKOBEADS — CHECKOUT
 ========================================= */
 
-const CHECKOUT_CART_KEY = "kokobeeds_cart";
+const CHECKOUT_CART_KEY = "kokobeads_cart";
 
 
 /* =========================================

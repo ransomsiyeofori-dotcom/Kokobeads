@@ -10,7 +10,7 @@ function setAuthCookie(res, token) {
 
 
     res.cookie(
-        "kokobeeds_access_token",
+        "kokobeads_access_token",
         token,
         {
             httpOnly: true,
@@ -317,7 +317,7 @@ setAuthCookie(
 function logoutUser(req, res) {
 
     res.clearCookie(
-        "kokobeeds_access_token",
+        "kokobeads_access_token",
         {
             httpOnly: true,
 

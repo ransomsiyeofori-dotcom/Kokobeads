@@ -1,5 +1,5 @@
 const API_BASE_URL =
-    window.KOKOBEEDS_API_URL ||
+    window.KOKOBEADS_API_URL ||
     "https://kokobeads-api.onrender.com/api";
 
 

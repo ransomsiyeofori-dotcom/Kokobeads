@@ -1754,7 +1754,7 @@ function initializePagination() {
 ========================================= */
 
 const API_BASE_URL =
-    window.KOKOBEEDS_API_URL ||
+    window.KOKOBEADS_API_URL ||
     "https://kokobeads-api.onrender.com/api";
 
 
@@ -2287,7 +2287,7 @@ function renderProductsError() {
 ========================================= */
 
 const CART_STORAGE_KEY =
-    "kokobeeds_cart";
+    "kokobeads_cart";
 
 
 /* =========================================
@@ -2682,7 +2682,7 @@ function initializeCart() {
 ========================================= */
 
 const WISHLIST_STORAGE_KEY =
-    "kokobeeds_wishlist";
+    "kokobeads_wishlist";
 
 
 /* =========================================

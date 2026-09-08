@@ -1,4 +1,4 @@
-const CART_STORAGE_KEY = "kokobeeds_cart";
+const CART_STORAGE_KEY = "kokobeads_cart";
 
 function updateGlobalCartCount() {
     let cart = [];

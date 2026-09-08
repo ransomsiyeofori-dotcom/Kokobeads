@@ -3,11 +3,11 @@
 ========================================================= */
 
 const API_BASE_URL =
-    window.KOKOBEEDS_API_URL ||
+    window.KOKOBEADS_API_URL ||
     "https://kokobeads-api.onrender.com/api";
 
 const WISHLIST_STORAGE_KEY =
-    "kokobeeds_wishlist";
+    "kokobeads_wishlist";
 
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -386,7 +386,7 @@ function addProductToCart(
 
         const stored =
             localStorage.getItem(
-                "kokobeeds_cart"
+                "kokobeads_cart"
             );
 
         if (stored) {
@@ -457,7 +457,7 @@ function addProductToCart(
 
 
     localStorage.setItem(
-        "kokobeeds_cart",
+        "kokobeads_cart",
         JSON.stringify(cart)
     );
 

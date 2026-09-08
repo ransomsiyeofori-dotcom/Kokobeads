@@ -10,7 +10,7 @@ function authenticateUser(req, res, next) {
     try {
 
         const token =
-            req.cookies.kokobeeds_access_token;
+            req.cookies.kokobeads_access_token;
 
 
         // No cookie
