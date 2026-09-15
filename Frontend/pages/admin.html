@@ -515,26 +515,30 @@
                 <!-- Image -->
 
                 <div class="admin-form-group">
-
-                    <label for="productImage">
-                        Product Image URL
+                    <label for="productImageFile">
+                        Product Image
                     </label>
 
                     <input
-                        type="url"
-                        id="productImage"
+                        type="file"
+                        id="productImageFile"
                         name="image"
-                        placeholder="https://example.com/image.jpg"
+                        accept="image/*"
                     >
 
-                    <small>
-                        Image uploading will be added later.
-                    </small>
+                    <div
+                        id="productImagePreview"
+                        style="display: none; margin-top: 12px;"
+                    >
+                        <img
+                            id="productImagePreviewImg"
+                            src=""
+                            alt="Product image preview"
+                            style="max-width: 220px; max-height: 180px; object-fit: cover; border-radius: 8px;"
+                        >
+                    </div>
 
                 </div>
-
-
-                <!-- Featured -->
 
                 <label class="admin-checkbox">
 

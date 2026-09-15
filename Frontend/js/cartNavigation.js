@@ -1,5 +1,6 @@
 /* =========================================
    KOKOBEADS MOBILE NAVIGATION
+console.log("KOKOBEADS: cartNavigation.js loaded");
 ========================================= */
 
 document.addEventListener("DOMContentLoaded", function () {

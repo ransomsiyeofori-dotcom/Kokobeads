@@ -27,6 +27,33 @@ async function initializeCollectionsAdmin() {
     if (form) form.addEventListener("submit", saveCollection);
     if (deleteButton) deleteButton.addEventListener("click", deleteCurrentCollection);
 
+    const list = document.getElementById("adminCollectionsList");
+
+    if (list) {
+        list.addEventListener("click", async function (event) {
+            const editButton =
+                event.target.closest(".admin-edit-collection-button");
+
+            const deleteCardButton =
+                event.target.closest(".admin-delete-collection-button");
+
+            if (editButton) {
+                const collectionId =
+                    editButton.dataset.collectionId;
+
+                openCollectionModal(collectionId);
+                return;
+            }
+
+            if (deleteCardButton) {
+                const collectionId =
+                    deleteCardButton.dataset.collectionId;
+
+                await deleteCollection(collectionId);
+            }
+        });
+    }
+
     await loadAdminCollections();
 }
 
@@ -119,16 +146,16 @@ function renderAdminCollections() {
                     <div class="admin-collection-actions">
                         <button
                             type="button"
-                            class="btn btn-secondary"
-                            onclick="openCollectionModal('${escapeJsString(collection._id)}')"
+                            class="btn btn-secondary admin-edit-collection-button"
+                            data-collection-id="${escapeCollectionHtml(collection._id)}"
                         >
                             Edit
                         </button>
 
                         <button
                             type="button"
-                            class="btn btn-danger"
-                            onclick="deleteCollection('${escapeJsString(collection._id)}')"
+                            class="btn btn-danger admin-delete-collection-button"
+                            data-collection-id="${escapeCollectionHtml(collection._id)}"
                         >
                             Delete
                         </button>

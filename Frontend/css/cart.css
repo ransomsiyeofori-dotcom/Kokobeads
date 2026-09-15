@@ -697,3 +697,29 @@ body {
 [hidden] {
     display: none !important;
 }
+
+/* =========================================
+   CART PAGE — MOBILE NAVIGATION FIX
+========================================= */
+
+@media (max-width: 768px) {
+
+    .site-header {
+        position: relative;
+        z-index: 1000;
+    }
+
+    .mobile-navigation {
+        position: relative;
+        z-index: 999;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .mobile-navigation.open {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+
+}

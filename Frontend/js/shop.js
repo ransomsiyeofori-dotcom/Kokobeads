@@ -31,6 +31,10 @@ function initializeShop() {
     const urlSearch = new URLSearchParams(window.location.search).get("search");
     if (urlSearch) {
         shopState.searchQuery = urlSearch.trim();
+    const urlCollection = new URLSearchParams(window.location.search).get("collection");
+    if (urlCollection) {
+        shopState.currentCollection = urlCollection.trim().toLowerCase();
+    }
     }
 
 
@@ -451,6 +455,7 @@ const shopState = {
     filteredProducts: [],
 
     currentCategory: "all",
+    currentCollection: "all",
 
     searchQuery: "",
 
@@ -1074,6 +1079,18 @@ function applyShopFilters() {
             );
 
     }
+    /* ==============================
+       COLLECTION FILTER
+    ============================== */
+
+    if (shopState.currentCollection !== "all") {
+        products = products.filter(function (product) {
+            return String(product.collection || "").toLowerCase() ===
+                shopState.currentCollection;
+        });
+    }
+
+
     if (shopState.searchQuery) {
         const query = shopState.searchQuery.toLowerCase();
         products = products.filter(function (product) {

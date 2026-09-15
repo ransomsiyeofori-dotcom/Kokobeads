@@ -214,6 +214,8 @@ async function getCurrentUser() {
 async function loadProductCollections() {
     const select = document.getElementById("productCollection");
     if (!select) return;
+    console.log("loadProductCollections started", select);
+    select.innerHTML = "<option>Loading collections...</option>";
 
     try {
         const response = await fetch(API_BASE_URL + "/collections");
@@ -1061,28 +1063,34 @@ function openProductModal() {
 // =========================================
 
 function closeProductModal() {
-
-    const modal =
-        document.getElementById(
-            "productModal"
-        );
-
+    const modal = document.getElementById("productModal");
 
     if (!modal) {
-
         return;
-
     }
 
-
     modal.hidden = true;
+    document.body.style.overflow = "";
 
-    document.body.style.overflow =
-        "";
+    delete modal.dataset.editingProductId;
 
+    uploadedProductImage = null;
+    productImageUploading = false;
+
+    const title = document.getElementById("productModalTitle");
+
+    if (title) {
+        title.textContent = "Add Product";
+    }
+
+    const saveButton = document.getElementById("saveProductButton");
+
+    if (saveButton) {
+        saveButton.textContent = "Save Product";
+        saveButton.disabled = false;
+    }
 
     clearProductFormMessage();
-
 }
 
 
@@ -1608,7 +1616,9 @@ async function handleProductSubmit(event) {
 
 
         showProductFormMessage(
-            "Product created successfully.",
+            isEditing
+                ? "Product updated successfully."
+                : "Product created successfully.",
             "success"
         );
 
@@ -2060,139 +2070,103 @@ function escapeHTML(value) {
 ========================================= */
 
 function openEditProductModal(product) {
-
-    const modal =
-        document.getElementById("productModal");
+    const modal = document.getElementById("productModal");
 
     if (!modal) {
         return;
     }
 
+    modal.dataset.editingProductId = String(product._id || "");
 
-    document.getElementById("productName").value =
-        product.name || "";
+    const nameInput = document.getElementById("productName");
+    const descriptionInput = document.getElementById("productDescription");
+    const priceInput = document.getElementById("productPrice");
+    const originalPriceInput = document.getElementById("productOriginalPrice");
+    const categoryInput = document.getElementById("productCategory");
+    const collectionInput = document.getElementById("productCollection");
+    const stockInput = document.getElementById("productStock");
+    const badgeInput = document.getElementById("productBadge");
+    const imageInput = document.getElementById("productImage");
+    const featuredInput = document.getElementById("productFeatured");
 
-    document.getElementById("productDescription").value =
-        product.description || "";
+    if (nameInput) nameInput.value = product.name || "";
+    if (descriptionInput) descriptionInput.value = product.description || "";
+    if (priceInput) priceInput.value = product.price ?? "";
+    if (originalPriceInput) originalPriceInput.value = product.originalPrice ?? "";
 
-    document.getElementById("productPrice").value =
-        product.price ?? "";
+    if (categoryInput) {
+        categoryInput.value = product.category || "";
+    }
 
-    document.getElementById("productOriginalPrice").value =
-        product.originalPrice ?? "";
+    if (collectionInput) {
+        collectionInput.value = product.collection || "";
+    }
 
-    document.getElementById("productCategory").value =
-        document.getElementById("productCollection").value =
-        product.collection || "";
-
-        product.category || "";
-
-    document.getElementById("productStock").value =
-        product.stock ?? "";
-
-    document.getElementById("productBadge").value =
-        product.badge || "";
+    if (stockInput) stockInput.value = product.stock ?? "";
+    if (badgeInput) badgeInput.value = product.badge || "";
+    if (featuredInput) featuredInput.checked = Boolean(product.isFeatured);
 
     const existingImage =
-        Array.isArray(product.images) &&
-        product.images.length > 0
+        Array.isArray(product.images) && product.images.length > 0
             ? product.images[0]
             : null;
 
-    uploadedProductImage =
-        existingImage &&
-        typeof existingImage === "object"
-            ? {
-                url: existingImage.url || "",
-                publicId:
-                    existingImage.publicId || null
-            }
-            : existingImage
-                ? {
-                    url: existingImage,
-                    publicId: null
-                }
-                : null;
+    let existingImageUrl = "";
+    let existingImagePublicId = null;
 
-    document.getElementById("productImage").value =
-        uploadedProductImage?.url || "";
+    if (existingImage && typeof existingImage === "object") {
+        existingImageUrl = existingImage.url || "";
+        existingImagePublicId = existingImage.publicId || null;
+    } else if (typeof existingImage === "string") {
+        existingImageUrl = existingImage;
+    }
 
-    document.getElementById("productFeatured").checked =
-        Boolean(product.isFeatured);
+    uploadedProductImage = existingImageUrl
+        ? {
+            url: existingImageUrl,
+            publicId: existingImagePublicId
+        }
+        : null;
 
-    const preview =
-        document.getElementById(
-            "productImagePreview"
-        );
+    if (imageInput) {
+        imageInput.value = existingImageUrl;
+    }
 
-    const previewImg =
-        document.getElementById(
-            "productImagePreviewImg"
-        );
+    const preview = document.getElementById("productImagePreview");
+    const previewImg = document.getElementById("productImagePreviewImg");
 
     if (preview && previewImg) {
-
-        if (existingImage) {
-
-            previewImg.src =
-                existingImage;
-
-            previewImg.alt =
-                product.name || "Product image";
-
-            preview.style.display =
-                "block";
-
+        if (existingImageUrl) {
+            previewImg.src = existingImageUrl;
+            previewImg.alt = product.name || "Product image";
+            preview.style.display = "block";
         } else {
-
-            previewImg.src = "";
-
-            preview.style.display =
-                "none";
+            previewImg.removeAttribute("src");
+            preview.style.display = "none";
         }
     }
 
-
-    modal.dataset.editingProductId =
-        String(product._id);
-
-
-    const title =
-        document.getElementById(
-            "productModalTitle"
-        );
+    const title = document.getElementById("productModalTitle");
 
     if (title) {
-
-        title.textContent =
-            "Edit Product";
-
+        title.textContent = "Edit Product";
     }
 
-
-    const saveButton =
-        document.getElementById(
-            "saveProductButton"
-        );
+    const saveButton = document.getElementById("saveProductButton");
 
     if (saveButton) {
-
-        saveButton.textContent =
-            "Save Changes";
-
+        saveButton.textContent = "Save Changes";
     }
-
 
     clearProductFormMessage();
 
-
     modal.hidden = false;
+    document.body.style.overflow = "hidden";
 
-    document.body.style.overflow =
-        "hidden";
-
+    if (nameInput) {
+        setTimeout(() => nameInput.focus(), 50);
+    }
 }
-
 
 /* =========================================
    DELETE PRODUCT

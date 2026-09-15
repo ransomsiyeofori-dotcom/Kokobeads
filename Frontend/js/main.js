@@ -20,9 +20,60 @@ function initializeMain() {
     initializeSearchButton();
 
     initializeHomepageProducts();
+    initializeHomepageCollections();
 
 }
 
+
+async function initializeHomepageCollections() {
+    const collectionsGrid = document.getElementById("collectionsGrid");
+    if (!collectionsGrid) return;
+
+    try {
+        const response = await fetch(
+            (window.KOKOBEADS_API_URL || "https://kokobeads-api.onrender.com/api") + "/collections"
+        );
+
+        if (!response.ok) throw new Error("Unable to load collections.");
+
+        const data = await response.json();
+        const collections = Array.isArray(data) ? data : (data.collections || data.data || []);
+
+        const activeCollections = collections
+            .filter(function (collection) {
+                return collection && collection.isActive !== false;
+            })
+            .sort(function (a, b) {
+                return Number(a.sortOrder || 0) - Number(b.sortOrder || 0);
+            });
+
+        if (!activeCollections.length) return;
+
+        collectionsGrid.innerHTML = activeCollections.map(function (collection) {
+            const image = collection.image && collection.image.url ? collection.image.url : "";
+            const name = collection.name || "Collection";
+            const slug = collection.slug || name.toLowerCase().replace(/\\s+/g, "-");
+
+            return `
+                <a href="./pages/shop.html?collection=${encodeURIComponent(slug)}" class="collection-card">
+                    <div class="collection-card-image-wrap">
+                        ${image ? `<img src="${escapeHomepageHtml(image)}" alt="${escapeHomepageHtml(name)}" class="collection-card-image" loading="lazy">` : `<div class="collection-card-placeholder">Kokobeads</div>`}
+                    </div>
+                    <div class="collection-card-content">
+                        <div>
+                            <h3 class="collection-card-title">${escapeHomepageHtml(name)}</h3>
+                            ${collection.description ? `<p class="collection-card-description">${escapeHomepageHtml(collection.description)}</p>` : ""}
+                        </div>
+                        <span class="collection-card-link">Shop collection <span aria-hidden="true">→</span></span>
+                    </div>
+                </a>
+            `;
+        }).join("");
+
+    } catch (error) {
+        console.error("Failed to load homepage collections:", error);
+    }
+}
 
 /* =========================================
    MOBILE MENU
