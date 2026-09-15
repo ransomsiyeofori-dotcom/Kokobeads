@@ -211,6 +211,29 @@ async function getCurrentUser() {
 
 
 // =========================================
+async function loadProductCollections() {
+    const select = document.getElementById("productCollection");
+    if (!select) return;
+
+    try {
+        const response = await fetch(API_BASE_URL + "/collections");
+        const data = await response.json();
+        const collections = Array.isArray(data.collections) ? data.collections : [];
+
+        select.innerHTML = `<option value="">Select collection</option>` +
+            collections
+                .filter(function (collection) { return collection && collection.isActive !== false; })
+                .sort(function (a, b) { return Number(a.sortOrder || 0) - Number(b.sortOrder || 0); })
+                .map(function (collection) {
+                    return `<option value="${collection.slug}">${collection.name}</option>`;
+                })
+                .join("");
+    } catch (error) {
+        console.error("Failed to load product collections:", error);
+    }
+}
+
+
 // INITIALIZE UI
 
 // =========================================
@@ -227,6 +250,7 @@ function initializeAdminUI() {
     initializeProductModal();
 
     initializeProductForm();
+    loadProductCollections();
     initializeProductActions();
 
 
@@ -576,7 +600,6 @@ function applyProductFilters() {
     const category =
         document.getElementById("adminCategoryFilter")?.value || "all";
 
-
     const stock =
         document.getElementById("adminStockFilter")?.value || "all";
 
@@ -751,11 +774,8 @@ function createProductHTML(product) {
     const price =
         formatPrice(product.price);
 
-
     const stock =
         Number(product.stock);
-
-
     const stockClass =
         stock <= 5
             ? "admin-stock-low"
@@ -1420,6 +1440,11 @@ async function handleProductSubmit(event) {
         )?.value.trim();
 
 
+    const collection =
+        document.getElementById(
+            "productCollection"
+        )?.value.trim();
+
     const stock =
         document.getElementById(
             "productStock"
@@ -1449,6 +1474,7 @@ async function handleProductSubmit(event) {
         !description ||
         price === "" ||
         !category ||
+        !collection ||
         stock === ""
     ) {
 
@@ -1486,6 +1512,8 @@ async function handleProductSubmit(event) {
                     : [],
 
         category,
+
+        collection,
 
         stock: Number(stock),
 
@@ -2054,6 +2082,9 @@ function openEditProductModal(product) {
         product.originalPrice ?? "";
 
     document.getElementById("productCategory").value =
+        document.getElementById("productCollection").value =
+        product.collection || "";
+
         product.category || "";
 
     document.getElementById("productStock").value =
