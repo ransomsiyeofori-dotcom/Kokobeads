@@ -64,6 +64,7 @@ async function createProduct(req, res) {
             originalPrice,
             images,
             category,
+            collection,
             stock,
             badge,
             isFeatured
@@ -75,6 +76,7 @@ async function createProduct(req, res) {
             !description ||
             price === undefined ||
             !category ||
+            !collection ||
             stock === undefined
         ) {
 
@@ -108,6 +110,8 @@ async function createProduct(req, res) {
                 category:
                     category.trim().toLowerCase(),
 
+                collection:
+                    collection.trim().toLowerCase(),
                 stock,
 
                 badge:
@@ -170,6 +174,7 @@ async function updateProduct(req, res) {
             originalPrice,
             images,
             category,
+            collection,
             stock,
             badge,
             isFeatured,
@@ -305,6 +310,25 @@ async function updateProduct(req, res) {
 
             updateData.category =
                 String(category)
+                    .trim()
+                    .toLowerCase();
+
+        }
+
+
+        if (collection !== undefined) {
+
+            if (!String(collection).trim()) {
+
+                return res.status(400).json({
+                    success: false,
+                    message: "Product collection cannot be empty."
+                });
+
+            }
+
+            updateData.collection =
+                String(collection)
                     .trim()
                     .toLowerCase();
 

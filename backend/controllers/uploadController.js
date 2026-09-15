@@ -1,4 +1,3 @@
-
 const cloudinary = require("cloudinary").v2;
 
 
@@ -17,8 +16,24 @@ async function generateUploadSignature(req, res) {
             );
 
 
+        /*
+         * Products keep using:
+         * kokobeads/products
+         *
+         * Collections can use:
+         * kokobeads/collections
+         */
+
+        const type =
+            req.body && req.body.type
+                ? String(req.body.type).toLowerCase()
+                : "products";
+
+
         const folder =
-            "kokobeads/products";
+            type === "collections"
+                ? "kokobeads/collections"
+                : "kokobeads/products";
 
 
         const signature =

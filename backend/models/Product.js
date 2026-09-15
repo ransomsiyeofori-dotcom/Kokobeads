@@ -58,6 +58,14 @@ const productSchema = new mongoose.Schema(
         },
 
 
+        collection: {
+            type: String,
+            required: true,
+            trim: true,
+            lowercase: true
+        },
+
+
         stock: {
             type: Number,
             required: true,

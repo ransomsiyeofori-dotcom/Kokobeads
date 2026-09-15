@@ -8,6 +8,7 @@ const authRoutes = require("./routes/authRoutes");
 const orderRoutes = require("./routes/orderRoutes");
 const uploadRoutes = require("./routes/uploadRoutes");
 const productRoutes = require("./routes/productRoutes");
+const collectionRoutes = require("./routes/collectionRoutes");
 
 dotenv.config();
 
@@ -64,7 +65,10 @@ app.use(
     productRoutes
 );
 
-
+app.use(
+    "/api/collections",
+    collectionRoutes
+);
 
 
 /* =========================================
