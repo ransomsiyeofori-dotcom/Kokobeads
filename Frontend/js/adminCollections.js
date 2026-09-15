@@ -38,7 +38,7 @@ async function loadAdminCollections() {
     }
 
     try {
-        const response = await fetch(COLLECTIONS_API_URL);
+        const response = await fetch(COLLECTIONS_API_URL, { credentials: "include" });
         const data = await response.json();
 
         if (!response.ok || !data.success) {
