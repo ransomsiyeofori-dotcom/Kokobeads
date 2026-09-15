@@ -596,6 +596,96 @@
 
 
         <!-- =========================================
+             ORDER MANAGEMENT
+        ========================================== -->
+
+        <section class="admin-section">
+
+            <div class="admin-section-header">
+
+                <div>
+                    <h2>Order Management</h2>
+                    <p>
+                        View and manage customer orders,
+                        payments and order status.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- Order Search & Filters -->
+
+            <div class="admin-order-filters">
+
+                <div class="admin-search-box">
+
+                    <span aria-hidden="true">⌕</span>
+
+                    <input
+                        type="search"
+                        id="adminOrderSearch"
+                        placeholder="Search orders..."
+                        autocomplete="off"
+                    >
+
+                </div>
+
+
+                <select
+                    id="adminOrderStatusFilter"
+                    class="admin-filter-select"
+                >
+                    <option value="all">All Order Status</option>
+                    <option value="pending">Pending</option>
+                    <option value="confirmed">Confirmed</option>
+                    <option value="processing">Processing</option>
+                    <option value="shipped">Shipped</option>
+                    <option value="delivered">Delivered</option>
+                    <option value="cancelled">Cancelled</option>
+                </select>
+
+
+                <select
+                    id="adminPaymentStatusFilter"
+                    class="admin-filter-select"
+                >
+                    <option value="all">All Payment Status</option>
+                    <option value="pending">Payment Pending</option>
+                    <option value="paid">Paid</option>
+                    <option value="failed">Failed</option>
+                    <option value="refunded">Refunded</option>
+                </select>
+
+
+                <button
+                    type="button"
+                    id="clearOrderFilters"
+                    class="admin-clear-filters"
+                >
+                    Clear
+                </button>
+
+            </div>
+
+
+            <!-- Order List -->
+
+            <div
+                id="adminOrdersList"
+                class="admin-orders-list"
+            >
+
+                <div class="admin-loading">
+                    Loading orders...
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
              COLLECTION MANAGEMENT
         ========================================== -->
 
@@ -820,6 +910,7 @@
 
     <script src="../js/admin.js"></script>
     <script src="../js/adminCollections.js"></script>
+    <script src="../js/adminOrders.js"></script>
 
 </body>
 

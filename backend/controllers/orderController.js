@@ -484,3 +484,280 @@ module.exports = {
     getCustomerOrders
 
 };
+
+/* =========================================
+   ADMIN — GET ALL ORDERS
+========================================= */
+
+async function getAllOrders(req, res) {
+
+    try {
+
+        const orders =
+            await Order.find({})
+                .populate(
+                    "customer",
+                    "name email phone"
+                )
+                .populate(
+                    "items.product",
+                    "name images"
+                )
+                .sort({
+                    createdAt: -1
+                });
+
+        return res.status(200).json({
+
+            success: true,
+
+            orders
+
+        });
+
+    } catch (error) {
+
+        console.error(
+            "Get all orders error:",
+            error
+        );
+
+        return res.status(500).json({
+
+            success: false,
+
+            message:
+                "Unable to retrieve orders."
+
+        });
+
+    }
+
+}
+
+
+/* =========================================
+   ADMIN — GET SINGLE ORDER
+========================================= */
+
+async function getOrderById(req, res) {
+
+    try {
+
+        const order =
+            await Order.findById(
+                req.params.id
+            )
+            .populate(
+                "customer",
+                "name email phone"
+            )
+            .populate(
+                "items.product",
+                "name images"
+            );
+
+        if (!order) {
+
+            return res.status(404).json({
+
+                success: false,
+
+                message:
+                    "Order not found."
+
+            });
+
+        }
+
+        return res.status(200).json({
+
+            success: true,
+
+            order
+
+        });
+
+    } catch (error) {
+
+        console.error(
+            "Get order error:",
+            error
+        );
+
+        return res.status(500).json({
+
+            success: false,
+
+            message:
+                "Unable to retrieve order."
+
+        });
+
+    }
+
+}
+
+
+/* =========================================
+   ADMIN — UPDATE ORDER
+========================================= */
+
+async function updateOrder(req, res) {
+
+    try {
+
+        const {
+            status,
+            paymentStatus
+        } = req.body;
+
+        const allowedStatuses = [
+            "pending",
+            "confirmed",
+            "processing",
+            "shipped",
+            "delivered",
+            "cancelled"
+        ];
+
+        const allowedPaymentStatuses = [
+            "pending",
+            "paid",
+            "failed",
+            "refunded"
+        ];
+
+        if (
+            status !== undefined &&
+            !allowedStatuses.includes(status)
+        ) {
+
+            return res.status(400).json({
+
+                success: false,
+
+                message:
+                    "Invalid order status."
+
+            });
+
+        }
+
+        if (
+            paymentStatus !== undefined &&
+            !allowedPaymentStatuses.includes(
+                paymentStatus
+            )
+        ) {
+
+            return res.status(400).json({
+
+                success: false,
+
+                message:
+                    "Invalid payment status."
+
+            });
+
+        }
+
+        if (
+            status === undefined &&
+            paymentStatus === undefined
+        ) {
+
+            return res.status(400).json({
+
+                success: false,
+
+                message:
+                    "No order changes provided."
+
+            });
+
+        }
+
+        const update = {};
+
+        if (status !== undefined) {
+            update.status = status;
+        }
+
+        if (paymentStatus !== undefined) {
+            update.paymentStatus =
+                paymentStatus;
+        }
+
+        const order =
+            await Order.findByIdAndUpdate(
+                req.params.id,
+                update,
+                {
+                    new: true,
+                    runValidators: true
+                }
+            )
+            .populate(
+                "customer",
+                "name email phone"
+            )
+            .populate(
+                "items.product",
+                "name images"
+            );
+
+        if (!order) {
+
+            return res.status(404).json({
+
+                success: false,
+
+                message:
+                    "Order not found."
+
+            });
+
+        }
+
+        return res.status(200).json({
+
+            success: true,
+
+            message:
+                "Order updated successfully.",
+
+            order
+
+        });
+
+    } catch (error) {
+
+        console.error(
+            "Update order error:",
+            error
+        );
+
+        return res.status(500).json({
+
+            success: false,
+
+            message:
+                "Unable to update order."
+
+        });
+
+    }
+
+}
+
+
+module.exports.getAllOrders =
+    getAllOrders;
+
+module.exports.getOrderById =
+    getOrderById;
+
+module.exports.updateOrder =
+    updateOrder;
+
