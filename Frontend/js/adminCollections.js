@@ -266,7 +266,6 @@ async function handleCollectionImageUpload(event) {
             `https://api.cloudinary.com/v1_1/${signatureData.cloudName}/image/upload`,
             {
                 method: "POST",
-                credentials: "include",
                 body: formData
             }
         );
