@@ -70,9 +70,9 @@
                     Log Out
                 </button>
 
-            </div>
 
-        </div>
+
+            </div>
 
     </header>
 
@@ -107,7 +107,7 @@
                         Kokobeads store up to date.
                     </p>
 
-                </div>
+        </div>
 
             </section>
 
@@ -206,7 +206,7 @@
                             Products
                         </h2>
 
-                    </div>
+                </div>
 
 
                     <button
@@ -217,7 +217,7 @@
                         + Add Product
                     </button>
 
-                </div>
+                    </div>
 
                 <!-- Message -->
 
@@ -243,7 +243,7 @@
                             autocomplete="off"
                         >
 
-                    </div>
+                </div>
 
 
                     <select
@@ -283,8 +283,7 @@
                         Clear
                     </button>
 
-                </div>
-
+                    </div>
 
                 <!-- Product list -->
 
@@ -294,14 +293,6 @@
                 >
 
                     <div class="admin-loading">
-                        Loading products...
-                    </div>
-
-                </div>
-
-            </section>
-
-        </div>
 
     </main>
 
@@ -353,7 +344,7 @@
                     ×
                 </button>
 
-            </div>
+                </div>
 
 
             <!-- Product Form -->
@@ -381,7 +372,7 @@
                         placeholder="e.g. Gold Beaded Bracelet"
                     >
 
-                </div>
+            </div>
 
 
                 <!-- Description -->
@@ -423,7 +414,7 @@
                             placeholder="5000"
                         >
 
-                    </div>
+                </div>
 
 
                     <div class="admin-form-group">
@@ -443,7 +434,7 @@
 
                     </div>
 
-                </div>
+                    </div>
 
 
                 <!-- Category + Stock -->
@@ -464,8 +455,9 @@
                             placeholder="bracelets"
                         >
 
-                    </div>
+                </div>
 
+                        Collection
 
                     <div class="admin-form-group">
 
@@ -485,7 +477,7 @@
 
                     </div>
 
-                </div>
+                    </div>
 
 
                 <!-- Badge -->
@@ -506,43 +498,24 @@
                 </div>
 
 
-                <!-- Product Image -->
+                <!-- Image -->
 
                 <div class="admin-form-group">
 
-                    <label for="productImageFile">
-                        Product Image
+                    <label for="productImage">
+                        Product Image URL
                     </label>
 
                     <input
-                        type="file"
-                        id="productImageFile"
+                        type="url"
+                        id="productImage"
                         name="image"
-                        accept="image/jpeg,image/png,image/webp"
+                        placeholder="https://example.com/image.jpg"
                     >
 
                     <small>
-                        JPG, PNG or WebP. Maximum size: 5MB.
+                        Image uploading will be added later.
                     </small>
-
-                    <div
-                        id="productImagePreview"
-                        class="admin-image-preview"
-                        style="display:none;"
-                    >
-                        <img
-                            id="productImagePreviewImg"
-                            src=""
-                            alt="Product image preview"
-                        >
-                    </div>
-
-                    <input
-                        type="hidden"
-                        id="productImage"
-                        name="image"
-                        value=""
-                    >
 
                 </div>
 
@@ -598,16 +571,237 @@
 
             </form>
 
+                </div>
+
         </div>
 
-    </div>
 
+
+        <!-- =========================================
+             COLLECTION MANAGEMENT
+        ========================================== -->
+
+        <section class="admin-section">
+
+            <div class="admin-section-header">
+
+                <div>
+                    <h2>Collection Management</h2>
+                    <p>
+                        Manage the images used for your Men, Women,
+                        Purple Beads and other collections.
+                    </p>
+                </div>
+
+                <button
+                    type="button"
+                    id="addCollectionBtn"
+                    class="admin-primary-button"
+                >
+                    + Add Collection
+                </button>
+
+            </div>
+
+            <div
+                id="adminCollectionsList"
+                class="admin-collections-list"
+            >
+                <div class="admin-loading">
+                    Loading collections...
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             COLLECTION MODAL
+        ========================================== -->
+
+        <div
+            id="collectionModal"
+            class="admin-modal"
+            style="display: none;"
+        >
+
+            <div class="admin-modal-content">
+
+                <div class="admin-modal-header">
+
+                    <h2 id="collectionModalTitle">
+                        Add Collection
+                    </h2>
+
+                    <button
+                        type="button"
+                        id="closeCollectionModal"
+                        class="admin-modal-close"
+                        aria-label="Close"
+                    >
+                        &times;
+                    </button>
+
+                </div>
+
+                <form id="collectionForm">
+
+                    <div class="admin-form-group">
+                        <label for="collectionName">
+                            Collection Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="collectionName"
+                            name="name"
+                            maxlength="200"
+                            placeholder="e.g. Men"
+                            required
+                        >
+                    </div>
+
+                    <div class="admin-form-group">
+                        <label for="collectionSlug">
+                            Collection Slug
+                        </label>
+
+                        <input
+                            type="text"
+                            id="collectionSlug"
+                            name="slug"
+                            maxlength="200"
+                            placeholder="e.g. men"
+                            required
+                        >
+
+                        <small>
+                            Example: men, women, purple-beads
+                        </small>
+                    </div>
+
+                    <div class="admin-form-group">
+                        <label for="collectionDescription">
+                            Description
+                        </label>
+
+                        <textarea
+                            id="collectionDescription"
+                            name="description"
+                            rows="4"
+                            placeholder="Describe this collection..."
+                        ></textarea>
+                    </div>
+
+                    <div class="admin-form-group">
+
+                        <label for="collectionImageFile">
+                            Collection Image
+                        </label>
+
+                        <input
+                            type="file"
+                            id="collectionImageFile"
+                            name="image"
+                            accept="image/*"
+                        >
+
+                        <small>
+                            Upload the image that represents this collection.
+                        </small>
+
+                        <div
+                            id="collectionImagePreview"
+                            style="display: none; margin-top: 12px;"
+                        >
+
+                            <img
+                                id="collectionPreviewImg"
+                                src=""
+                                alt="Collection image preview"
+                                style="
+                                    max-width: 220px;
+                                    max-height: 180px;
+                                    object-fit: cover;
+                                    border-radius: 8px;
+                                "
+                            >
+
+                        </div>
+
+                    </div>
+
+                    <div class="admin-form-group">
+
+                        <label for="collectionSortOrder">
+                            Sort Order
+                        </label>
+
+                        <input
+                            type="number"
+                            id="collectionSortOrder"
+                            name="sortOrder"
+                            min="0"
+                            value="0"
+                        >
+
+                    </div>
+
+                    <div class="admin-form-group">
+
+                        <label>
+                            <input
+                                type="checkbox"
+                                id="collectionIsActive"
+                                name="isActive"
+                                checked
+                            >
+
+                            Active collection
+                        </label>
+
+                    </div>
+
+                    <div class="admin-form-actions">
+
+                        <button
+                            type="button"
+                            id="deleteCollectionBtn"
+                            class="admin-danger-button"
+                            style="display: none;"
+                        >
+                            Delete
+                        </button>
+
+                        <button
+                            type="button"
+                            id="cancelCollectionBtn"
+                            class="admin-secondary-button"
+                        >
+                            Cancel
+                        </button>
+
+                        <button
+                            type="submit"
+                            class="admin-primary-button"
+                        >
+                            Save Collection
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
 
     <!-- =========================================
          JAVASCRIPT
     ========================================== -->
 
     <script src="../js/admin.js"></script>
+    <script src="../js/adminCollections.js"></script>
 
 </body>
 
