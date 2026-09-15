@@ -334,12 +334,6 @@ async function saveCollection(event) {
         return;
     }
 
-    const token = localStorage.getItem("token");
-
-    if (!token) {
-        alert("Your admin session has expired. Please log in again.");
-        return;
-    }
 
     const payload = {
         name,
@@ -357,6 +351,7 @@ async function saveCollection(event) {
     try {
         const response = await fetch(url, {
             method: editingCollectionId ? "PUT" : "POST",
+            credentials: "include",
             headers: {
                 "Content-Type": "application/json",
             },
@@ -400,18 +395,13 @@ async function deleteCollection(collectionId) {
         return;
     }
 
-    const token = localStorage.getItem("token");
-
-    if (!token) {
-        alert("Your admin session has expired. Please log in again.");
-        return;
-    }
 
     try {
         const response = await fetch(
             `${COLLECTIONS_API_URL}/${collectionId}`,
             {
                 method: "DELETE",
+                credentials: "include",
                 headers: {
                 }
             }
