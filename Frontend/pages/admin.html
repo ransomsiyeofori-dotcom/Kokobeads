@@ -724,6 +724,67 @@
 
 
         <!-- =========================================
+             ORDER DETAILS MODAL
+        ========================================== -->
+
+        <div
+            id="orderDetailsModal"
+            class="admin-modal"
+            hidden
+        >
+
+            <div
+                class="admin-modal-overlay"
+                id="orderDetailsModalOverlay"
+            ></div>
+
+            <div
+                class="admin-modal-content admin-order-modal-content"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="orderDetailsModalTitle"
+            >
+
+                <div class="admin-modal-header">
+
+                    <div>
+
+                        <p class="admin-eyebrow">
+                            ORDER MANAGEMENT
+                        </p>
+
+                        <h2 id="orderDetailsModalTitle">
+                            Order Details
+                        </h2>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        id="closeOrderDetailsModal"
+                        class="admin-modal-close"
+                        aria-label="Close"
+                    >
+                        ×
+                    </button>
+
+                </div>
+
+                <div
+                    id="orderDetailsContent"
+                    class="admin-order-details-content"
+                >
+                    <div class="admin-loading">
+                        Loading order details...
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================================
              COLLECTION MODAL
         ========================================== -->
 
