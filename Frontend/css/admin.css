@@ -810,7 +810,8 @@
 
 
     .admin-account-link {
-        display: none;
+        display: inline-flex;
+        align-items: center;
     }
 
 
@@ -2316,3 +2317,49 @@ input[type="search"]:focus {
         padding-right: 10px;
     }
 }
+
+/* =========================================
+   ADMIN MOBILE BOTTOM NAVIGATION
+========================================= */
+
+@media (max-width: 768px) {
+
+    .admin-page .mobile-bottom-navigation {
+        display: grid;
+        background: rgba(8, 8, 8, 0.96);
+        border-top: 1px solid var(--admin-border);
+        box-shadow:
+            0 -8px 30px rgba(0, 0, 0, 0.45);
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+    }
+
+    .admin-page .mobile-nav-item {
+        color: var(--admin-muted);
+        font-size: 10px;
+        font-weight: 600;
+    }
+
+    .admin-page .mobile-nav-item:hover,
+    .admin-page .mobile-nav-item.active {
+        color: var(--admin-gold-light);
+    }
+
+    .admin-page .mobile-nav-icon {
+        color: inherit;
+        font-size: 20px;
+    }
+
+    .admin-page .mobile-nav-label {
+        color: inherit;
+    }
+
+    .admin-page .mobile-cart-count,
+    .admin-page .mobile-wishlist-count {
+        background: var(--admin-gold);
+        color: #080808;
+        font-weight: 800;
+    }
+
+}
+
