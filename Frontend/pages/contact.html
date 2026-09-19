@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Contact Kokobeads for questions, orders, and customer support."
+    >
+
+    <title>Contact Us | Kokobeads</title>
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- Main Styles -->
+    <link
+        rel="stylesheet"
+        href="../css/styles.css"
+    >
+
+    <!-- Contact Styles -->
+    <link
+        rel="stylesheet"
+        href="../css/contact.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- ==============================
+     HEADER
+=============================== -->
+
+<header class="site-header">
+
+    <div class="header-container">
+
+
+
+
+        <!-- Logo -->
+
+        <a
+            href="../index.html"
+            class="site-logo"
+            aria-label="Kokobeads home"
+        >
+            Kokobeads
+        </a>
+
+
+        <!-- Desktop Navigation -->
+
+        <nav
+            class="main-navigation"
+            aria-label="Main navigation"
+        >
+
+            <a href="../index.html">
+                Home
+            </a>
+
+            <a href="./shop.html">
+                Shop
+            </a>
+
+            <a href="./collections.html">
+                Collections
+            </a>
+
+            <a href="./about.html">
+                About
+            </a>
+
+            <a
+                href="./contact.html"
+                class="active"
+            >
+                Contact
+            </a>
+
+        </nav>
+
+
+        <!-- Header Actions -->
+
+        <div class="header-actions">
+
+            <a
+                href="./wishlist.html"
+                aria-label="Wishlist"
+            >
+                <i class="fa-regular fa-heart"></i>
+            </a>
+
+            <a
+                href="./profile.html"
+                aria-label="Account"
+            >
+                <i class="fa-regular fa-user"></i>
+            </a>
+
+            <a
+                href="./cart.html"
+                aria-label="Shopping cart"
+            >
+                <i class="fa-solid fa-bag-shopping"></i>
+
+                <span
+                    class="cart-count"
+                    id="cartCount"
+                    data-cart-count
+                >
+                    0
+                </span>
+
+            </a>
+    </div>
+
+</header>
+
+
+
+<!-- ==============================
+     CONTACT PAGE
+=============================== -->
+
+<main class="contact-page">
+
+
+    <!-- Hero -->
+
+    <section class="contact-hero">
+
+        <div class="contact-hero-content">
+
+            <p class="contact-eyebrow">
+                GET IN TOUCH
+            </p>
+
+            <h1>
+                Contact Us
+            </h1>
+
+            <p>
+                Have a question about our beads, an order, or
+                anything else? We'd love to hear from you.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Contact Content -->
+
+    <section class="contact-section">
+
+        <div class="contact-container">
+
+
+            <!-- Contact Information -->
+
+            <div class="contact-info">
+
+                <div class="contact-section-heading">
+
+                    <p class="contact-eyebrow">
+                        WE'RE HERE TO HELP
+                    </p>
+
+                    <h2>
+                        Let's talk
+                    </h2>
+
+                    <p>
+                        Reach out to us and our team will get
+                        back to you as soon as possible.
+                    </p>
+
+                </div>
+
+
+                <div class="contact-info-list">
+
+
+                    <!-- Email -->
+
+                    <div class="contact-info-card">
+
+                        <div class="contact-info-icon">
+                            <i class="fa-regular fa-envelope"></i>
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Email
+                            </h3>
+
+                            <p>
+                                oziwostephanie@gmail.com
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Phone -->
+
+                    <div class="contact-info-card">
+
+                        <div class="contact-info-icon">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Phone
+                            </h3>
+
+                            <p>
+                                09020335967
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Location -->
+
+                    <div class="contact-info-card">
+
+                        <div class="contact-info-icon">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Location
+                            </h3>
+
+                            <p>
+                                Nigeria
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Contact Form -->
+
+            <div class="contact-form-wrapper">
+
+                <form
+                    class="contact-form"
+                    id="contactForm"
+                >
+
+                    <div class="contact-form-heading">
+
+                        <h2>
+                            Send us a message
+                        </h2>
+
+                        <p>
+                            Fill in the form below and we'll
+                            get back to you.
+                        </p>
+
+                    </div>
+
+
+                    <div class="contact-form-row">
+
+
+                        <div class="contact-form-group">
+
+                            <label for="contactName">
+                                Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="contactName"
+                                name="name"
+                                placeholder="Your name"
+                                autocomplete="name"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="contact-form-group">
+
+                            <label for="contactEmail">
+                                Email
+                            </label>
+
+                            <input
+                                type="email"
+                                id="contactEmail"
+                                name="email"
+                                placeholder="you@example.com"
+                                autocomplete="email"
+                                required
+                            >
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="contact-form-group">
+
+                        <label for="contactSubject">
+                            Subject
+                        </label>
+
+                        <input
+                            type="text"
+                            id="contactSubject"
+                            name="subject"
+                            placeholder="How can we help?"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="contact-form-group">
+
+                        <label for="contactMessage">
+                            Message
+                        </label>
+
+                        <textarea
+                            id="contactMessage"
+                            name="message"
+                            rows="7"
+                            placeholder="Write your message..."
+                            required
+                        ></textarea>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="contact-submit-button"
+                    >
+
+                        <span>
+                            Send Message
+                        </span>
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </button>
+
+
+                    <p
+                        class="contact-form-status"
+                        id="contactFormStatus"
+                        role="status"
+                        aria-live="polite"
+                    ></p>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- ==============================
+     FOOTER
+=============================== -->
+
+<footer class="site-footer">
+
+    <div class="footer-container">
+
+
+        <!-- Footer Brand -->
+
+        <div class="footer-brand">
+
+            <a
+                href="../index.html"
+                class="footer-logo"
+            >
+                Kokobeads
+            </a>
+
+            <p class="footer-description">
+                Beautifully handcrafted beads made to
+                complement your style and tell your story.
+            </p>
+
+
+            <div class="footer-socials">
+
+                <a
+                    href="#"
+                    class="social-link"
+                    aria-label="Instagram"
+                >
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a
+                    href="#"
+                    class="social-link"
+                    aria-label="Facebook"
+                >
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+
+                <a
+                    href="#"
+                    class="social-link"
+                    aria-label="TikTok"
+                >
+                    <i class="fa-brands fa-tiktok"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- Shop -->
+
+        <div class="footer-column">
+
+            <h2>
+                Shop
+            </h2>
+
+            <nav aria-label="Shop links">
+
+                <a href="./shop.html">
+                    All Products
+                </a>
+
+                <a href="./collections.html">
+                    Collections
+                </a>
+
+                <a href="./wishlist.html">
+                    Wishlist
+                </a>
+
+                <a href="./cart.html">
+                    Cart
+                </a>
+
+            </nav>
+
+        </div>
+
+
+        <!-- Customer Care -->
+
+        <div class="footer-column">
+
+            <h2>
+                Customer Care
+            </h2>
+
+            <nav aria-label="Customer care links">
+
+                <a href="./contact.html">
+                    Contact Us
+                </a>
+
+                <a href="./shipping.html">
+                    Shipping
+                </a>
+
+                <a href="./returns.html">
+                    Returns &amp; Refunds
+                </a>
+
+                <a href="./faq.html">
+                    FAQs
+                </a>
+
+            </nav>
+
+        </div>
+
+
+        <!-- Account -->
+
+        <div class="footer-column">
+
+            <h2>
+                Account
+            </h2>
+
+            <nav aria-label="Account links">
+
+                <a href="./login.html">
+                    Login
+                </a>
+
+                <a href="./register.html">
+                    Create Account
+                </a>
+
+                <a href="./orders.html">
+                    My Orders
+                </a>
+
+                <a href="./account.html">
+                    My Account
+                </a>
+
+            </nav>
+
+        </div>
+
+    </div>
+
+
+    <!-- Footer Bottom -->
+
+    <div class="footer-bottom">
+
+        <div class="footer-bottom-container">
+
+            <p>
+                &copy;
+                <span id="currentYear"></span>
+                Kokobeads. All rights reserved.
+            </p>
+
+
+            <nav
+                class="footer-legal-links"
+                aria-label="Legal links"
+            >
+
+                <a href="./privacy.html">
+                    Privacy Policy
+                </a>
+
+                <a href="./terms.html">
+                    Terms &amp; Conditions
+                </a>
+
+            </nav>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- Mobile Bottom Navigation -->
+
+<nav
+    class="mobile-bottom-nav"
+    aria-label="Mobile navigation"
+>
+
+    <a href="../index.html">
+        <i class="fa-solid fa-house"></i>
+        <span>Home</span>
+    </a>
+
+    <a href="./shop.html">
+        <i class="fa-solid fa-store"></i>
+        <span>Shop</span>
+    </a>
+    <a href="./wishlist.html" class="mobile-nav-item">
+        <span class="mobile-nav-icon">
+            <i class="fa-regular fa-heart"></i>
+            <span class="mobile-wishlist-count" id="mobileWishlistCount">0</span>
+        </span>
+        <span class="mobile-nav-label">
+            Wishlist
+        </span>
+    </a>
+
+    <a href="./contact.html" class="mobile-nav-item active">
+        <span class="mobile-nav-icon">
+            <i class="fa-regular fa-envelope"></i>
+        </span>
+        <span class="mobile-nav-label">
+            Contact
+        </span>
+    </a>
+
+    <a href="./cart.html" class="mobile-nav-item">
+        <span class="mobile-nav-icon">
+            <i class="fa-solid fa-bag-shopping"></i>
+            <span class="mobile-cart-count" id="mobileCartCount" data-cart-count>0</span>
+        </span>
+        <span class="mobile-nav-label">
+            Cart
+        </span>
+    </a>
+
+</nav>
+
+
+
+<script src="../js/cartCount.js"></script>
+
+
+<script>
+
+    const currentYear =
+        document.getElementById("currentYear");
+
+    if (currentYear) {
+        currentYear.textContent =
+            new Date().getFullYear();
+    }
+
+
+    const contactForm =
+        document.getElementById("contactForm");
+
+    const contactFormStatus =
+        document.getElementById("contactFormStatus");
+
+
+    if (contactForm) {
+
+        contactForm.addEventListener(
+            "submit",
+            function (event) {
+
+                event.preventDefault();
+
+                contactFormStatus.textContent =
+                    "Thanks for reaching out. Your message has been received.";
+
+                contactFormStatus.classList.add(
+                    "success"
+                );
+
+                contactForm.reset();
+
+            }
+        );
+
+    }
+
+</script>
+
+<script src="../js/wishlist.js"></script>
+</body>
+
+</html>

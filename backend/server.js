@@ -9,8 +9,9 @@ const orderRoutes = require("./routes/orderRoutes");
 const uploadRoutes = require("./routes/uploadRoutes");
 const productRoutes = require("./routes/productRoutes");
 const collectionRoutes = require("./routes/collectionRoutes");
+const contactRoutes = require("./routes/contactRoutes");
 
-dotenv.config();
+dotenv.config({ path: require("path").join(__dirname, ".env") });
 
 const app = express();
 
@@ -68,6 +69,11 @@ app.use(
 app.use(
     "/api/collections",
     collectionRoutes
+);
+
+app.use(
+    "/api/contact",
+    contactRoutes
 );
 
 
