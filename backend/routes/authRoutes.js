@@ -4,6 +4,8 @@ const {
     registerUser,
     loginUser,
     logoutUser
+    ,forgotPassword
+    ,resetPassword
 } = require("../controllers/authController");
 
 const {
@@ -35,6 +37,10 @@ router.post(
     loginUser
 );
 
+
+// =========================================
+
+
 router.get(
     "/test",
     function (req, res) {
@@ -46,6 +52,10 @@ router.get(
 
     }
 );
+
+
+// =========================================
+
 
 router.get(
     "/protected-test",
@@ -70,6 +80,10 @@ router.get(
 // CURRENT USER
 // GET /api/auth/me
 // =========================================
+
+
+// =========================================
+
 
 router.get(
     "/me",
@@ -128,6 +142,28 @@ router.get(
 );
 
 // =========================================
+// =========================================
+// FORGOT PASSWORD
+// POST /api/auth/forgot-password
+// =========================================
+
+router.post(
+    "/forgot-password",
+    forgotPassword
+);
+
+
+// =========================================
+// RESET PASSWORD
+// POST /api/auth/reset-password
+// =========================================
+
+router.post(
+    "/reset-password",
+    resetPassword
+);
+
+
 // LOGOUT
 // POST /api/auth/logout
 // =========================================
@@ -135,6 +171,8 @@ router.get(
 router.post(
     "/logout",
     logoutUser
+    ,forgotPassword
+    ,resetPassword
 );
 
 
