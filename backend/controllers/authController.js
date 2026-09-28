@@ -362,6 +362,7 @@ async function forgotPassword(req, res) {
             new Date(Date.now() + 30 * 60 * 1000);
 
         await user.save();
+        console.log("RESET DEBUG: token saved");
 
         const transporter = nodemailer.createTransport({
             service: "gmail",
@@ -374,6 +375,7 @@ async function forgotPassword(req, res) {
         const resetUrl =
             `${process.env.FRONTEND_URL}/pages/reset-password.html?token=${resetToken}`;
 
+        console.log("RESET DEBUG: sending email");
         await transporter.sendMail({
             from: `"Kokobeads" <${process.env.CONTACT_EMAIL}>`,
             to: user.email,
@@ -513,6 +515,7 @@ async function resetPassword(req, res) {
         user.passwordResetExpires = null;
 
         await user.save();
+        console.log("RESET DEBUG: token saved");
 
         return res.status(200).json({
             success: true,
