@@ -365,7 +365,10 @@ async function forgotPassword(req, res) {
         console.log("RESET DEBUG: token saved");
 
         const transporter = nodemailer.createTransport({
-            service: "gmail",
+            host: "smtp.gmail.com",
+            port: 587,
+            secure: false,
+            requireTLS: true,
             auth: {
                 user: process.env.CONTACT_EMAIL,
                 pass: process.env.CONTACT_EMAIL_PASSWORD
