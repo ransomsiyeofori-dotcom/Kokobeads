@@ -685,11 +685,83 @@
         </section>
 
 
-        <!-- =========================================
-             COLLECTION MANAGEMENT
-        ========================================== -->
 
-        <section class="admin-section">
+
+
+
+
+
+          <!-- =========================================
+               INVENTORY MANAGEMENT
+          ========================================== -->
+
+<section class="admin-section">
+
+              <div class="admin-section-header">
+
+                  <div>
+                      <h2>Inventory Management</h2>
+                      <p>
+                          Monitor product stock levels and quickly identify
+                          products that need attention.
+                      </p>
+                  </div>
+
+              </div>
+
+              <div class="admin-inventory-summary">
+
+                  <div class="admin-inventory-card">
+                      <span>Total Products</span>
+                      <strong id="inventoryTotalProducts">0</strong>
+                  </div>
+
+                  <div class="admin-inventory-card">
+                      <span>In Stock</span>
+                      <strong id="inventoryInStock">0</strong>
+                  </div>
+
+                  <div class="admin-inventory-card">
+                      <span>Low Stock</span>
+                      <strong id="inventoryLowStock">0</strong>
+                  </div>
+
+                  <div class="admin-inventory-card">
+                      <span>Out of Stock</span>
+                      <strong id="inventoryOutOfStock">0</strong>
+                  </div>
+
+              </div>
+
+              <div class="admin-inventory-toolbar">
+
+                  <input
+                      type="search"
+                      id="inventorySearch"
+                      class="admin-search-input"
+                      placeholder="Search products..."
+                      autocomplete="off"
+                  >
+
+              </div>
+
+              <div
+                  id="adminInventoryList"
+                  class="admin-inventory-list"
+              >
+                  <div class="admin-loading">
+                      Loading inventory...
+                  </div>
+              </div>
+
+          </section>
+
+
+<!-- =========================================
+               COLLECTION MANAGEMENT
+          ========================================== -->
+
+<section class="admin-section">
 
             <div class="admin-section-header">
 

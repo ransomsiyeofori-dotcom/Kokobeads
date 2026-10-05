@@ -1,0 +1,653 @@
+cat > Frontend/pages/shipping.html <<'EOF'
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Learn about Kokobeads shipping and delivery times."
+    >
+
+    <title>Shipping &amp; Delivery | Kokobeads</title>
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- Main Styles -->
+    <link
+        rel="stylesheet"
+        href="../css/styles.css"
+    >
+
+    <!-- Information Page Styles -->
+    <link
+        rel="stylesheet"
+        href="../css/shipping.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- ==============================
+     HEADER
+=============================== -->
+
+<header class="site-header">
+
+    <div class="header-container">
+
+
+        <!-- Logo -->
+
+        <a
+            href="../index.html"
+            class="site-logo"
+            aria-label="Kokobeads home"
+        >
+            Kokobeads
+        </a>
+
+
+        <!-- Desktop Navigation -->
+
+        <nav
+            class="main-navigation"
+            aria-label="Main navigation"
+        >
+
+            <a href="../index.html">
+                Home
+            </a>
+
+            <a href="./shop.html">
+                Shop
+            </a>
+
+            <a href="./collections.html">
+                Collections
+            </a>
+
+            <a href="./about.html">
+                About
+            </a>
+
+            <a href="./contact.html">
+                Contact
+            </a>
+
+        </nav>
+
+
+        <!-- Header Actions -->
+
+        <div class="header-actions">
+
+            <a
+                href="./wishlist.html"
+                aria-label="Wishlist"
+            >
+                <i class="fa-regular fa-heart"></i>
+            </a>
+
+            <a
+                href="./profile.html"
+                aria-label="Account"
+            >
+                <i class="fa-regular fa-user"></i>
+            </a>
+
+            <a
+                href="./cart.html"
+                aria-label="Shopping cart"
+            >
+                <i class="fa-solid fa-bag-shopping"></i>
+
+                <span
+                    class="cart-count"
+                    id="cartCount"
+                    data-cart-count
+                >
+                    0
+                </span>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- ==============================
+     SHIPPING PAGE
+=============================== -->
+
+<main class="info-page">
+
+
+    <!-- Hero -->
+
+    <section class="info-hero">
+
+        <div class="info-hero-inner">
+
+            <p class="info-eyebrow">
+                KOKOBEADS
+            </p>
+
+            <h1>
+                Shipping &amp; Delivery
+            </h1>
+
+            <p>
+                Everything you need to know about how we
+                prepare, ship, and deliver your Kokobeads order.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Content -->
+
+    <div class="info-content">
+
+
+        <!-- Order Processing -->
+
+        <section class="info-section">
+
+            <h2>
+                Order Processing
+            </h2>
+
+            <p>
+                Once your order is confirmed, our team prepares
+                your pieces carefully for delivery.
+            </p>
+
+            <ul class="info-list">
+
+                <li>
+                    Orders are normally processed within
+                    1–2 business days.
+                </li>
+
+                <li>
+                    Orders are processed Monday through Friday,
+                    excluding public holidays.
+                </li>
+
+                <li>
+                    You will receive delivery updates when
+                    tracking information is available.
+                </li>
+
+            </ul>
+
+        </section>
+
+
+        <!-- Delivery Times -->
+
+        <section class="info-section">
+
+            <h2>
+                Delivery Times
+            </h2>
+
+            <ul class="info-list">
+
+                <li>
+                    Port Harcourt deliveries generally take
+                    1–3 business days after processing.
+                </li>
+
+                <li>
+                    Deliveries to other locations in Nigeria
+                    generally take 2–7 business days.
+                </li>
+
+                <li>
+                    Delivery times are estimates and may vary
+                    depending on the courier and destination.
+                </li>
+
+            </ul>
+
+        </section>
+
+
+        <!-- Delivery Address -->
+
+        <section class="info-section">
+
+            <h2>
+                Delivery Address
+            </h2>
+
+            <p>
+                Please make sure your delivery information is
+                complete and accurate when placing your order.
+            </p>
+
+            <div class="info-note">
+                Kokobeads cannot be responsible for delivery
+                problems caused by an incomplete or incorrect
+                address supplied at checkout.
+            </div>
+
+        </section>
+
+
+        <!-- Delivery Delays -->
+
+        <section class="info-section">
+
+            <h2>
+                Delivery Delays
+            </h2>
+
+            <p>
+                Occasionally, deliveries may take longer than
+                expected because of courier delays, public
+                holidays, severe weather, traffic, or other
+                circumstances outside our control.
+            </p>
+
+            <p>
+                If your order appears to be significantly delayed,
+                please contact us and we will help you check its
+                delivery status.
+            </p>
+
+        </section>
+
+
+        <!-- Delivery Fees -->
+
+        <section class="info-section">
+
+            <h2>
+                Delivery Fees
+            </h2>
+
+            <p>
+                Delivery fees depend on the delivery destination
+                and will be displayed during checkout before you
+                complete your order.
+            </p>
+
+        </section>
+
+
+        <!-- Related Pages -->
+
+        <div class="info-links">
+
+            <a
+                href="./returns.html"
+                class="info-link-card"
+            >
+
+                <strong>
+                    Returns &amp; Refunds
+                </strong>
+
+                <span>
+                    Learn about returns, exchanges, and refunds.
+                </span>
+
+            </a>
+
+
+            <a
+                href="./faqs.html"
+                class="info-link-card"
+            >
+
+                <strong>
+                    Frequently Asked Questions
+                </strong>
+
+                <span>
+                    Find quick answers about orders and delivery.
+                </span>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+<!-- ==============================
+     FOOTER
+=============================== -->
+
+<footer class="site-footer">
+
+    <div class="footer-container">
+
+
+        <!-- Footer Brand -->
+
+        <div class="footer-brand">
+
+            <a
+                href="../index.html"
+                class="footer-logo"
+            >
+                Kokobeads
+            </a>
+
+            <p class="footer-description">
+                Beautifully handcrafted beads made to
+                complement your style and tell your story.
+            </p>
+
+
+            <div class="footer-socials">
+
+                <a
+                    href="#"
+                    class="social-link"
+                    aria-label="Instagram"
+                >
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a
+                    href="#"
+                    class="social-link"
+                    aria-label="Facebook"
+                >
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+
+                <a
+                    href="#"
+                    class="social-link"
+                    aria-label="TikTok"
+                >
+                    <i class="fa-brands fa-tiktok"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- Shop -->
+
+        <div class="footer-column">
+
+            <h2>
+                Shop
+            </h2>
+
+            <nav aria-label="Shop links">
+
+                <a href="./shop.html">
+                    All Products
+                </a>
+
+                <a href="./collections.html">
+                    Collections
+                </a>
+
+                <a href="./wishlist.html">
+                    Wishlist
+                </a>
+
+                <a href="./cart.html">
+                    Cart
+                </a>
+
+            </nav>
+
+        </div>
+
+
+        <!-- Customer Care -->
+
+        <div class="footer-column">
+
+            <h2>
+                Customer Care
+            </h2>
+
+            <nav aria-label="Customer care links">
+
+                <a href="./contact.html">
+                    Contact Us
+                </a>
+
+                <a href="./shipping.html">
+                    Shipping
+                </a>
+
+                <a href="./returns.html">
+                    Returns &amp; Refunds
+                </a>
+
+                <a href="./faqs.html">
+                    FAQs
+                </a>
+
+            </nav>
+
+        </div>
+
+
+        <!-- Account -->
+
+        <div class="footer-column">
+
+            <h2>
+                Account
+            </h2>
+
+            <nav aria-label="Account links">
+
+                <a href="./login.html">
+                    Login
+                </a>
+
+                <a href="./register.html">
+                    Create Account
+                </a>
+
+                <a href="./orders.html">
+                    My Orders
+                </a>
+
+                <a href="./account.html">
+                    My Account
+                </a>
+
+            </nav>
+
+        </div>
+
+    </div>
+
+
+    <!-- Footer Bottom -->
+
+    <div class="footer-bottom">
+
+        <div class="footer-bottom-container">
+
+            <p>
+                &copy;
+                <span id="currentYear"></span>
+                Kokobeads. All rights reserved.
+            </p>
+
+
+            <nav
+                class="footer-legal-links"
+                aria-label="Legal links"
+            >
+
+                <a href="./privacy.html">
+                    Privacy Policy
+                </a>
+
+                <a href="./terms.html">
+                    Terms &amp; Conditions
+                </a>
+
+            </nav>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- ==============================
+     MOBILE BOTTOM NAVIGATION
+=============================== -->
+
+<nav
+    class="mobile-bottom-nav"
+    aria-label="Mobile navigation"
+>
+
+    <a href="../index.html">
+
+        <i class="fa-solid fa-house"></i>
+
+        <span>
+            Home
+        </span>
+
+    </a>
+
+
+    <a href="./shop.html">
+
+        <i class="fa-solid fa-store"></i>
+
+        <span>
+            Shop
+        </span>
+
+    </a>
+
+
+    <a
+        href="./wishlist.html"
+        class="mobile-nav-item"
+    >
+
+        <span class="mobile-nav-icon">
+
+            <i class="fa-regular fa-heart"></i>
+
+            <span
+                class="mobile-wishlist-count"
+                id="mobileWishlistCount"
+            >
+                0
+            </span>
+
+        </span>
+
+        <span class="mobile-nav-label">
+            Wishlist
+        </span>
+
+    </a>
+
+
+    <a
+        href="./contact.html"
+        class="mobile-nav-item"
+    >
+
+        <span class="mobile-nav-icon">
+
+            <i class="fa-regular fa-envelope"></i>
+
+        </span>
+
+        <span class="mobile-nav-label">
+            Contact
+        </span>
+
+    </a>
+
+
+    <a
+        href="./cart.html"
+        class="mobile-nav-item"
+    >
+
+        <span class="mobile-nav-icon">
+
+            <i class="fa-solid fa-bag-shopping"></i>
+
+            <span
+                class="mobile-cart-count"
+                id="mobileCartCount"
+                data-cart-count
+            >
+                0
+            </span>
+
+        </span>
+
+        <span class="mobile-nav-label">
+            Cart
+        </span>
+
+    </a>
+
+</nav>
+
+
+<!-- Scripts -->
+
+<script src="../js/cartCount.js"></script>
+
+<script src="../js/wishlist.js"></script>
+
+<script>
+
+    const currentYear =
+        document.getElementById("currentYear");
+
+    if (currentYear) {
+        currentYear.textContent =
+            new Date().getFullYear();
+    }
+
+</script>
+
+
+</body>
+
+</html>
+EOF

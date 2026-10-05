@@ -254,6 +254,7 @@ function initializeAdminUI() {
     initializeProductForm();
     loadProductCollections();
     initializeProductActions();
+    initializeInventorySearch();
 
 
     initializeLogout();
@@ -348,6 +349,8 @@ async function loadProducts() {
 
 
         renderProducts();
+
+        renderInventory();
 
     } catch (error) {
 
@@ -703,6 +706,229 @@ function clearProductFilters() {
     renderProducts();
 
 }
+
+
+// =========================================
+// INVENTORY MANAGEMENT
+// =========================================
+
+let inventorySearchInitialized = false;
+
+
+function renderInventory() {
+
+    const totalElement =
+        document.getElementById(
+            "inventoryTotalProducts"
+        );
+
+    const inStockElement =
+        document.getElementById(
+            "inventoryInStock"
+        );
+
+    const lowStockElement =
+        document.getElementById(
+            "inventoryLowStock"
+        );
+
+    const outOfStockElement =
+        document.getElementById(
+            "inventoryOutOfStock"
+        );
+
+    const list =
+        document.getElementById(
+            "adminInventoryList"
+        );
+
+    if (
+        !totalElement ||
+        !inStockElement ||
+        !lowStockElement ||
+        !outOfStockElement ||
+        !list
+    ) {
+        return;
+    }
+
+
+    const total =
+        adminProducts.length;
+
+    const inStock =
+        adminProducts.filter(
+            function(product) {
+                return Number(product.stock) > 5;
+            }
+        ).length;
+
+    const lowStock =
+        adminProducts.filter(
+            function(product) {
+                const stock =
+                    Number(product.stock);
+
+                return stock > 0 && stock <= 5;
+            }
+        ).length;
+
+    const outOfStock =
+        adminProducts.filter(
+            function(product) {
+                return Number(product.stock) === 0;
+            }
+        ).length;
+
+
+    totalElement.textContent =
+        total;
+
+    inStockElement.textContent =
+        inStock;
+
+    lowStockElement.textContent =
+        lowStock;
+
+    outOfStockElement.textContent =
+        outOfStock;
+
+
+    const searchInput =
+        document.getElementById(
+            "inventorySearch"
+        );
+
+    const searchTerm =
+        searchInput
+            ? searchInput.value
+                .trim()
+                .toLowerCase()
+            : "";
+
+
+    const visibleProducts =
+        adminProducts.filter(
+            function(product) {
+
+                if (!searchTerm) {
+                    return true;
+                }
+
+                const name =
+                    String(
+                        product.name || ""
+                    ).toLowerCase();
+
+                const category =
+                    String(
+                        product.category || ""
+                    ).toLowerCase();
+
+                const collection =
+                    String(
+                        product.collection || ""
+                    ).toLowerCase();
+
+                return (
+                    name.includes(searchTerm) ||
+                    category.includes(searchTerm) ||
+                    collection.includes(searchTerm)
+                );
+            }
+        );
+
+
+    if (!visibleProducts.length) {
+
+        list.innerHTML = `
+            <div class="admin-loading">
+                No inventory items found.
+            </div>
+        `;
+
+        return;
+    }
+
+
+    list.innerHTML =
+        visibleProducts
+            .map(
+                function(product) {
+
+                    const stock =
+                        Number(product.stock);
+
+                    const stockClass =
+                        stock === 0
+                            ? "admin-stock-out"
+                            : stock <= 5
+                                ? "admin-stock-low"
+                                : "admin-stock-badge";
+
+                    const stockText =
+                        stock === 0
+                            ? "Out of stock"
+                            : stock <= 5
+                                ? `Low stock: ${stock}`
+                                : `Stock: ${stock}`;
+
+                    return `
+                        <div
+                            class="admin-inventory-item"
+                            data-product-id="${escapeHTML(String(product._id || ""))}"
+                        >
+
+                            <div class="admin-inventory-product">
+
+                                <strong>
+                                    ${escapeHTML(product.name || "Unnamed Product")}
+                                </strong>
+
+                                <span>
+                                    ${escapeHTML(product.category || "Uncategorized")}
+                                </span>
+
+                            </div>
+
+                            <span class="${stockClass}">
+                                ${stockText}
+                            </span>
+
+                        </div>
+                    `;
+                }
+            )
+            .join("");
+}
+
+
+function initializeInventorySearch() {
+
+    if (inventorySearchInitialized) {
+        return;
+    }
+
+    const searchInput =
+        document.getElementById(
+            "inventorySearch"
+        );
+
+    if (!searchInput) {
+        return;
+    }
+
+    searchInput.addEventListener(
+        "input",
+        function() {
+            renderInventory();
+        }
+    );
+
+    inventorySearchInitialized =
+        true;
+}
+
 
 function renderProducts() {
 

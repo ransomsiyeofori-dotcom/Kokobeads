@@ -362,56 +362,47 @@ async function forgotPassword(req, res) {
             new Date(Date.now() + 30 * 60 * 1000);
 
         await user.save();
-        console.log("RESET DEBUG: token saved");
-
-        const transporter = nodemailer.createTransport({
-            host: "smtp.gmail.com",
-            port: 587,
-            secure: false,
-            requireTLS: true,
-            auth: {
-                user: process.env.CONTACT_EMAIL,
-                pass: process.env.CONTACT_EMAIL_PASSWORD
-            }
-        });
 
         const resetUrl =
             `${process.env.FRONTEND_URL}/pages/reset-password.html?token=${resetToken}`;
 
-        console.log("RESET DEBUG: sending email");
-        await transporter.sendMail({
-            from: `"Kokobeads" <${process.env.CONTACT_EMAIL}>`,
-            to: user.email,
-            subject: "Reset your Kokobeads password",
-            text: [
-                `Hello ${user.name},`,
-                "",
-                "We received a request to reset your Kokobeads password.",
-                "",
-                `Reset your password using this link: ${resetUrl}`,
-                "",
-                "This link will expire in 30 minutes.",
-                "",
-                "If you did not request a password reset, you can safely ignore this email."
-            ].join("\n"),
-            html: `
-                <div style="font-family: Arial, sans-serif; line-height: 1.6;">
-                    <h2>Kokobeads Password Reset</h2>
-                    <p>Hello ${user.name},</p>
-                    <p>We received a request to reset your Kokobeads password.</p>
-                    <p>
-                        <a
-                            href="${resetUrl}"
-                            style="display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;"
-                        >
-                            Reset Password
-                        </a>
-                    </p>
-                    <p>This link will expire in 30 minutes.</p>
-                    <p>If you did not request a password reset, you can safely ignore this email.</p>
-                </div>
-            `
-        });
+        const resend = new (require("resend").Resend)(process.env.RESEND_API_KEY);
+
+        const { error: resendError } =
+            await resend.emails.send({
+                from: process.env.RESEND_FROM_EMAIL,
+                to: user.email,
+                subject: "Reset your Kokobeads password",
+                text: [
+                    `Hello ${user.name},`,
+                    "",
+                    "We received a request to reset your Kokobeads password.",
+                    "",
+                    `Reset your password using this link: ${resetUrl}`,
+                    "",
+                    "This link will expire in 30 minutes.",
+                    "",
+                    "If you did not request a password reset, you can safely ignore this email."
+                ].join("\n"),
+                html: `
+                    <div style="font-family: Arial, sans-serif; line-height: 1.6;">
+                        <h2>Kokobeads Password Reset</h2>
+                        <p>Hello ${user.name},</p>
+                        <p>We received a request to reset your Kokobeads password.</p>
+                        <p>
+                            <a href="${resetUrl}" style="display:inline-block;padding:12px 20px;background:#111;color:#fff;text-decoration:none;border-radius:6px;">
+                                Reset Password
+                            </a>
+                        </p>
+                        <p>This link will expire in 30 minutes.</p>
+                        <p>If you did not request a password reset, you can safely ignore this email.</p>
+                    </div>`
+            });
+
+        if (resendError) {
+            console.error("Resend password reset error:", resendError);
+            throw resendError;
+        }
 
         return res.status(200).json({
             success: true,
@@ -518,7 +509,6 @@ async function resetPassword(req, res) {
         user.passwordResetExpires = null;
 
         await user.save();
-        console.log("RESET DEBUG: token saved");
 
         return res.status(200).json({
             success: true,

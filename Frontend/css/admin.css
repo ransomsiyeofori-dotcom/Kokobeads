@@ -2546,3 +2546,116 @@ input[type="search"]:focus {
     }
 
 }
+
+/* =========================================
+   INVENTORY MANAGEMENT
+========================================= */
+
+.admin-inventory-summary {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.admin-inventory-card {
+    padding: 18px;
+    border: 1px solid rgba(17, 24, 39, 0.08);
+    border-radius: 12px;
+    background: #ffffff;
+}
+
+.admin-inventory-card span {
+    display: block;
+    margin-bottom: 7px;
+    color: #6b7280;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.admin-inventory-card strong {
+    display: block;
+    color: #111827;
+    font-size: 24px;
+    line-height: 1.2;
+}
+
+.admin-inventory-toolbar {
+    width: 100%;
+    margin-bottom: 18px;
+}
+
+.admin-inventory-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.admin-inventory-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 16px;
+    border: 1px solid rgba(17, 24, 39, 0.08);
+    border-radius: 10px;
+    background: #ffffff;
+}
+
+.admin-inventory-product {
+    min-width: 0;
+}
+
+.admin-inventory-product strong {
+    display: block;
+    margin-bottom: 4px;
+    color: #111827;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.admin-inventory-product span {
+    display: block;
+    color: #6b7280;
+    font-size: 12px;
+}
+
+.admin-stock-out {
+    display: inline-flex;
+    align-items: center;
+    min-height: 27px;
+    padding: 0 9px;
+    border-radius: 7px;
+    color: #991b1b;
+    background: rgba(220, 38, 38, 0.08);
+    border: 1px solid rgba(220, 38, 38, 0.20);
+    font-size: 0.67rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+@media (max-width: 767px) {
+
+    .admin-inventory-summary {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .admin-inventory-card {
+        padding: 14px;
+    }
+
+    .admin-inventory-card strong {
+        font-size: 21px;
+    }
+
+    .admin-inventory-item {
+        align-items: flex-start;
+        padding: 14px;
+    }
+
+    .admin-inventory-product strong {
+        font-size: 13px;
+    }
+
+}
