@@ -232,3 +232,890 @@
         margin-top: 35px;
     }
 }
+
+/* =========================================
+   ABOUT PAGE HEADER — LAYOUT FIX
+========================================= */
+
+.about-page .site-header > .container {
+    width: 100%;
+    max-width: var(--container-width, 1200px);
+    min-height: 78px;
+    margin: 0 auto;
+    padding: 12px var(--container-padding, 22px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    box-sizing: border-box;
+}
+
+.about-page .site-header .logo {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+    color: #101828;
+    font-size: 1.65rem;
+    font-weight: 800;
+    line-height: 1.2;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.about-page .site-header nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 28px;
+    margin: 0;
+}
+
+.about-page .site-header nav a {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 0;
+    color: #344054;
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1.4;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color 0.2s ease;
+}
+
+.about-page .site-header nav a:hover,
+.about-page .site-header nav a:focus-visible {
+    color: #2563eb;
+}
+
+@media (max-width: 768px) {
+    .about-page .site-header > .container {
+        min-height: auto;
+        flex-direction: column;
+        justify-content: center;
+        gap: 8px;
+        padding: 16px 20px;
+    }
+
+    .about-page .site-header .logo {
+        font-size: 1.5rem;
+    }
+
+    .about-page .site-header nav {
+        width: 100%;
+        justify-content: center;
+        gap: 8px 22px;
+    }
+
+    .about-page .site-header nav a {
+        padding: 8px 0;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .about-page .site-header nav {
+        gap: 6px 16px;
+    }
+
+    .about-page .site-header nav a {
+        font-size: 0.85rem;
+    }
+}
+
+/* =========================================
+   KOKOBEADS FAQ HEADER
+   Scoped to the FAQ page only
+========================================= */
+
+.faq-page .site-header {
+    position: relative;
+    z-index: 1000;
+    width: 100%;
+    background: #ffffff;
+    border-bottom: 1px solid #e8e2d8;
+    box-shadow: 0 3px 14px rgba(20, 20, 20, 0.04);
+}
+
+.faq-page .site-header > .container {
+    width: 100%;
+    max-width: 1280px;
+    min-height: 78px;
+    margin: 0 auto;
+    padding: 0 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    box-sizing: border-box;
+}
+
+.faq-page .site-header .logo {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+    color: #171717;
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    line-height: 1.2;
+    text-decoration: none;
+}
+
+.faq-page .site-header nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.faq-page .site-header nav a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    color: #333333;
+    font-size: 0.94rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.faq-page .site-header nav a:hover,
+.faq-page .site-header nav a:focus-visible {
+    color: #a87932;
+}
+
+.faq-page .site-header nav a:focus-visible,
+.faq-page .site-header .logo:focus-visible {
+    outline: 2px solid #a87932;
+    outline-offset: 5px;
+}
+
+@media (max-width: 768px) {
+    .faq-page .site-header > .container {
+        min-height: auto;
+        padding: 18px 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .faq-page .site-header .logo {
+        font-size: 1.65rem;
+    }
+
+    .faq-page .site-header nav {
+        width: 100%;
+        justify-content: flex-start;
+        gap: 8px 22px;
+    }
+
+    .faq-page .site-header nav a {
+        min-height: 36px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 380px) {
+    .faq-page .site-header > .container {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+
+    .faq-page .site-header nav {
+        gap: 4px 16px;
+    }
+
+    .faq-page .site-header nav a {
+        font-size: 0.85rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .faq-page .site-header nav a {
+        transition: none;
+    }
+}
+
+
+/* =========================================
+   KOKOBEADS RETURNS & REFUNDS HEADER
+   Scoped to the Returns page only
+========================================= */
+
+.returns-page .site-header {
+    position: relative;
+    z-index: 1000;
+    width: 100%;
+    background: #ffffff;
+    border-bottom: 1px solid #e8e2d8;
+    box-shadow: 0 3px 14px rgba(20, 20, 20, 0.04);
+}
+
+.returns-page .site-header > .container {
+    width: 100%;
+    max-width: 1280px;
+    min-height: 78px;
+    margin: 0 auto;
+    padding: 0 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    box-sizing: border-box;
+}
+
+.returns-page .site-header .logo {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+    color: #171717;
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    line-height: 1.2;
+    text-decoration: none;
+}
+
+.returns-page .site-header nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.returns-page .site-header nav a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    color: #333333;
+    font-size: 0.94rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.returns-page .site-header nav a:hover,
+.returns-page .site-header nav a:focus-visible {
+    color: #a87932;
+}
+
+.returns-page .site-header nav a:focus-visible,
+.returns-page .site-header .logo:focus-visible {
+    outline: 2px solid #a87932;
+    outline-offset: 5px;
+}
+
+@media (max-width: 768px) {
+    .returns-page .site-header > .container {
+        min-height: auto;
+        padding: 18px 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .returns-page .site-header .logo {
+        font-size: 1.65rem;
+    }
+
+    .returns-page .site-header nav {
+        width: 100%;
+        justify-content: flex-start;
+        gap: 8px 22px;
+    }
+
+    .returns-page .site-header nav a {
+        min-height: 36px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 380px) {
+    .returns-page .site-header > .container {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+
+    .returns-page .site-header nav {
+        gap: 4px 16px;
+    }
+
+    .returns-page .site-header nav a {
+        font-size: 0.85rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .returns-page .site-header nav a {
+        transition: none;
+    }
+}
+
+
+/* =========================================
+   PRIVACY POLICY HEADER AND FOOTER
+========================================= */
+
+.privacy-policy-page .site-header {
+    position: relative;
+    z-index: 1000;
+    width: 100%;
+    background: #ffffff;
+    border-bottom: 1px solid #e8e2d8;
+    box-sizing: border-box;
+}
+
+.privacy-policy-page .header-container {
+    width: 100%;
+    max-width: 1280px;
+    min-height: 78px;
+    margin: 0 auto;
+    padding: 12px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    box-sizing: border-box;
+}
+
+.privacy-policy-page .site-logo {
+    flex-shrink: 0;
+    color: #17121d;
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    text-decoration: none;
+}
+
+.privacy-policy-page .main-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+    margin: 0 auto;
+}
+
+.privacy-policy-page .main-navigation a {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    min-height: 40px;
+    color: #333333;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.privacy-policy-page .main-navigation a:hover,
+.privacy-policy-page .main-navigation a:focus-visible {
+    color: #a87932;
+}
+
+.privacy-policy-page .header-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.privacy-policy-page .header-actions > a {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #27212d;
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 50%;
+}
+
+.privacy-policy-page .header-actions > a:hover,
+.privacy-policy-page .header-actions > a:focus-visible {
+    color: #a87932;
+    background: #f7f2eb;
+}
+
+.privacy-policy-page .cart-count {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+/* Footer layout */
+
+.privacy-policy-page .site-footer {
+    width: 100%;
+    background: #17121d;
+    color: #ffffff;
+    box-sizing: border-box;
+}
+
+.privacy-policy-page .footer-container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 56px 32px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 36px;
+    box-sizing: border-box;
+}
+
+.privacy-policy-page .footer-brand {
+    max-width: 340px;
+}
+
+.privacy-policy-page .footer-logo {
+    display: inline-block;
+    margin-bottom: 16px;
+    color: #c4a1ff;
+    font-size: 27px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    text-decoration: none;
+}
+
+.privacy-policy-page .footer-logo:hover {
+    color: #ffffff;
+}
+
+.privacy-policy-page .footer-description {
+    max-width: 310px;
+    margin: 0;
+    color: #b8b0c1;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.privacy-policy-page .footer-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 0;
+}
+
+.privacy-policy-page .footer-column h2 {
+    margin: 0 0 18px;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.privacy-policy-page .footer-column nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.privacy-policy-page .footer-column nav a {
+    color: #aaa1b2;
+    font-size: 13px;
+    line-height: 1.6;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.privacy-policy-page .footer-column nav a:hover,
+.privacy-policy-page .footer-column nav a:focus-visible {
+    color: #c4a1ff;
+}
+
+.privacy-policy-page .footer-bottom {
+    border-top: 1px solid #39313f;
+}
+
+.privacy-policy-page .footer-bottom-container {
+    width: 100%;
+    max-width: 1280px;
+    min-height: 70px;
+    margin: 0 auto;
+    padding: 18px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    box-sizing: border-box;
+}
+
+.privacy-policy-page .footer-bottom p {
+    margin: 0;
+    color: #aaa1b2;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.privacy-policy-page .footer-legal-links {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.privacy-policy-page .footer-legal-links a {
+    color: #aaa1b2;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.privacy-policy-page .footer-legal-links a:hover,
+.privacy-policy-page .footer-legal-links a:focus-visible,
+.privacy-policy-page .footer-legal-links a[aria-current="page"] {
+    color: #c4a1ff;
+}
+
+/* Mobile bottom navigation */
+
+.privacy-policy-page .mobile-bottom-nav {
+    display: none;
+}
+
+@media (max-width: 900px) {
+    .privacy-policy-page .header-container {
+        padding-right: 22px;
+        padding-left: 22px;
+        gap: 16px;
+    }
+
+    .privacy-policy-page .main-navigation {
+        gap: 18px;
+    }
+
+    .privacy-policy-page .footer-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 36px 28px;
+        padding: 44px 24px;
+    }
+
+    .privacy-policy-page .footer-bottom-container {
+        padding-right: 24px;
+        padding-left: 24px;
+    }
+}
+
+@media (max-width: 600px) {
+    .privacy-policy-page .header-container {
+        min-height: auto;
+        padding: 18px 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 14px;
+    }
+
+    .privacy-policy-page .site-logo {
+        font-size: 24px;
+    }
+
+    .privacy-policy-page .main-navigation {
+        order: 3;
+        width: 100%;
+        margin: 0;
+        padding-top: 10px;
+        border-top: 1px solid #eee8e1;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 8px 24px;
+    }
+
+    .privacy-policy-page .main-navigation a {
+        min-height: 34px;
+        font-size: 13px;
+    }
+
+    .privacy-policy-page .header-actions {
+        gap: 2px;
+    }
+
+    .privacy-policy-page .header-actions > a {
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
+    }
+
+    .privacy-policy-page .footer-container {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 30px;
+        padding: 38px 22px;
+    }
+
+    .privacy-policy-page .footer-brand {
+        max-width: 100%;
+    }
+
+    .privacy-policy-page .footer-bottom-container {
+        min-height: auto;
+        padding: 20px 22px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .privacy-policy-page .footer-legal-links {
+        gap: 16px;
+    }
+
+    .privacy-policy-page .mobile-bottom-nav {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1100;
+        display: flex;
+        align-items: stretch;
+        justify-content: space-around;
+        gap: 4px;
+        padding: 8px 6px calc(8px + env(safe-area-inset-bottom, 0px));
+        background: #ffffff;
+        border-top: 1px solid #e8e2d8;
+        box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.06);
+        box-sizing: border-box;
+    }
+
+    .privacy-policy-page .mobile-bottom-nav > a {
+        position: relative;
+        display: flex;
+        flex: 1;
+        min-width: 0;
+        min-height: 48px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+        color: #554b60;
+        font-size: 11px;
+        text-decoration: none;
+    }
+
+    .privacy-policy-page .mobile-bottom-nav > a > i,
+    .privacy-policy-page .mobile-bottom-nav .mobile-nav-icon > i {
+        font-size: 17px;
+    }
+
+    .privacy-policy-page .mobile-bottom-nav .mobile-nav-icon {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .privacy-policy-page .mobile-bottom-nav .mobile-nav-label,
+    .privacy-policy-page .mobile-bottom-nav > a > span {
+        font-size: 11px;
+        line-height: 1.2;
+    }
+
+    .privacy-policy-page .mobile-bottom-nav .mobile-wishlist-count,
+    .privacy-policy-page .mobile-bottom-nav .mobile-cart-count {
+        position: absolute;
+        top: -7px;
+        right: -10px;
+        min-width: 15px;
+        height: 15px;
+        padding: 0 3px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 999px;
+        background: #a87932;
+        color: #ffffff;
+        font-size: 9px;
+        line-height: 1;
+        box-sizing: border-box;
+    }
+
+    .privacy-policy-page {
+        padding-bottom: 76px;
+    }
+}
+
+@media (max-width: 360px) {
+    .privacy-policy-page .header-container {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+
+    .privacy-policy-page .main-navigation {
+        gap: 8px 18px;
+    }
+
+    .privacy-policy-page .footer-container {
+        padding-right: 18px;
+        padding-left: 18px;
+    }
+
+    .privacy-policy-page .footer-bottom-container {
+        padding-right: 18px;
+        padding-left: 18px;
+    }
+}
+
+
+/* =========================================
+   TERMS PAGE HEADER
+========================================= */
+
+.terms-page .site-header {
+    position: relative;
+    z-index: 1000;
+    width: 100%;
+    background: #ffffff;
+    border-bottom: 1px solid #e8e2d8;
+    box-sizing: border-box;
+}
+
+.terms-page .header-container {
+    width: 100%;
+    max-width: 1280px;
+    min-height: 78px;
+    margin: 0 auto;
+    padding: 12px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    box-sizing: border-box;
+}
+
+.terms-page .site-logo {
+    flex-shrink: 0;
+    color: #17121d;
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    text-decoration: none;
+}
+
+.terms-page .main-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+    margin: 0 auto;
+}
+
+.terms-page .main-navigation a {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    min-height: 40px;
+    color: #333333;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.terms-page .main-navigation a:hover,
+.terms-page .main-navigation a:focus-visible {
+    color: #2563eb;
+}
+
+.terms-page .header-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.terms-page .header-actions > a {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: #27212d;
+    font-size: 18px;
+    text-decoration: none;
+    transition: color 0.2s ease, background 0.2s ease;
+}
+
+.terms-page .header-actions > a:hover,
+.terms-page .header-actions > a:focus-visible {
+    color: #2563eb;
+    background: #eff6ff;
+}
+
+.terms-page .cart-count {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+@media (max-width: 900px) {
+    .terms-page .header-container {
+        padding-right: 22px;
+        padding-left: 22px;
+        gap: 16px;
+    }
+
+    .terms-page .main-navigation {
+        gap: 18px;
+    }
+}
+
+@media (max-width: 600px) {
+    .terms-page .header-container {
+        min-height: auto;
+        padding: 18px 20px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 14px;
+    }
+
+    .terms-page .site-logo {
+        font-size: 24px;
+    }
+
+    .terms-page .main-navigation {
+        order: 3;
+        width: 100%;
+        margin: 0;
+        padding-top: 10px;
+        border-top: 1px solid #e8e2d8;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 8px 22px;
+    }
+
+    .terms-page .main-navigation a {
+        min-height: 34px;
+        font-size: 13px;
+    }
+
+    .terms-page .header-actions {
+        gap: 2px;
+    }
+
+    .terms-page .header-actions > a {
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 360px) {
+    .terms-page .header-container {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+
+    .terms-page .main-navigation {
+        gap: 8px 16px;
+    }
+}
+

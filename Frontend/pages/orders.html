@@ -1,0 +1,677 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="View your Kokobeads orders, purchase details and order status.">
+    <title>My Orders | Kokobeads</title>
+
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <style>
+        .orders-page {
+            min-height: 100vh;
+            background: #f8f9fc;
+            color: #172033;
+        }
+
+        .orders-header {
+            background: #fff;
+            border-bottom: 1px solid #e6eaf0;
+            padding: 18px 5%;
+        }
+
+        .orders-header-inner {
+            max-width: 1100px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .orders-logo {
+            color: #172033;
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: 800;
+        }
+
+        .orders-navigation {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .orders-navigation a {
+            color: #374151;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .orders-navigation a:hover {
+            color: #2563eb;
+        }
+
+        .orders-main {
+            max-width: 1000px;
+            margin: auto;
+            padding: 48px 20px 70px;
+        }
+
+        .orders-heading {
+            margin-bottom: 30px;
+        }
+
+        .orders-eyebrow {
+            color: #2563eb;
+            font-size: .78rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .orders-heading h1 {
+            margin: 0 0 12px;
+            font-size: clamp(2rem, 5vw, 3rem);
+            color: #111827;
+        }
+
+        .orders-heading p {
+            color: #64748b;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .orders-toolbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 22px;
+            flex-wrap: wrap;
+        }
+
+        .orders-toolbar strong {
+            color: #334155;
+        }
+
+        .orders-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 11px 17px;
+            border-radius: 9px;
+            background: #2563eb;
+            color: #fff;
+            border: 0;
+            text-decoration: none;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .orders-button:hover {
+            background: #1d4ed8;
+        }
+
+        .orders-button:disabled {
+            opacity: .6;
+            cursor: wait;
+        }
+
+        .orders-button.secondary {
+            background: #fff;
+            border: 1px solid #dbe2ea;
+            color: #334155;
+        }
+
+        .orders-list {
+            display: grid;
+            gap: 20px;
+        }
+
+        .order-card {
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(15, 23, 42, .035);
+        }
+
+        .order-card-header {
+            padding: 20px 22px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 15px;
+            flex-wrap: wrap;
+            background: #fdfdff;
+            border-bottom: 1px solid #edf0f5;
+        }
+
+        .order-number {
+            font-weight: 800;
+            font-size: 1rem;
+            overflow-wrap: anywhere;
+        }
+
+        .order-date {
+            color: #64748b;
+            font-size: .87rem;
+            margin-top: 7px;
+        }
+
+        .order-statuses {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 7px 10px;
+            border-radius: 30px;
+            font-size: .75rem;
+            font-weight: 800;
+            text-transform: capitalize;
+        }
+
+        .status-pending {
+            background: #fff7ed;
+            color: #c2410c;
+        }
+
+        .status-confirmed,
+        .status-processing {
+            background: #eff6ff;
+            color: #1d4ed8;
+        }
+
+        .status-shipped {
+            background: #f5f3ff;
+            color: #6d28d9;
+        }
+
+        .status-delivered,
+        .status-paid {
+            background: #ecfdf5;
+            color: #047857;
+        }
+
+        .status-cancelled,
+        .status-failed {
+            background: #fef2f2;
+            color: #b91c1c;
+        }
+
+        .status-refunded {
+            background: #f1f5f9;
+            color: #475569;
+        }
+
+        .order-items {
+            padding: 8px 22px;
+        }
+
+        .order-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 16px 0;
+            border-bottom: 1px solid #edf0f5;
+        }
+
+        .order-item:last-child {
+            border-bottom: 0;
+        }
+
+        .order-item-name {
+            font-weight: 700;
+            overflow-wrap: anywhere;
+        }
+
+        .order-item-detail {
+            color: #64748b;
+            font-size: .87rem;
+            margin-top: 6px;
+        }
+
+        .order-item-price {
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        .order-card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            padding: 18px 22px;
+            background: #f8fafc;
+            border-top: 1px solid #edf0f5;
+            flex-wrap: wrap;
+        }
+
+        .order-total-label {
+            color: #64748b;
+            font-size: .85rem;
+            margin-bottom: 5px;
+        }
+
+        .order-total {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: #111827;
+        }
+
+        .orders-message {
+            padding: 32px 22px;
+            border-radius: 14px;
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            text-align: center;
+            line-height: 1.7;
+        }
+
+        .orders-message h2 {
+            margin-top: 0;
+            color: #172033;
+        }
+
+        .orders-message p {
+            color: #64748b;
+        }
+
+        .orders-message.error {
+            border-color: #fecaca;
+        }
+
+        .orders-message.error h2 {
+            color: #b91c1c;
+        }
+
+        .orders-actions {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .orders-footer {
+            padding: 24px 20px;
+            text-align: center;
+            color: #64748b;
+            border-top: 1px solid #e2e8f0;
+            background: #fff;
+        }
+
+        .orders-footer a {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        @media (max-width: 600px) {
+            .orders-header {
+                padding: 16px 20px;
+            }
+
+            .orders-navigation {
+                gap: 13px;
+                font-size: .9rem;
+            }
+
+            .orders-main {
+                padding: 32px 14px 48px;
+            }
+
+            .order-card-header,
+            .order-card-footer {
+                padding: 17px;
+            }
+
+            .order-items {
+                padding: 5px 17px;
+            }
+
+            .order-item {
+                gap: 10px;
+            }
+
+            .order-item-price {
+                font-size: .9rem;
+            }
+        }
+    </style>
+</head>
+
+<body class="orders-page">
+
+<header class="orders-header">
+    <div class="orders-header-inner">
+        <a href="../index.html" class="orders-logo">Kokobeads</a>
+
+        <nav class="orders-navigation" aria-label="Main navigation">
+            <a href="../index.html">Home</a>
+            <a href="./shop.html">Shop</a>
+            <a href="./collection.html">Collections</a>
+            <a href="./profile.html">My Account</a>
+        </nav>
+    </div>
+</header>
+
+<main class="orders-main">
+    <section class="orders-heading">
+        <p class="orders-eyebrow">YOUR PURCHASES</p>
+        <h1>My Orders</h1>
+        <p>View your Kokobeads purchases, order progress and payment status.</p>
+    </section>
+
+    <div class="orders-toolbar">
+        <strong id="ordersSummary" aria-live="polite">Loading your orders...</strong>
+        <button class="orders-button secondary" id="refreshOrders" type="button">
+            Refresh Orders
+        </button>
+    </div>
+
+    <section
+        id="ordersContent"
+        class="orders-list"
+        aria-label="Your orders"
+        aria-live="polite"
+    >
+        <div class="orders-message">
+            <p>Loading your orders. Please wait...</p>
+        </div>
+    </section>
+</main>
+
+<footer class="orders-footer">
+    <p>
+        Need assistance?
+        <a href="./contact.html">Contact Kokobeads</a>
+        &nbsp;|&nbsp;
+        <a href="./shipping.html">Shipping Information</a>
+    </p>
+    <p>&copy; <span id="currentYear"></span> Kokobeads.</p>
+</footer>
+
+<script>
+(function () {
+    "use strict";
+
+    const API_BASE_URL =
+        window.KOKOBEADS_API_URL ||
+        "https://kokobeads-api.onrender.com/api";
+
+    const ordersContent = document.getElementById("ordersContent");
+    const ordersSummary = document.getElementById("ordersSummary");
+    const refreshButton = document.getElementById("refreshOrders");
+
+    document.getElementById("currentYear").textContent =
+        new Date().getFullYear();
+
+    function escapeHTML(value) {
+        return String(value == null ? "" : value).replace(
+            /[&<>"']/g,
+            function (character) {
+                return {
+                    "&": "&amp;",
+                    "<": "&lt;",
+                    ">": "&gt;",
+                    '"': "&quot;",
+                    "'": "&#39;"
+                }[character];
+            }
+        );
+    }
+
+    function formatCurrency(amount) {
+        const value = Number(amount);
+
+        if (!Number.isFinite(value)) {
+            return "Price unavailable";
+        }
+
+        return new Intl.NumberFormat("en-NG", {
+            style: "currency",
+            currency: "NGN",
+            maximumFractionDigits: 2
+        }).format(value);
+    }
+
+    function formatDate(dateValue) {
+        const date = new Date(dateValue);
+
+        if (Number.isNaN(date.getTime())) {
+            return "Date unavailable";
+        }
+
+        return date.toLocaleDateString("en-NG", {
+            day: "numeric",
+            month: "long",
+            year: "numeric"
+        });
+    }
+
+    function statusClass(status) {
+        const normalized = String(status || "pending")
+            .toLowerCase()
+            .replace(/[^a-z-]/g, "");
+
+        const allowed = [
+            "pending",
+            "confirmed",
+            "processing",
+            "shipped",
+            "delivered",
+            "cancelled",
+            "paid",
+            "failed",
+            "refunded"
+        ];
+
+        return allowed.includes(normalized)
+            ? "status-" + normalized
+            : "status-pending";
+    }
+
+    function formatStatus(status) {
+        return String(status || "pending")
+            .replace(/[-_]/g, " ")
+            .replace(/\b\w/g, function (letter) {
+                return letter.toUpperCase();
+            });
+    }
+
+    function renderEmptyOrders() {
+        ordersSummary.textContent = "0 orders";
+
+        ordersContent.innerHTML = `
+            <div class="orders-message">
+                <h2>You haven't placed an order yet</h2>
+                <p>Your purchases will appear here after you place an order.</p>
+                <div class="orders-actions">
+                    <a class="orders-button" href="./shop.html">Explore the Shop</a>
+                    <a class="orders-button secondary" href="./profile.html">My Account</a>
+                </div>
+            </div>
+        `;
+    }
+
+    function renderOrders(orders) {
+        if (!Array.isArray(orders) || orders.length === 0) {
+            renderEmptyOrders();
+            return;
+        }
+
+        ordersSummary.textContent =
+            orders.length + (orders.length === 1 ? " order" : " orders");
+
+        ordersContent.innerHTML = orders.map(function (order) {
+            const orderId = String(order._id || "");
+            const displayId = orderId
+                ? orderId.slice(-8).toUpperCase()
+                : "Unavailable";
+
+            const items = Array.isArray(order.items) ? order.items : [];
+
+            const itemHTML = items.map(function (item) {
+                const product = item.product || {};
+                const name = item.name || product.name || "Product";
+                const quantity = Number(item.quantity) || 0;
+                const subtotal = Number.isFinite(Number(item.subtotal))
+                    ? Number(item.subtotal)
+                    : Number(item.price || 0) * quantity;
+
+                return `
+                    <div class="order-item">
+                        <div>
+                            <div class="order-item-name">${escapeHTML(name)}</div>
+                            <div class="order-item-detail">
+                                Quantity: ${quantity}
+                                &nbsp;·&nbsp;
+                                ${formatCurrency(item.price)} each
+                            </div>
+                        </div>
+                        <div class="order-item-price">
+                            ${formatCurrency(subtotal)}
+                        </div>
+                    </div>
+                `;
+            }).join("");
+
+            return `
+                <article class="order-card">
+                    <div class="order-card-header">
+                        <div>
+                            <div class="order-number">Order #${escapeHTML(displayId)}</div>
+                            <div class="order-date">
+                                Placed on ${escapeHTML(formatDate(order.createdAt))}
+                            </div>
+                        </div>
+
+                        <div class="order-statuses">
+                            <span class="status-badge ${statusClass(order.status)}">
+                                ${escapeHTML(formatStatus(order.status))}
+                            </span>
+                            <span class="status-badge ${statusClass(order.paymentStatus)}">
+                                Payment: ${escapeHTML(formatStatus(order.paymentStatus))}
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="order-items">
+                        ${itemHTML || "<p>No item details are available for this order.</p>"}
+                    </div>
+
+                    <div class="order-card-footer">
+                        <div>
+                            <div class="order-total-label">Order total</div>
+                            <div class="order-total">${formatCurrency(order.totalAmount)}</div>
+                        </div>
+                        <a class="orders-button secondary" href="./contact.html">
+                            Need Help?
+                        </a>
+                    </div>
+                </article>
+            `;
+        }).join("");
+    }
+
+    function showError(message) {
+        ordersSummary.textContent = "Unable to load orders";
+
+        ordersContent.innerHTML = `
+            <div class="orders-message error">
+                <h2>We couldn't load your orders</h2>
+                <p>${escapeHTML(message)}</p>
+                <div class="orders-actions">
+                    <button class="orders-button" id="retryOrders" type="button">
+                        Try Again
+                    </button>
+                    <a class="orders-button secondary" href="./profile.html">
+                        My Account
+                    </a>
+                </div>
+            </div>
+        `;
+
+        document.getElementById("retryOrders").addEventListener(
+            "click",
+            loadOrders
+        );
+    }
+
+    async function loadOrders() {
+        refreshButton.disabled = true;
+        refreshButton.textContent = "Loading...";
+
+        ordersSummary.textContent = "Loading your orders...";
+
+        ordersContent.innerHTML = `
+            <div class="orders-message">
+                <p>Loading your orders. Please wait...</p>
+            </div>
+        `;
+
+        try {
+            const response = await fetch(
+                API_BASE_URL + "/orders/my-orders",
+                {
+                    method: "GET",
+                    credentials: "include",
+                    headers: {
+                        "Accept": "application/json"
+                    }
+                }
+            );
+
+            let data;
+
+            try {
+                data = await response.json();
+            } catch (error) {
+                throw new Error("The server returned an invalid response.");
+            }
+
+            if (response.status === 401 || response.status === 403) {
+                window.location.href = "./login.html";
+                return;
+            }
+
+            if (!response.ok || !data.success) {
+                throw new Error(
+                    data.message || "Please try again in a moment."
+                );
+            }
+
+            renderOrders(data.orders);
+
+        } catch (error) {
+            console.error("Load customer orders error:", error);
+
+            showError(
+                error.message ||
+                "A network error occurred. Please check your connection."
+            );
+
+        } finally {
+            refreshButton.disabled = false;
+            refreshButton.textContent = "Refresh Orders";
+        }
+    }
+
+    refreshButton.addEventListener("click", loadOrders);
+
+    loadOrders();
+})();
+</script>
+
+</body>
+</html>

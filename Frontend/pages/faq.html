@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Find answers to common questions about Kokobeads products, orders, accounts, shipping, returns and refunds.">
+    <meta name="robots" content="index, follow">
+    <title>Frequently Asked Questions | Kokobeads</title>
+
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/info-pages.css">
+
+    <style>
+        .faq-page {
+            --faq-blue: #2563eb;
+            --faq-dark: #111827;
+            --faq-muted: #64748b;
+            color: var(--faq-dark);
+            background: #f8fafc;
+        }
+
+        .faq-hero {
+            padding: 65px 20px;
+            text-align: center;
+            background: linear-gradient(135deg, #eff6ff, #fff);
+        }
+
+        .faq-hero-inner,
+        .faq-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-eyebrow {
+            color: var(--faq-blue);
+            font-size: .8rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .faq-hero h1 {
+            margin: 12px 0;
+            font-size: clamp(2.2rem, 6vw, 3.5rem);
+        }
+
+        .faq-hero p {
+            max-width: 680px;
+            margin: auto;
+            color: var(--faq-muted);
+            line-height: 1.8;
+        }
+
+        .faq-content {
+            padding: 35px 20px 70px;
+        }
+
+        .faq-group {
+            margin-bottom: 32px;
+        }
+
+        .faq-group h2 {
+            margin-bottom: 16px;
+            font-size: 1.4rem;
+        }
+
+        .faq-item {
+            margin-bottom: 12px;
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            background: #fff;
+        }
+
+        .faq-question {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 18px;
+            width: 100%;
+            padding: 20px;
+            border: 0;
+            background: #fff;
+            color: var(--faq-dark);
+            text-align: left;
+            font: inherit;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .faq-question:hover {
+            background: #f8faff;
+        }
+
+        .faq-question:focus-visible {
+            outline: 3px solid #93c5fd;
+            outline-offset: -3px;
+        }
+
+        .faq-icon {
+            flex: 0 0 auto;
+            color: var(--faq-blue);
+            font-size: 1.35rem;
+            transition: transform .2s ease;
+        }
+
+        .faq-question[aria-expanded="true"] .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: #475569;
+            line-height: 1.85;
+        }
+
+        .faq-answer[hidden] {
+            display: none;
+        }
+
+        .faq-answer p {
+            margin: 0 0 12px;
+        }
+
+        .faq-answer p:last-child {
+            margin-bottom: 0;
+        }
+
+        .faq-answer a,
+        .faq-footer a {
+            color: var(--faq-blue);
+            text-decoration: none;
+        }
+
+        .faq-answer a:hover,
+        .faq-footer a:hover {
+            text-decoration: underline;
+        }
+
+        .faq-contact {
+            padding: 28px;
+            border: 1px solid #dbeafe;
+            border-radius: 16px;
+            background: #eff6ff;
+            text-align: center;
+        }
+
+        .faq-contact h2 {
+            margin-top: 0;
+        }
+
+        .faq-contact p {
+            color: #475569;
+            line-height: 1.8;
+        }
+
+        .faq-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 46px;
+            padding: 12px 22px;
+            margin-top: 8px;
+            border-radius: 9px;
+            background: var(--faq-blue);
+            color: #fff !important;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .faq-button:hover {
+            background: #1d4ed8;
+        }
+
+        .faq-footer {
+            padding: 25px 15px;
+            border-top: 1px solid #e2e8f0;
+            text-align: center;
+            color: var(--faq-muted);
+            background: #fff;
+        }
+
+        @media (max-width: 600px) {
+            .faq-hero {
+                padding: 45px 18px;
+            }
+
+            .faq-content {
+                padding: 25px 14px 45px;
+            }
+
+            .faq-question {
+                padding: 17px;
+            }
+
+            .faq-answer {
+                padding: 0 17px 18px;
+            }
+
+            .faq-contact {
+                padding: 22px 17px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .faq-icon {
+                transition: none;
+            }
+        }
+    </style>
+</head>
+
+<body class="faq-page">
+
+<header class="site-header">
+    <div class="container">
+        <a href="../index.html" class="logo" aria-label="Kokobeads home">
+            Kokobeads
+        </a>
+
+        <nav aria-label="Main navigation">
+            <a href="../index.html">Home</a>
+            <a href="./shop.html">Shop</a>
+            <a href="./collection.html">Collections</a>
+            <a href="./contact.html">Contact</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="faq-hero">
+        <div class="faq-hero-inner">
+            <span class="faq-eyebrow">Help centre</span>
+            <h1>Frequently Asked Questions</h1>
+            <p>
+                Find helpful information about browsing products,
+                managing your account, placing orders, shipping and
+                getting support from Kokobeads.
+            </p>
+        </div>
+    </section>
+
+    <div class="faq-content">
+
+        <section class="faq-group" aria-labelledby="faq-products-heading">
+            <h2 id="faq-products-heading">Products and Shopping</h2>
+
+            <article class="faq-item">
+                <h3>
+                    <button class="faq-question" type="button"
+                        aria-expanded="false" aria-controls="faq-answer-1">
+                        <span>What products can I find on Kokobeads?</span>
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </button>
+                </h3>
+                <div class="faq-answer" id="faq-answer-1" hidden>
+                    <p>
+                        Kokobeads offers beads, bracelets, anklets, necklaces
+                        and other accessories listed in the online store.
+                        Visit the <a href="./shop.html">Shop</a> or
+                        <a href="./collection.html">Collections</a> page
+                        to explore currently available products.
+                    </p>
+                </div>
+            </article>
+
+            <article class="faq-item">
+                <h3>
+                    <button class="faq-question" type="button"
+                        aria-expanded="false" aria-controls="faq-answer-2">
+                        <span>How do I find a particular product?</span>
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </button>
+                </h3>
+                <div class="faq-answer" id="faq-answer-2" hidden>
+                    <p>
+                        Browse the shop and collections, or use the search
+                        and filtering features available on the website.
+                        Check the product page for its displayed description,
+                        price and availability.
+                    </p>
+                </div>
+            </article>
+
+            <article class="faq-item">
+                <h3>
+                    <button class="faq-question" type="button"
+                        aria-expanded="false" aria-controls="faq-answer-3">
+                        <span>Will the product look exactly like its photograph?</span>
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </button>
+                </h3>
+                <div class="faq-answer" id="faq-answer-3" hidden>
+                    <p>
+                        Product photographs are intended to help you
+                        understand what is offered. Colours can appear
+                        slightly different depending on lighting and
+                        your device's screen settings. Review the
+                        product description before ordering.
+                    </p>
+                </div>
+            </article>
+        </section>
+
+        <section class="faq-group" aria-labelledby="faq-account-heading">
+            <h2 id="faq-account-heading">Accounts and Orders</h2>
+
+            <article class="faq-item">
+                <h3>
+                    <button class="faq-question" type="button"
+                        aria-expanded="false" aria-controls="faq-answer-4">
+                        <span>Do I need an account to use Kokobeads?</span>
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </button>
+                </h3>
+                <div class="faq-answer" id="faq-answer-4" hidden>
+                    <p>
+                        Some store features, including account-related
+                        functions and viewing your order history, require
+                        you to sign in. You can visit the
+                        <a href="./login.html">Login page</a> or
+                        <a href="./register.html">create an account</a>.
+                    </p>
+                </div>
+            </article>
+
+            <article class="faq-item">
+                <h3>
+                    <button class="faq-question" type="button"
+                        aria-expanded="false" aria-controls="faq-answer-5">
+                        <span>How can I view my orders?</span>
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </button>
+                </h3>
+                <div class="faq-answer" id="faq-answer-5" hidden>
+                    <p>
+                        Sign in to your account and open
+                        <a href="./orders.html">My Orders</a> to view
+                        the orders associated with your account. You
+                        must be signed in to access your order history.
+                    </p>
+                </div>
+            </article>
+
+            <article class="faq-item">
+                <h3>
+                    <button class="faq-question" type="button"
+                        aria-expanded="false" aria-controls="faq-answer-6">
+                        <span>What should I do if I forget my password?</span>
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </button>
+                </h3>
+                <div class="faq-answer" id="faq-answer-6" hidden>
+                    <p>
+                        Visit the
+                        <a href="./forgot-password.html">Forgot Password page</a>
+                        and follow the available instructions to request
+                        a password reset.
+                    </p>
+                </div>
+            </article>
+
+            <article class="faq-item">
+                <h3>
+                    <button class="faq-question" type="button"
+                        aria-expanded="false" aria-controls="faq-answer-7">
+                        <span>Can I cancel an order after placing it?</span>
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </button>
+                </h3>
+                <div class="faq-answer" id="faq-answer-7" hidden>
+                    <p>
+                        Contact Kokobeads as soon as possible with your
+                        order reference. Whether cancellation is possible
+                        depends on the order's status and applicable
+                        requirements. Read our
+                        <a href="./returns.html">Returns &amp; Refunds</a>
+                        information for further guidance.
+                    </p>
+                </div>
+            </article>
+        </section>
+
+        <section class="faq-group" aria-labelledby="faq-shipping-heading">
+            <h2 id="faq-shipping-heading">Shipping and Returns</h2>
+
+            <article class="faq-item">
+                <h3>
+                    <button class="faq-question" type="button"
+                        aria-expanded="false" aria-controls="faq-answer-8">
+                        <span>Where can I find shipping information?</span>
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </button>
+                </h3>
+                <div class="faq-answer" id="faq-answer-8" hidden>
+                    <p>
+                        Visit our
+                        <a href="./shipping.html">Shipping Information page</a>
+                        for the shipping details published by Kokobeads.
+                        Check the information relevant to your order
+                        before completing checkout.
+                    </p>
+                </div>
+            </article>
+
+            <article class="faq-item">
+                <h3>
+                    <button class="faq-question" type="button"
+                        aria-expanded="false" aria-controls="faq-answer-9">
+                        <span>What if my item arrives damaged or is incorrect?</span>
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </button>
+                </h3>
+                <div class="faq-answer" id="faq-answer-9" hidden>
+                    <p>
+                        Contact us with your order reference and a
+                        description of the issue. If possible, include
+                        photographs of the damaged or incorrect item.
+                        See the <a href="./returns.html">Returns &amp;
+                        Refunds page</a> for guidance.
+                    </p>
+                </div>
+            </article>
+
+            <article class="faq-item">
+                <h3>
+                    <button class="faq-question" type="button"
+                        aria-expanded="false" aria-controls="faq-answer-10">
+                        <span>How do I request a refund?</span>
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </button>
+                </h3>
+                <div class="faq-answer" id="faq-answer-10" hidden>
+                    <p>
+                        Contact Kokobeads with your order details and
+                        explain why you are requesting a refund. Requests
+                        are reviewed according to the circumstances,
+                        the applicable policy and legal requirements.
+                        Read our <a href="./returns.html">Returns &amp;
+                        Refunds policy</a>.
+                    </p>
+                </div>
+            </article>
+        </section>
+
+        <section class="faq-group" aria-labelledby="faq-privacy-heading">
+            <h2 id="faq-privacy-heading">Privacy and Support</h2>
+
+            <article class="faq-item">
+                <h3>
+                    <button class="faq-question" type="button"
+                        aria-expanded="false" aria-controls="faq-answer-11">
+                        <span>How does Kokobeads handle my information?</span>
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </button>
+                </h3>
+                <div class="faq-answer" id="faq-answer-11" hidden>
+                    <p>
+                        Read our
+                        <a href="./privacy.html">Privacy Policy</a>
+                        for information about the collection, use,
+                        storage and handling of personal information
+                        when using the website.
+                    </p>
+                </div>
+            </article>
+
+            <article class="faq-item">
+                <h3>
+                    <button class="faq-question" type="button"
+                        aria-expanded="false" aria-controls="faq-answer-12">
+                        <span>How can I contact Kokobeads?</span>
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </button>
+                </h3>
+                <div class="faq-answer" id="faq-answer-12" hidden>
+                    <p>
+                        Visit the <a href="./contact.html">Contact page</a>
+                        and use the contact options provided there.
+                        Include relevant order details when asking
+                        about a purchase.
+                    </p>
+                </div>
+            </article>
+        </section>
+
+        <section class="faq-contact">
+            <h2>Still Have Questions?</h2>
+            <p>
+                If you cannot find the answer you need, contact
+                Kokobeads and explain how we can help.
+            </p>
+            <a class="faq-button" href="./contact.html">Contact Us</a>
+        </section>
+
+    </div>
+</main>
+
+<footer class="faq-footer">
+    <p>
+        <a href="../index.html">Home</a> ·
+        <a href="./about.html">About Us</a> ·
+        <a href="./shop.html">Shop</a> ·
+        <a href="./collection.html">Collections</a> ·
+        <a href="./shipping.html">Shipping</a> ·
+        <a href="./returns.html">Returns &amp; Refunds</a> ·
+        <a href="./privacy.html">Privacy Policy</a> ·
+        <a href="./terms.html">Terms &amp; Conditions</a>
+    </p>
+    <p>&copy; <span id="faqYear"></span> Kokobeads.</p>
+</footer>
+
+<script>
+(function () {
+    "use strict";
+
+    document.getElementById("faqYear").textContent =
+        new Date().getFullYear();
+
+    const questions = document.querySelectorAll(".faq-question");
+
+    questions.forEach(function (button) {
+        button.addEventListener("click", function () {
+            const isExpanded =
+                button.getAttribute("aria-expanded") === "true";
+
+            const answerId = button.getAttribute("aria-controls");
+            const answer = document.getElementById(answerId);
+
+            if (!answer) {
+                return;
+            }
+
+            button.setAttribute("aria-expanded", String(!isExpanded));
+            answer.hidden = isExpanded;
+        });
+    });
+})();
+</script>
+
+</body>
+</html>
