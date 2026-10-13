@@ -23,6 +23,13 @@ const userSchema = new mongoose.Schema(
             minlength: 8
         },
 
+        // Customer profile photo URL from Cloudinary
+        profileImage: {
+            type: String,
+            default: "",
+            trim: true
+        },
+
         passwordResetToken: {
             type: String,
             default: null
@@ -32,7 +39,6 @@ const userSchema = new mongoose.Schema(
             type: Date,
             default: null
         },
-
 
         googleId: {
             type: String,

@@ -2,7 +2,8 @@
 const express = require("express");
 
 const {
-    generateUploadSignature
+    generateUploadSignature,
+    generateProfileUploadSignature
 } = require("../controllers/uploadController");
 
 const {
@@ -29,5 +30,14 @@ router.post(
     generateUploadSignature
 );
 
+
+/* CUSTOMER PROFILE PHOTO SIGNATURE
+   POST /api/uploads/profile-signature
+*/
+router.post(
+    "/profile-signature",
+    authenticateUser,
+    generateProfileUploadSignature
+);
 
 module.exports = router;

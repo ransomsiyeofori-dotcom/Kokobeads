@@ -3,9 +3,11 @@ const express = require("express");
 const {
     registerUser,
     loginUser,
-    logoutUser
-    ,forgotPassword
-    ,resetPassword
+    logoutUser,
+    forgotPassword,
+    resetPassword,
+    updateCustomerProfile,
+    changeCustomerPassword
 } = require("../controllers/authController");
 
 const {
@@ -77,6 +79,28 @@ router.get(
 // =========================================
 
 // =========================================
+// UPDATE CUSTOMER PROFILE
+// PUT /api/auth/profile
+// =========================================
+
+router.put(
+    "/profile",
+    authenticateUser,
+    updateCustomerProfile
+);
+
+// =========================================
+// CHANGE CUSTOMER PASSWORD
+// PUT /api/auth/change-password
+// =========================================
+
+router.put(
+    "/change-password",
+    authenticateUser,
+    changeCustomerPassword
+);
+
+// =========================================
 // CURRENT USER
 // GET /api/auth/me
 // =========================================
@@ -119,7 +143,8 @@ router.get(
                     id: user._id,
                     name: user.name,
                     email: user.email,
-                    role: user.role
+                    role: user.role,
+                    profileImage: user.profileImage || ""
                 }
 
             });
@@ -171,8 +196,6 @@ router.post(
 router.post(
     "/logout",
     logoutUser
-    ,forgotPassword
-    ,resetPassword
 );
 
 

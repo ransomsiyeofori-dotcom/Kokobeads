@@ -531,10 +531,169 @@ async function resetPassword(req, res) {
 
 }
 
+
+
+// Update the authenticated customer's profile.
+async function updateCustomerProfile(req, res) {
+    try {
+        const userId = req.user && req.user.userId;
+        const { name, profileImage } = req.body || {};
+
+        if (!userId) {
+            return res.status(401).json({
+                success: false,
+                message: "Authentication required."
+            });
+        }
+
+        if (typeof name !== "string" || !name.trim()) {
+            return res.status(400).json({
+                success: false,
+                message: "Please enter your name."
+            });
+        }
+
+        if (name.trim().length > 100) {
+            return res.status(400).json({
+                success: false,
+                message: "Your name must not exceed 100 characters."
+            });
+        }
+
+        if (
+            profileImage !== undefined &&
+            typeof profileImage !== "string"
+        ) {
+            return res.status(400).json({
+                success: false,
+                message: "Invalid profile image."
+            });
+        }
+
+        const User = require("../models/User");
+        const user = await User.findById(userId);
+
+        if (!user) {
+            return res.status(404).json({
+                success: false,
+                message: "Customer account not found."
+            });
+        }
+
+        user.name = name.trim();
+
+        if (profileImage !== undefined) {
+            user.profileImage = profileImage.trim();
+        }
+
+        await user.save();
+
+        return res.status(200).json({
+            success: true,
+            message: "Profile updated successfully.",
+            user: {
+                id: user._id,
+                name: user.name,
+                email: user.email,
+                role: user.role,
+                profileImage: user.profileImage || ""
+            }
+        });
+    } catch (error) {
+        console.error("Update customer profile error:", error);
+
+        return res.status(500).json({
+            success: false,
+            message: "Unable to update your profile right now."
+        });
+    }
+}
+
+// Change the authenticated customer's password.
+async function changeCustomerPassword(req, res) {
+    try {
+        const userId = req.user && req.user.userId;
+        const { currentPassword, newPassword } = req.body || {};
+
+        if (!userId) {
+            return res.status(401).json({
+                success: false,
+                message: "Authentication required."
+            });
+        }
+
+        if (
+            typeof currentPassword !== "string" ||
+            typeof newPassword !== "string" ||
+            !currentPassword ||
+            !newPassword
+        ) {
+            return res.status(400).json({
+                success: false,
+                message: "Enter your current password and new password."
+            });
+        }
+
+        if (newPassword.length < 8) {
+            return res.status(400).json({
+                success: false,
+                message: "Your new password must be at least 8 characters."
+            });
+        }
+
+        const User = require("../models/User");
+        const user = await User.findById(userId);
+
+        if (!user) {
+            return res.status(404).json({
+                success: false,
+                message: "Customer account not found."
+            });
+        }
+
+        if (!user.password) {
+            return res.status(400).json({
+                success: false,
+                message: "This account has no password set. Use the password reset option instead."
+            });
+        }
+
+        const passwordMatches = await bcrypt.compare(
+            currentPassword,
+            user.password
+        );
+
+        if (!passwordMatches) {
+            return res.status(400).json({
+                success: false,
+                message: "Your current password is incorrect."
+            });
+        }
+
+        user.password = await bcrypt.hash(newPassword, 12);
+        await user.save();
+
+        return res.status(200).json({
+            success: true,
+            message: "Password changed successfully."
+        });
+    } catch (error) {
+        console.error("Change customer password error:", error);
+
+        return res.status(500).json({
+            success: false,
+            message: "Unable to change your password right now."
+        });
+    }
+}
+
 module.exports = {
     registerUser,
     loginUser,
     logoutUser
     ,forgotPassword
     ,resetPassword
+,
+    updateCustomerProfile,
+    changeCustomerPassword
 };

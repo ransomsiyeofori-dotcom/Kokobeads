@@ -87,5 +87,53 @@ async function generateUploadSignature(req, res) {
 
 
 module.exports = {
-    generateUploadSignature
+    generateUploadSignature,
+    generateProfileUploadSignature
 };
+
+// Customer profile photo upload signature.
+async function generateProfileUploadSignature(req, res) {
+    try {
+        if (!req.user || !req.user.userId) {
+            return res.status(401).json({
+                success: false,
+                message: "Authentication required."
+            });
+        }
+
+        if (
+            !process.env.CLOUDINARY_API_SECRET ||
+            !process.env.CLOUDINARY_API_KEY ||
+            !process.env.CLOUDINARY_CLOUD_NAME
+        ) {
+            return res.status(500).json({
+                success: false,
+                message: "Profile photo uploads are not configured."
+            });
+        }
+
+        const timestamp = Math.round(Date.now() / 1000);
+        const folder = "kokobeads/profiles";
+
+        const signature = cloudinary.utils.api_sign_request(
+            { timestamp, folder },
+            process.env.CLOUDINARY_API_SECRET
+        );
+
+        return res.json({
+            success: true,
+            timestamp,
+            folder,
+            signature,
+            cloudName: process.env.CLOUDINARY_CLOUD_NAME,
+            apiKey: process.env.CLOUDINARY_API_KEY
+        });
+    } catch (error) {
+        console.error("Profile upload signature error:", error);
+
+        return res.status(500).json({
+            success: false,
+            message: "Unable to prepare your profile photo upload."
+        });
+    }
+}
